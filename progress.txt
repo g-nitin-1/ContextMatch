@@ -857,7 +857,11 @@ and honeypot proxies are suppressed. That is defensible from the JD and
 challenge documentation, but stability across these worlds proves robustness to
 weights, behavior, mutation policy, and boundary assumptions, not robustness to
 a fundamentally different tier ordering. `BASE_TIER_BY_ATOM` remains the core
-unvalidated JD-to-tier hypothesis and needs deliberate sign-off before freeze.
+unvalidated JD-to-tier hypothesis. It is deliberately accepted for the
+pre-teacher freeze as an ordinal JD-supported hypothesis, not as recovered
+ground truth. Senior system builders remain highest, applied ML is next,
+generic ML is below the main relevance threshold unless candidate evidence is
+exceptional, and adjacent/nontechnical cohorts remain tail candidates.
 
 Regression tests were added for the scorer:
 
@@ -880,8 +884,59 @@ exactly 100 rows and candidate-specific factual reasoning. The organizer's
 `validate_submission.py` accepts the generated file. All 100 IDs were
 cross-checked against the candidate overlay, all 100 reasoning strings are
 unique, and the output contains zero high-risk or detected honeypot-proxy
-candidates. This is still an Idea 2 review artifact, not the final constrained
-`rank.py` deliverable or the registered-participant filename.
+candidates.
+
+
+5.16 IDEA 2 FREEZE AND CONSTRAINED REPRODUCTION
+
+Idea 2 is frozen before any Idea 1 teacher output has been viewed.
+
+Freeze identity:
+
+- Freeze version: `idea2-1.0.0`
+- Status: `frozen_pre_teacher`
+- Source snapshot commit: `e4a74a9`
+- Rubric version: `1.0.5`
+- Scorer version: `0.2.0`
+- Analysis reference date: `2026-06-01`
+- Manifest: `artifacts/analysis/idea2_freeze_manifest.json`
+
+The manifest records hashes for all runtime assets and scored artifacts, the
+full atom-tier mapping with rationales, all six world configurations, and the
+Tier-A/B/C audit decisions. It explicitly preserves that the tier ordering is
+a proxy hypothesis.
+
+The constrained command is:
+
+    python3 rank.py \
+      --candidates India_runs_data_and_ai_challenge/candidates.jsonl \
+      --out submission.csv
+
+`rank.py` uses only the Python standard library. It verifies asset hashes,
+streams the input once, computes integrity and candidate evidence in memory,
+scores all six worlds, enforces the top-100 integrity gate, and writes only the
+final CSV.
+
+Full 100,000-candidate benchmark on the local 16 GB WSL environment:
+
+- Wall-clock time: 57.82 seconds
+- Ranker internal elapsed time: 51.697 seconds
+- Peak RSS: 547,380 KB (about 535 MB)
+- GPU: none
+- Network: none
+- Disk intermediates: none
+- Organizer validator: passed
+- Output SHA-256:
+  `9242380ba54110991949b9ab382b03a7258fb74a5d33917cc889bced7ebadb17`
+- Output is byte-for-byte identical to
+  `artifacts/analysis/idea2_submission.csv`.
+
+The full research pipeline also ran in 4:02.45 with about 1.11 GB peak RSS,
+but it is not the submission ranking path. The constrained `rank.py` result is
+the relevant Stage-3 measurement.
+
+The test suite now contains 43 passing tests, including freeze-asset hash
+validation and all scorer counterfactual checks.
 
 
 6. CURRENT RECONSTRUCTED GENERATOR GRAPH
@@ -1297,32 +1352,27 @@ than automatically accepted or rejected.
 
 12. IMMEDIATE IMPLEMENTATION PRIORITY
 
-The immediate next coding task should be:
+The immediate next task should be:
 
-Complete the Idea 2 freeze review, then build the constrained reproduction
-entry point.
+Build Idea 1 independently against the full dataset without modifying the
+frozen Idea 2 specification.
 
-The candidate-specific evidence overlay is built, the first multi-world scorer
-is implemented, and the 44-template audit is complete enough to continue
-engineering. Idea 2 is not frozen yet.
+Idea 2 is frozen and reproducible. Any change made after inspecting Idea 1 must
+be recorded as a new post-comparison version rather than silently changing
+`idea2-1.0.0`.
 
 This is the correct next step because:
 
-- The generator structure, template catalog, overlay, and first scorer are
+- The reconstruction, audited catalog, candidate overlay, multi-world scorer,
+  counterfactual tests, freeze manifest, and constrained `rank.py` are
   complete.
-- Counterfactual direction tests and a validator-ready 100-row export now
-  exist.
-- The evidence audit, production-delivery judgments, rubric version, and
-  scorer version are signed off. The remaining freeze mechanics are a
-  deliberate `BASE_TIER_BY_ATOM` sign-off, a source snapshot commit, and a
-  generated manifest hashing the runtime assets.
-- After sign-off, implement root `rank.py` so one command reads
-  `candidates.jsonl` and emits the final CSV within 5 minutes, 16 GB RAM, CPU
-  only, and no network. The current analysis pipeline uses precomputed
-  reconstruction artifacts and is not yet that constrained deliverable.
-- Add the real root README reproduction instructions and
-  `submission_metadata.yaml` only when participant/contact/sandbox values are
-  known; do not fabricate those fields.
+- The one-command ranker is comfortably within the five-minute and 16 GB
+  constraints and reproduces the frozen CSV exactly.
+- The next independent evidence source is Idea 1: broad retrieval, stronger
+  reranking/reasoning, and stability checks over the relevant shortlist plus
+  tail audits.
+- Add `submission_metadata.yaml` only when participant, contact, compute,
+  repository, and sandbox values are known; do not fabricate those fields.
 - It keeps Idea 2 independent from the teacher.
 - It creates a reproducible pre-teacher frozen artifact that can later be
   compared with Idea 1 instead of silently merged.
@@ -1511,17 +1561,15 @@ A.8 OPEN ENGINEERING DEBTS (tracked so they are not forgotten)
 - Git LFS push is still unresolved; git-lfs is not installed in this Linux
   environment, so even `git status` currently errors. candidates.jsonl must
   never be re-committed as a 464 MB normal object.
-- README.md at repo root is still a one-line stub. Stage 3 requires a real
-  README with a single reproduce command.
-- A validator-ready Idea 2 CSV export now exists, but root `rank.py` and
-  `submission_metadata.yaml` do not. The export proves formatting and factual
-  reasoning generation; it does not yet satisfy the one-command constrained
-  reproduction requirement.
+- Root README and `rank.py` now provide the required single-command
+  reproduction path. `submission_metadata.yaml` remains blocked on real
+  participant/contact/sandbox values.
 - __pycache__ and .pytest_cache are ignored. .pytest_cache is present locally;
   remove it before committing only if you want a cleaner working tree.
-- The constrained 5-minute CPU student ranker (Idea 1 step 6 / final path) has
-  no implementation yet. The sklearn clustering in generator_reconstruction.py
-  is oracle-stage only and must stay out of the submission runtime path.
+- The constrained Idea 2 runtime path is complete. The independent Idea 1
+  teacher/student path has no implementation yet. The sklearn clustering in
+  `generator_reconstruction.py` remains research-only and is not imported by
+  `rank.py`.
 
 
 A.9 MY BOTTOM LINE

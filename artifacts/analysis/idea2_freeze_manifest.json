@@ -1,0 +1,266 @@
+{
+  "analysis_as_of": "2026-06-01",
+  "assets": {
+    "generator_manifest": {
+      "bytes": 759095,
+      "path": "artifacts/analysis/generator_manifest.json",
+      "sha256": "4a668c3e769fc2f2d52db1a3cd3569991022406253a727131e74d26de525acd9"
+    },
+    "integrity_source": {
+      "bytes": 22141,
+      "path": "analysis/integrity_checks.py",
+      "sha256": "d3b481741c86d305749e52a7eb8fa88b95a3d1f85117beade9a2e542a2631a45"
+    },
+    "jd_evidence_catalog": {
+      "bytes": 279909,
+      "path": "artifacts/analysis/jd_evidence_catalog.json",
+      "sha256": "af364de194a77ab66f0be46282a638efc261cf3a95aa2c90be48f26ded80acce"
+    },
+    "knowledge_base": {
+      "bytes": 1750,
+      "path": "analysis/knowledge_base.json",
+      "sha256": "423e665553ca2afc0938a182ae925631f23b4057a496a507d62685983af0879d"
+    },
+    "overlay_source": {
+      "bytes": 30593,
+      "path": "analysis/candidate_overlay.py",
+      "sha256": "784bc0688137fade12601ea9c6d5d06318a0fe71bb354fde291005ce01b3aa0e"
+    },
+    "rank_entrypoint": {
+      "bytes": 5892,
+      "path": "rank.py",
+      "sha256": "3b0177bd869ff533aa5093c1867e818aad578451b99b1703db500ce786793981"
+    },
+    "rubric": {
+      "bytes": 21276,
+      "path": "analysis/jd_evidence_rubric.json",
+      "sha256": "ec2a0573f918a79c4349c0243254cfdb508e1a021c2d9d8714a61ed8aaa0487f"
+    },
+    "score_summary": {
+      "bytes": 147306,
+      "path": "artifacts/analysis/idea2_score_summary.json",
+      "sha256": "4568bccc605c66c1d9ad317b40f9bd54c313d17c3e81edc7799c7c57a5eddfb5"
+    },
+    "scorer_source": {
+      "bytes": 32980,
+      "path": "analysis/idea2_scorer.py",
+      "sha256": "28e80dcf64ede8cc213132ed34a434c0a3d7b75bd14efdd5f3fb0dc8aecaf2f1"
+    },
+    "submission": {
+      "bytes": 27425,
+      "path": "artifacts/analysis/idea2_submission.csv",
+      "sha256": "9242380ba54110991949b9ab382b03a7258fb74a5d33917cc889bced7ebadb17"
+    },
+    "submission_export_source": {
+      "bytes": 5618,
+      "path": "analysis/submission_export.py",
+      "sha256": "cc248fcd8f38cfbf8b6bce9e9b43aadba017df56dc1b714d15ccd979e00bbf90"
+    },
+    "top100": {
+      "bytes": 33294,
+      "path": "artifacts/analysis/idea2_top100.csv",
+      "sha256": "17125861c7796bf1242b0e5bfeaa7d83e5a95aef7f73318bc579bc526b44ecb1"
+    }
+  },
+  "audit_sign_off": {
+    "additional_correction": {
+      "career_03ab1210df1d": "removed operational ownership inferred from a sentence that denied productionization ownership"
+    },
+    "production_delivery_judgments": {
+      "career_2e516f229493": "accepted: explicitly shipped small predictive features",
+      "career_8f5eedb01688": "accepted: explicit Docker/Kubernetes deployment of the described SaaS application",
+      "career_9ab513003702": "rejected: integration of another team's model-serving service is not delivery ownership"
+    },
+    "tier_a": "accepted after full template review and rubric 1.0.3 fixes",
+    "tier_b": "accepted after false-positive review; no direct-requirement leakage found",
+    "tier_c": "accepted after bidirectional review of all six generic-ML templates"
+  },
+  "base_tier_by_atom": {
+    "fine_atom_00": 3.4,
+    "fine_atom_01": 4.9,
+    "fine_atom_02": 1.8,
+    "fine_atom_03": 4.45,
+    "fine_atom_04": 4.7,
+    "fine_atom_05": 4.9,
+    "fine_atom_06": 0.08,
+    "fine_atom_07": 0.75,
+    "fine_atom_08": 4.8,
+    "fine_atom_09": 0.45,
+    "fine_atom_10": 4.8,
+    "fine_atom_11": 4.75
+  },
+  "base_tier_rationales": {
+    "fine_atom_00": "Applied-ML cohort with strong evaluated-ranking prevalence and mixed production retrieval depth.",
+    "fine_atom_01": "Senior explicit-AI cohort with complete retrieval, ranking-evaluation, production, and ownership evidence.",
+    "fine_atom_02": "Generic-ML cohort with no career-side ranking evaluation or production retrieval compounds.",
+    "fine_atom_03": "Senior explicit-AI cohort with evaluated ranking but only partial production embedding/vector coverage.",
+    "fine_atom_04": "Senior explicit-AI cohort with complete production retrieval evidence; LLM context is deep rather than shallow.",
+    "fine_atom_05": "JD-anchored plain-language senior system builders; evaluated ranking is universal despite sparse tool keywords.",
+    "fine_atom_06": "General-professional catch-all with no direct technical JD evidence.",
+    "fine_atom_07": "Data/backend-adjacent cohort with Python and systems evidence but no direct retrieval/ranking compounds.",
+    "fine_atom_08": "Senior explicit-AI cohort with complete production retrieval and evaluation evidence.",
+    "fine_atom_09": "General-software cohort with product engineering evidence but no direct retrieval/ranking compounds.",
+    "fine_atom_10": "Senior explicit-AI cohort with complete production retrieval and evaluation evidence.",
+    "fine_atom_11": "Single senior explicit-AI profile with complete evidence but maximum small-cohort uncertainty."
+  },
+  "candidate_count": 100000,
+  "freeze_version": "idea2-1.0.0",
+  "frozen_on": "2026-06-18",
+  "interpretation_boundary": "This freezes an independent deterministic proxy ranking, not hidden ground truth. The atom-to-tier ordering remains a JD-supported hypothesis and must not be changed after viewing Idea 1 without a new explicitly versioned post-comparison freeze.",
+  "rubric_version": "1.0.5",
+  "scorer_version": "0.2.0",
+  "source_commit": "e4a74a9",
+  "status": "frozen_pre_teacher",
+  "worlds": [
+    {
+      "atom_tiers": {
+        "fine_atom_00": 3.25,
+        "fine_atom_01": 4.9,
+        "fine_atom_02": 1.45,
+        "fine_atom_03": 4.45,
+        "fine_atom_04": 4.7,
+        "fine_atom_05": 4.9,
+        "fine_atom_06": 0.08,
+        "fine_atom_07": 0.75,
+        "fine_atom_08": 4.8,
+        "fine_atom_09": 0.45,
+        "fine_atom_10": 4.8,
+        "fine_atom_11": 4.75
+      },
+      "behavior_weight": 0.25,
+      "description": "Prioritizes audited senior/applied evidence, keeps generic ML borderline, hard-excludes strongest honeypot proxies.",
+      "evidence_weight": 0.95,
+      "integrity_policy": "hard",
+      "logistics_weight": 0.45,
+      "name": "conservative",
+      "overlay_penalty_scale": 1.0,
+      "skill_weight": 0.65,
+      "title_weight": 1.0
+    },
+    {
+      "atom_tiers": {
+        "fine_atom_00": 3.15,
+        "fine_atom_01": 5.0,
+        "fine_atom_02": 1.35,
+        "fine_atom_03": 4.65,
+        "fine_atom_04": 4.9,
+        "fine_atom_05": 5.0,
+        "fine_atom_06": 0.08,
+        "fine_atom_07": 0.75,
+        "fine_atom_08": 4.95,
+        "fine_atom_09": 0.45,
+        "fine_atom_10": 4.95,
+        "fine_atom_11": 4.9
+      },
+      "behavior_weight": 0.2,
+      "description": "Gives the plain-language and explicit senior cohorts the strongest Tier-5 prior, matching the JD's senior-system-builder anchor.",
+      "evidence_weight": 1.05,
+      "integrity_policy": "hard",
+      "logistics_weight": 0.35,
+      "name": "senior_heavy",
+      "overlay_penalty_scale": 1.0,
+      "skill_weight": 0.55,
+      "title_weight": 1.0
+    },
+    {
+      "atom_tiers": {
+        "fine_atom_00": 3.95,
+        "fine_atom_01": 4.9,
+        "fine_atom_02": 1.65,
+        "fine_atom_03": 4.45,
+        "fine_atom_04": 4.7,
+        "fine_atom_05": 4.9,
+        "fine_atom_06": 0.08,
+        "fine_atom_07": 0.75,
+        "fine_atom_08": 4.8,
+        "fine_atom_09": 0.45,
+        "fine_atom_10": 4.8,
+        "fine_atom_11": 4.75
+      },
+      "behavior_weight": 0.25,
+      "description": "Raises applied-ML candidates when their career templates show ranking/evaluation depth, while keeping senior cohorts high.",
+      "evidence_weight": 1.05,
+      "integrity_policy": "hard",
+      "logistics_weight": 0.45,
+      "name": "applied_ml_friendly",
+      "overlay_penalty_scale": 1.0,
+      "skill_weight": 0.75,
+      "title_weight": 1.0
+    },
+    {
+      "atom_tiers": {
+        "fine_atom_00": 3.55,
+        "fine_atom_01": 4.9,
+        "fine_atom_02": 4.6,
+        "fine_atom_03": 4.45,
+        "fine_atom_04": 4.7,
+        "fine_atom_05": 4.9,
+        "fine_atom_06": 0.08,
+        "fine_atom_07": 1.0,
+        "fine_atom_08": 4.8,
+        "fine_atom_09": 0.45,
+        "fine_atom_10": 4.8,
+        "fine_atom_11": 4.75
+      },
+      "behavior_weight": 0.25,
+      "description": "Stress-tests whether generic-ML or data/backend tail exceptions can enter the shortlist when skill overlays are useful.",
+      "evidence_weight": 1.05,
+      "integrity_policy": "hard",
+      "logistics_weight": 0.4,
+      "name": "generic_tail_friendly",
+      "overlay_penalty_scale": 1.0,
+      "skill_weight": 1.1,
+      "title_weight": 1.0
+    },
+    {
+      "atom_tiers": {
+        "fine_atom_00": 3.25,
+        "fine_atom_01": 4.9,
+        "fine_atom_02": 1.45,
+        "fine_atom_03": 4.45,
+        "fine_atom_04": 4.7,
+        "fine_atom_05": 4.9,
+        "fine_atom_06": 0.08,
+        "fine_atom_07": 0.75,
+        "fine_atom_08": 4.8,
+        "fine_atom_09": 0.45,
+        "fine_atom_10": 4.8,
+        "fine_atom_11": 4.75
+      },
+      "behavior_weight": 0.55,
+      "description": "Uses the same static structure as the conservative world but gives bounded behavior and availability the largest allowed influence.",
+      "evidence_weight": 0.95,
+      "integrity_policy": "hard",
+      "logistics_weight": 0.65,
+      "name": "behavior_medium",
+      "overlay_penalty_scale": 1.0,
+      "skill_weight": 0.65,
+      "title_weight": 1.0
+    },
+    {
+      "atom_tiers": {
+        "fine_atom_00": 3.35,
+        "fine_atom_01": 4.9,
+        "fine_atom_02": 1.65,
+        "fine_atom_03": 4.45,
+        "fine_atom_04": 4.7,
+        "fine_atom_05": 4.9,
+        "fine_atom_06": 0.08,
+        "fine_atom_07": 0.75,
+        "fine_atom_08": 4.8,
+        "fine_atom_09": 0.45,
+        "fine_atom_10": 4.8,
+        "fine_atom_11": 4.75
+      },
+      "behavior_weight": 0.25,
+      "description": "Treats detected honeypot proxies as very strong penalties rather than absolute truth, to measure mutation-policy sensitivity.",
+      "evidence_weight": 0.95,
+      "integrity_policy": "strong",
+      "logistics_weight": 0.45,
+      "name": "mutation_uncertain",
+      "overlay_penalty_scale": 1.0,
+      "skill_weight": 0.65,
+      "title_weight": 1.0
+    }
+  ]
+}
