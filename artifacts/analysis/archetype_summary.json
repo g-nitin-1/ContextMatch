@@ -1,0 +1,209 @@
+{
+  "career_entry_count": 300171,
+  "career_template_frequency_distribution": {
+    "2": 1,
+    "4": 1,
+    "5": 2,
+    "6": 1,
+    "8": 2,
+    "9": 2,
+    "12": 2,
+    "57": 1,
+    "58": 1,
+    "60": 1,
+    "64": 1,
+    "65": 1,
+    "78": 1,
+    "328": 1,
+    "359": 1,
+    "363": 1,
+    "366": 1,
+    "369": 1,
+    "389": 1,
+    "1790": 1,
+    "1807": 1,
+    "1814": 1,
+    "1823": 1,
+    "1836": 1,
+    "1854": 1,
+    "9785": 1,
+    "9911": 1,
+    "10015": 1,
+    "10025": 1,
+    "10055": 1,
+    "10125": 1,
+    "25029": 1,
+    "25071": 1,
+    "25078": 1,
+    "25104": 1,
+    "25164": 1,
+    "25207": 1,
+    "25237": 1,
+    "25290": 1,
+    "25515": 1
+  },
+  "dataset": "/mnt/e/contextmatch/India_runs_data_and_ai_challenge/candidates.jsonl",
+  "example_candidate_ids": {
+    "applied_ml": [
+      "CAND_0000031",
+      "CAND_0001610",
+      "CAND_0003977",
+      "CAND_0005649",
+      "CAND_0006418"
+    ],
+    "data_backend_adjacent": [
+      "CAND_0000001",
+      "CAND_0000010",
+      "CAND_0000082",
+      "CAND_0000131",
+      "CAND_0000155"
+    ],
+    "direct_occupation": [
+      "CAND_0000021",
+      "CAND_0000074",
+      "CAND_0000083",
+      "CAND_0000097",
+      "CAND_0000120"
+    ],
+    "general_professional": [
+      "CAND_0000002",
+      "CAND_0000003",
+      "CAND_0000004",
+      "CAND_0000005",
+      "CAND_0000006"
+    ],
+    "general_software": [
+      "CAND_0000011",
+      "CAND_0000014",
+      "CAND_0000015",
+      "CAND_0000018",
+      "CAND_0000023"
+    ],
+    "generic_ml": [
+      "CAND_0000112",
+      "CAND_0000165",
+      "CAND_0000200",
+      "CAND_0000273",
+      "CAND_0000422"
+    ],
+    "senior_explicit_ai": [
+      "CAND_0002025",
+      "CAND_0005260",
+      "CAND_0007411",
+      "CAND_0008425",
+      "CAND_0011687"
+    ],
+    "senior_plain_language": [
+      "CAND_0005538",
+      "CAND_0006567",
+      "CAND_0030468",
+      "CAND_0037980",
+      "CAND_0061257"
+    ]
+  },
+  "record_count": 100000,
+  "summary_archetypes": {
+    "applied_ml": 150,
+    "data_backend_adjacent": 5000,
+    "direct_occupation": 5517,
+    "general_professional": 63304,
+    "general_software": 25000,
+    "generic_ml": 1000,
+    "senior_explicit_ai": 21,
+    "senior_plain_language": 8
+  },
+  "title_families": {
+    "ai_ml": 857,
+    "data_backend": 3627,
+    "other": 68953,
+    "senior_ai_ml": 190,
+    "software": 26373
+  },
+  "top_titles_by_archetype": {
+    "applied_ml": {
+      "AI Engineer": 21,
+      "Applied ML Engineer": 23,
+      "Machine Learning Engineer": 24,
+      "NLP Engineer": 14,
+      "Recommendation Systems Engineer": 26,
+      "Search Engineer": 23,
+      "Senior Data Scientist": 19
+    },
+    "data_backend_adjacent": {
+      "Analytics Engineer": 764,
+      "Backend Engineer": 704,
+      "Data Analyst": 728,
+      "Data Engineer": 744,
+      "Senior Data Engineer": 687,
+      "Senior Software Engineer": 653,
+      "Software Engineer": 720
+    },
+    "direct_occupation": {
+      "Accountant": 474,
+      "Business Analyst": 460,
+      "Civil Engineer": 504,
+      "Content Writer": 452,
+      "Customer Support": 454,
+      "Graphic Designer": 500,
+      "HR Manager": 440,
+      "Marketing Manager": 405,
+      "Mechanical Engineer": 443,
+      "Operations Manager": 467,
+      "Project Manager": 432,
+      "Sales Executive": 486
+    },
+    "general_professional": {
+      "Accountant": 5290,
+      "Business Analyst": 5373,
+      "Civil Engineer": 5198,
+      "Content Writer": 5275,
+      "Customer Support": 5296,
+      "Graphic Designer": 5189,
+      "HR Manager": 5390,
+      "Marketing Manager": 5119,
+      "Mechanical Engineer": 5348,
+      "Operations Manager": 5277,
+      "Project Manager": 5322,
+      "Sales Executive": 5227
+    },
+    "general_software": {
+      ".NET Developer": 2788,
+      "Cloud Engineer": 2836,
+      "DevOps Engineer": 2787,
+      "Frontend Engineer": 2738,
+      "Full Stack Developer": 2873,
+      "Java Developer": 2809,
+      "Mobile Developer": 2757,
+      "QA Engineer": 2682,
+      "Software Engineer": 2730
+    },
+    "generic_ml": {
+      "AI Research Engineer": 153,
+      "AI Specialist": 130,
+      "Computer Vision Engineer": 132,
+      "Data Scientist": 145,
+      "Junior ML Engineer": 131,
+      "ML Engineer": 167,
+      "Senior Software Engineer (ML)": 142
+    },
+    "senior_explicit_ai": {
+      "Lead AI Engineer": 2,
+      "Senior AI Engineer": 2,
+      "Senior Applied Scientist": 2,
+      "Senior Machine Learning Engineer": 5,
+      "Senior NLP Engineer": 6,
+      "Staff Machine Learning Engineer": 4
+    },
+    "senior_plain_language": {
+      "Lead AI Engineer": 1,
+      "Senior AI Engineer": 2,
+      "Senior Applied Scientist": 2,
+      "Senior Machine Learning Engineer": 1,
+      "Staff Machine Learning Engineer": 2
+    }
+  },
+  "unique_career_sequences": 25912,
+  "unique_career_templates": 44,
+  "unique_headline_templates": 179,
+  "unique_summary_templates": 76
+}

@@ -1,0 +1,182 @@
+{
+  "behavior_eta_squared_by_static_class": {
+    "applications_log": 0.017329,
+    "github_missing": 0.032776,
+    "github_score": 0.078059,
+    "inactive_days": 0.070453,
+    "interview_completion": 0.068247,
+    "notice_period_days": 0.012095,
+    "offer_acceptance": 0.045799,
+    "offer_history_missing": 0.030019,
+    "open_to_work": 0.014678,
+    "profile_completeness": 0.032498,
+    "profile_views_log": 0.059837,
+    "recruiter_saves_log": 0.109224,
+    "response_rate": 0.023582,
+    "response_time_hours": 0.058465,
+    "search_appearances_log": 0.110926,
+    "verification_count": 0.027725,
+    "willing_to_relocate": 0.001974
+  },
+  "behavior_eta_squared_by_summary_archetype": {
+    "applications_log": 0.017338,
+    "github_missing": 0.032784,
+    "github_score": 0.078066,
+    "inactive_days": 0.070457,
+    "interview_completion": 0.068251,
+    "notice_period_days": 0.012096,
+    "offer_acceptance": 0.045802,
+    "offer_history_missing": 0.030022,
+    "open_to_work": 0.014682,
+    "profile_completeness": 0.03252,
+    "profile_views_log": 0.059849,
+    "recruiter_saves_log": 0.109224,
+    "response_rate": 0.023619,
+    "response_time_hours": 0.058482,
+    "search_appearances_log": 0.110936,
+    "verification_count": 0.027728,
+    "willing_to_relocate": 0.001979
+  },
+  "categorical_dependencies": [
+    {
+      "ami": 0.933133,
+      "nmi": 0.933142,
+      "source": "static_class",
+      "source_cardinality": 7,
+      "target": "title_family",
+      "target_cardinality": 5,
+      "target_mode_accuracy_given_source": 0.98334
+    },
+    {
+      "ami": 0.894173,
+      "nmi": 0.894193,
+      "source": "static_class",
+      "source_cardinality": 7,
+      "target": "summary_archetype",
+      "target_cardinality": 8,
+      "target_mode_accuracy_given_source": 0.94483
+    },
+    {
+      "ami": 0.893996,
+      "nmi": 0.894023,
+      "source": "fine_static_atom",
+      "source_cardinality": 12,
+      "target": "summary_archetype",
+      "target_cardinality": 8,
+      "target_mode_accuracy_given_source": 0.94483
+    },
+    {
+      "ami": 0.610668,
+      "nmi": 0.611043,
+      "source": "summary_template",
+      "source_cardinality": 76,
+      "target": "summary_archetype",
+      "target_cardinality": 8,
+      "target_mode_accuracy_given_source": 1.0
+    },
+    {
+      "ami": 0.485023,
+      "nmi": 0.485393,
+      "source": "summary_template",
+      "source_cardinality": 76,
+      "target": "title_family",
+      "target_cardinality": 5,
+      "target_mode_accuracy_given_source": 0.98334
+    },
+    {
+      "ami": 0.439234,
+      "nmi": 0.439516,
+      "source": "static_class",
+      "source_cardinality": 7,
+      "target": "current_career_template",
+      "target_cardinality": 44,
+      "target_mode_accuracy_given_source": 0.13114
+    },
+    {
+      "ami": 0.417478,
+      "nmi": 0.417817,
+      "source": "current_career_template",
+      "source_cardinality": 44,
+      "target": "summary_archetype",
+      "target_cardinality": 8,
+      "target_mode_accuracy_given_source": 0.94483
+    },
+    {
+      "ami": 0.365,
+      "nmi": 0.366067,
+      "source": "headline_template",
+      "source_cardinality": 179,
+      "target": "summary_archetype",
+      "target_cardinality": 8,
+      "target_mode_accuracy_given_source": 1.0
+    },
+    {
+      "ami": 0.33298,
+      "nmi": 0.338709,
+      "source": "summary_template",
+      "source_cardinality": 76,
+      "target": "headline_template",
+      "target_cardinality": 179,
+      "target_mode_accuracy_given_source": 0.05338
+    },
+    {
+      "ami": 0.313116,
+      "nmi": 0.31517,
+      "source": "summary_template",
+      "source_cardinality": 76,
+      "target": "current_career_template",
+      "target_cardinality": 44,
+      "target_mode_accuracy_given_source": 0.1359
+    },
+    {
+      "ami": 0.158546,
+      "nmi": 0.158879,
+      "source": "static_class",
+      "source_cardinality": 7,
+      "target": "current_industry",
+      "target_cardinality": 24,
+      "target_mode_accuracy_given_source": 0.30039
+    },
+    {
+      "ami": 0.019949,
+      "nmi": 0.019989,
+      "source": "static_class",
+      "source_cardinality": 7,
+      "target": "behavior_cluster",
+      "target_cardinality": 2,
+      "target_mode_accuracy_given_source": 0.61121
+    },
+    {
+      "ami": 0.017662,
+      "nmi": 0.017704,
+      "source": "summary_archetype",
+      "source_cardinality": 8,
+      "target": "behavior_cluster",
+      "target_cardinality": 2,
+      "target_mode_accuracy_given_source": 0.61121
+    },
+    {
+      "ami": 0.01281,
+      "nmi": 0.013019,
+      "source": "static_class",
+      "source_cardinality": 7,
+      "target": "mutation_family",
+      "target_cardinality": 7,
+      "target_mode_accuracy_given_source": 0.99838
+    },
+    {
+      "ami": 0.010397,
+      "nmi": 0.01062,
+      "source": "summary_archetype",
+      "source_cardinality": 8,
+      "target": "mutation_family",
+      "target_cardinality": 7,
+      "target_mode_accuracy_given_source": 0.99838
+    }
+  ],
+  "manual_archetype_agreement_for_interpretation_only": {
+    "ami": 0.894173,
+    "nmi": 0.894193,
+    "note": "Manual archetypes interpret discovered classes; they are not clustering inputs."
+  }
+}

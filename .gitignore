@@ -1,0 +1,10 @@
+# Reproducible candidate-level analysis outputs.
+__pycache__/
+.pytest_cache/
+*.py[cod]
+/artifacts/analysis/archetype_assignments.csv
+/artifacts/analysis/behavioral_twins.csv
+/artifacts/analysis/candidate_overlay.jsonl
+/artifacts/analysis/generator_assignments.csv
+/artifacts/analysis/idea2_scores.csv
+/artifacts/analysis/integrity_issues.jsonl

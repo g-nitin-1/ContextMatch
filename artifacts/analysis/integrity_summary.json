@@ -1,0 +1,104 @@
+{
+  "analysis_as_of": "2026-06-01",
+  "archetype_risk_levels": {
+    "applied_ml": {
+      "high": 29,
+      "low": 48,
+      "none": 73
+    },
+    "data_backend_adjacent": {
+      "high": 3,
+      "low": 1032,
+      "medium": 1,
+      "none": 3964
+    },
+    "direct_occupation": {
+      "low": 1563,
+      "medium": 2,
+      "none": 3952
+    },
+    "general_professional": {
+      "high": 35,
+      "low": 18028,
+      "medium": 14,
+      "none": 45227
+    },
+    "general_software": {
+      "high": 16,
+      "low": 6264,
+      "medium": 15,
+      "none": 18705
+    },
+    "generic_ml": {
+      "high": 71,
+      "low": 99,
+      "none": 830
+    },
+    "senior_explicit_ai": {
+      "high": 8,
+      "low": 5,
+      "none": 8
+    },
+    "senior_plain_language": {
+      "low": 1,
+      "none": 7
+    }
+  },
+  "category_candidate_counts": {
+    "behavioral_data_quality": 24895,
+    "honeypot_evidence": 162,
+    "soft_consistency": 2846
+  },
+  "category_occurrences": {
+    "behavioral_data_quality": 26361,
+    "honeypot_evidence": 199,
+    "soft_consistency": 2848
+  },
+  "dataset": "/mnt/e/contextmatch/India_runs_data_and_ai_challenge/candidates.jsonl",
+  "flagged_candidates": 27234,
+  "high_confidence_contradiction_candidates": 162,
+  "high_confidence_rules": [
+    "career_duration_exceeds_experience",
+    "company_pre_founding",
+    "expert_zero_duration_3plus",
+    "role_duration_large_mismatch",
+    "technology_before_release"
+  ],
+  "issue_candidate_counts": {
+    "activity_before_signup": 7496,
+    "career_duration_exceeds_experience": 23,
+    "career_history_incomplete": 25,
+    "company_pre_founding": 83,
+    "expert_zero_duration_3plus": 21,
+    "role_duration_large_mismatch": 33,
+    "role_duration_mismatch": 2,
+    "salary_range_order": 18865,
+    "skill_duration_exceeds_experience": 2821,
+    "technology_before_release": 25
+  },
+  "issue_counts": {
+    "activity_before_signup": 7496,
+    "career_duration_exceeds_experience": 23,
+    "career_history_incomplete": 25,
+    "company_pre_founding": 84,
+    "expert_zero_duration_3plus": 21,
+    "role_duration_large_mismatch": 33,
+    "role_duration_mismatch": 2,
+    "salary_range_order": 18865,
+    "skill_duration_exceeds_experience": 2821,
+    "technology_before_release": 38
+  },
+  "knowledge_base": "/mnt/e/ContextMatch/analysis/knowledge_base.json",
+  "record_count": 100000,
+  "risk_levels": {
+    "high": 162,
+    "low": 27040,
+    "medium": 32,
+    "none": 72766
+  },
+  "severity_counts": {
+    "high": 199,
+    "low": 29207,
+    "medium": 2
+  }
+}

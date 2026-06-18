@@ -1,0 +1,611 @@
+{
+  "version": "1.0.5",
+  "source": "India_runs_data_and_ai_challenge/job_description.docx",
+  "purpose": "Deterministic Idea 2 evidence extraction. This rubric records observed career evidence; it does not assign relevance tiers or scores.",
+  "principles": [
+    "Career evidence is stronger than self-declared skill keywords.",
+    "A missing match means not observed in this text, not evidence of absence.",
+    "Compound requirements require every listed atomic signal.",
+    "Risk contexts are review flags, not automatic disqualifiers."
+  ],
+  "skill_signal_patterns": {
+    "python_engineering": {
+      "label": "Python engineering skill evidence",
+      "description": "Candidate-declared Python or Python ecosystem skills. Skill evidence is kept separate from career compounds.",
+      "patterns": [
+        "\\bPython\\b",
+        "\\bPySpark\\b",
+        "\\bFastAPI\\b",
+        "\\bFlask\\b",
+        "\\bpytest\\b",
+        "\\bscikit[- ]learn\\b",
+        "\\bsklearn\\b"
+      ]
+    },
+    "embeddings": {
+      "label": "Embedding skill evidence",
+      "description": "Candidate-declared embedding or sentence-transformer skills.",
+      "patterns": [
+        "\\bembeddings?\\b",
+        "\\bsentence transformers?\\b",
+        "\\bBGE\\b",
+        "\\bMPNet\\b"
+      ]
+    },
+    "retrieval_search": {
+      "label": "Retrieval/search skill evidence",
+      "description": "Candidate-declared retrieval/search skills. Avoids bare search to prevent job-search style false positives.",
+      "patterns": [
+        "\\binformation retrieval\\b",
+        "\\bsemantic search\\b",
+        "\\bhybrid search\\b",
+        "\\bvector search\\b",
+        "\\bBM25\\b",
+        "^RAG$"
+      ]
+    },
+    "vector_hybrid_infrastructure": {
+      "label": "Vector/hybrid infrastructure skill evidence",
+      "description": "Candidate-declared vector database, vector search, or search infrastructure skills.",
+      "patterns": [
+        "\\bvector search\\b",
+        "\\bvector databases?\\b",
+        "\\bPinecone\\b",
+        "\\bWeaviate\\b",
+        "\\bQdrant\\b",
+        "\\bMilvus\\b",
+        "\\bFAISS\\b",
+        "\\bOpenSearch\\b",
+        "\\bElasticsearch\\b"
+      ]
+    },
+    "ranking_recommendation_matching": {
+      "label": "Ranking/recommendation skill evidence",
+      "description": "Candidate-declared ranking, recommendation, or learning-to-rank skills.",
+      "patterns": [
+        "\\brecommendation systems?\\b",
+        "\\brecommender\\b",
+        "\\branking\\b",
+        "\\blearning to rank\\b",
+        "\\bLTR\\b"
+      ]
+    },
+    "ranking_evaluation": {
+      "label": "Ranking evaluation skill evidence",
+      "description": "Candidate-declared ranking metric or evaluation skills.",
+      "patterns": [
+        "\\bNDCG\\b",
+        "\\bMRR\\b",
+        "\\bMAP\\b",
+        "\\brelevance\\b",
+        "\\bA/B testing\\b"
+      ]
+    },
+    "llm_finetuning": {
+      "label": "LLM fine-tuning skill evidence",
+      "description": "Candidate-declared LoRA, QLoRA, PEFT, or fine-tuning skills.",
+      "patterns": [
+        "\\bLoRA\\b",
+        "\\bQLoRA\\b",
+        "\\bPEFT\\b",
+        "\\bfine[- ]tuning LLMs?\\b"
+      ]
+    },
+    "llm_application_context": {
+      "label": "LLM application skill evidence",
+      "description": "Candidate-declared LLM/RAG application or framework skills.",
+      "patterns": [
+        "^LLMs?$",
+        "^RAG$",
+        "\\bLangChain\\b",
+        "\\bOpenAI\\b",
+        "\\bPrompt Engineering\\b"
+      ]
+    },
+    "computer_vision_primary": {
+      "label": "Computer vision skill evidence",
+      "description": "Candidate-declared computer-vision-primary skill evidence.",
+      "patterns": [
+        "\\bcomputer vision\\b",
+        "\\bobject detection\\b",
+        "\\bimage classification\\b",
+        "\\bResNet\\b"
+      ]
+    },
+    "ml_depth": {
+      "label": "General ML depth skill evidence",
+      "description": "Skill-only general ML depth signal. It has no career-side compound equivalent.",
+      "patterns": [
+        "\\bmachine learning\\b",
+        "\\bdeep learning\\b",
+        "\\bNLP\\b",
+        "\\btransformers?\\b",
+        "\\bMLOps\\b",
+        "\\bKubeflow\\b",
+        "\\bBentoML\\b"
+      ]
+    }
+  },
+  "signals": {
+    "embeddings": {
+      "category": "direct_requirement",
+      "label": "Embeddings experience",
+      "description": "Direct work with embedding models, dense vectors, or sentence-transformer representations.",
+      "pattern_groups": [
+        [
+          "\\bembeddings?\\b",
+          "\\bdense vectors?\\b",
+          "\\bsentence[- ]transformers?\\b",
+          "\\bBGE(?:[- ][A-Za-z0-9]+)?\\b",
+          "\\bMPNet(?:[- ][A-Za-z0-9]+)?\\b"
+        ]
+      ]
+    },
+    "retrieval_search": {
+      "category": "direct_requirement",
+      "label": "Retrieval or search systems",
+      "description": "Direct work on information retrieval, semantic search, hybrid retrieval, search, discovery, or matching.",
+      "pattern_groups": [
+        [
+          "\\bretrieval\\b",
+          "\\bsemantic search\\b",
+          "\\bhybrid search\\b",
+          "\\bhybrid retrieval\\b",
+          "\\bsearch (?:system|product|feature|and discovery|experience)\\b",
+          "\\bembedding-based search\\b",
+          "\\bmatching (?:layer|pipeline|system)\\b",
+          "\\bcandidate[- ]JD matching\\b",
+          "\\bquery understanding\\b",
+          "\\bRAG[- ]based\\b",
+          "\\bBM25\\b"
+        ]
+      ]
+    },
+    "vector_hybrid_infrastructure": {
+      "category": "direct_requirement",
+      "label": "Vector or hybrid-search infrastructure",
+      "description": "Direct work with vector indexes, vector databases, nearest-neighbor retrieval, or sparse+dense infrastructure.",
+      "pattern_groups": [
+        [
+          "\\bPinecone\\b",
+          "\\bWeaviate\\b",
+          "\\bQdrant\\b",
+          "\\bMilvus\\b",
+          "\\bFAISS\\b",
+          "\\bOpenSearch\\b",
+          "\\bElasticsearch\\b",
+          "\\bnearest[- ]neighbor\\b",
+          "\\bsparse and dense\\b",
+          "\\bBM25 \\+ dense\\b",
+          "\\bvector (?:database|index|retrieval|search)\\b"
+        ]
+      ]
+    },
+    "python_engineering": {
+      "category": "direct_requirement",
+      "label": "Python engineering",
+      "description": "Explicit Python or Python-ecosystem engineering evidence.",
+      "pattern_groups": [
+        [
+          "\\bPython\\b",
+          "\\bPySpark\\b",
+          "\\bpytest\\b",
+          "\\bscikit[- ]learn\\b",
+          "\\bsklearn\\b",
+          "\\bFastAPI\\b",
+          "\\bFlask\\b"
+        ]
+      ]
+    },
+    "ranking_evaluation": {
+      "category": "direct_requirement",
+      "label": "Ranking evaluation",
+      "description": "Hands-on design or use of relevance metrics, evaluation frameworks, judgments, or offline-to-online analysis.",
+      "pattern_groups": [
+        [
+          "\\bNDCG(?:@\\d+)?\\b",
+          "\\bMRR\\b",
+          "\\bMAP\\b",
+          "\\brecall@K\\b",
+          "\\bevaluation framework\\b",
+          "\\bevaluation methodology\\b",
+          "\\beval(?:uation)? (?:workflow|harness|methodology|set|side)\\b",
+          "\\boffline[- /]online correlation\\b",
+          "\\boffline metrics?\\b",
+          "\\boffline experimentation environment\\b",
+          "\\branking calibration\\b",
+          "\\bmodeling and evaluation\\b",
+          "\\bhuman relevance judgments?\\b",
+          "\\brelevance labeling\\b",
+          "\\bonline engagement metrics?\\b",
+          "\\brecruiter engagement metrics?\\b",
+          "\\bA/B testing alongside\\b",
+          "\\bA/B testing infrastructure\\b",
+          "\\blive A/B test\\b",
+          "\\bA/B test outcomes?\\b",
+          "\\bonline A/B engagement metrics?\\b"
+        ]
+      ]
+    },
+    "ranking_recommendation_matching": {
+      "category": "core_role",
+      "label": "Ranking, recommendation, or matching",
+      "description": "Work on rankers, recommenders, personalization, matching, discovery relevance, or reranking.",
+      "pattern_groups": [
+        [
+          "\\branking\\b",
+          "\\branker\\b",
+          "\\bre-ranking\\b",
+          "\\breranking\\b",
+          "\\brecommendation(?:s| system)?\\b",
+          "\\brecommender\\b",
+          "\\bpersonalization\\b",
+          "\\bmatching layer\\b",
+          "\\bmatching pipeline\\b",
+          "\\bdiscovery feed\\b",
+          "\\brelevance over time\\b",
+          "\\brelevant content\\b",
+          "\\brelevant matches\\b",
+          "\\bmost relevant results\\b"
+        ]
+      ]
+    },
+    "production_delivery": {
+      "category": "core_role",
+      "label": "Production delivery",
+      "description": "Evidence that a technical system or model was shipped, deployed, rolled out, or served to real users.",
+      "pattern_groups": [
+        [
+          "\\bproduction (?:deployment|system|recommendation|features?|ML|experience)\\b",
+          "\\bshipped\\b",
+          "\\bdeployed\\b",
+          "\\bdeployment\\b",
+          "\\bserving \\d+(?:[KkMmBb]\\+?)? (?:users|queries|items|documents|customers)\\b",
+          "\\bserved (?:millions|\\d)",
+          "\\blive engagement\\b",
+          "\\blive A/B test\\b",
+          "\\brollout\\b",
+          "\\blaunch improved\\b",
+          "\\bnow used by\\b",
+          "\\bended up shipping\\b",
+          "\\binference service\\b"
+        ]
+      ]
+    },
+    "operational_ownership": {
+      "category": "core_role",
+      "label": "Operational ownership",
+      "description": "Ownership of monitoring, drift, index refresh, rollback, reliability, latency, retraining, or production operations.",
+      "pattern_groups": [
+        [
+          "\\bindex (?:refresh|versioning)\\b",
+          "\\bembedding (?:drift|versioning)\\b",
+          "\\bdrift (?:monitoring|detection)\\b",
+          "\\brollback paths?\\b",
+          "\\bmonitoring stack\\b",
+          "\\bfeature monitoring\\b",
+          "\\bretraining cadence\\b",
+          "\\bob(?:servability)? layer\\b",
+          "\\bobservability\\b",
+          "\\bp95\\b",
+          "\\blatency\\b",
+          "\\bon-call\\b",
+          "\\bdata quality checks\\b",
+          "\\boperational discipline\\b",
+          "\\b(?:kept|keeping) (?:it|all of it) healthy in production\\b"
+        ]
+      ]
+    },
+    "online_experimentation": {
+      "category": "core_role",
+      "label": "Online experimentation",
+      "description": "A/B tests, online metrics, feedback loops, or experiment infrastructure tied to product outcomes.",
+      "pattern_groups": [
+        [
+          "\\bA/B test(?:ing|s)?\\b",
+          "\\bonline experimentation\\b",
+          "\\bonline metrics?\\b",
+          "\\bonline engagement\\b",
+          "\\brecruiter-feedback loop\\b",
+          "\\boffline experimentation environment\\b",
+          "\\bsimulated A/B tests\\b"
+        ]
+      ]
+    },
+    "product_context": {
+      "category": "core_role",
+      "label": "Product context",
+      "description": "Work situated in a product, marketplace, SaaS, e-commerce, consumer, or user-facing environment.",
+      "pattern_groups": [
+        [
+          "\\bproduct\\b",
+          "\\bmarketplace\\b",
+          "\\bSaaS\\b",
+          "\\be-commerce\\b",
+          "\\bconsumer[- ]app\\b",
+          "\\bconsumer product\\b",
+          "\\bcustomer-facing\\b",
+          "\\bpaying customers\\b",
+          "\\brecruiter-facing\\b",
+          "\\breal users\\b"
+        ]
+      ]
+    },
+    "meaningful_scale": {
+      "category": "core_role",
+      "label": "Meaningful operating scale",
+      "description": "Explicit evidence of large corpora, traffic, users, data volume, or low-latency operation.",
+      "pattern_groups": [
+        [
+          "\\b\\d+(?:M|K)\\+ (?:queries|users|items|documents|candidate corpus)\\b",
+          "\\bmillions of (?:items|users|queries|documents)\\b",
+          "\\bbillions of documents\\b",
+          "\\b\\d+GB of daily\\b",
+          "\\blow latency\\b",
+          "\\bsub-\\d+ms\\b",
+          "\\bpeak QPS\\b",
+          "\\bmeaningful scale\\b"
+        ]
+      ]
+    },
+    "learning_to_rank": {
+      "category": "preferred",
+      "label": "Learning to rank",
+      "description": "Direct learning-to-rank or trained reranking-model experience.",
+      "pattern_groups": [
+        [
+          "\\blearning-to-rank\\b",
+          "\\bLTR\\b",
+          "\\branking models?\\b",
+          "\\bgradient-boosted re-ranking\\b",
+          "\\bXGBoost\\b.*\\brank",
+          "\\bLightGBM\\b.*\\brank"
+        ]
+      ]
+    },
+    "llm_finetuning": {
+      "category": "preferred",
+      "label": "LLM fine-tuning",
+      "description": "Direct LoRA, QLoRA, PEFT, or domain-model fine-tuning experience.",
+      "pattern_groups": [
+        [
+          "\\bLoRA\\b",
+          "\\bQLoRA\\b",
+          "\\bPEFT\\b",
+          "\\bfine-tuned (?:LLaMA|Llama|Mistral|smaller model)\\b",
+          "\\bLLM fine-tuning\\b"
+        ]
+      ]
+    },
+    "recruiting_marketplace": {
+      "category": "preferred",
+      "label": "Recruiting, HR-tech, or marketplace context",
+      "description": "Direct exposure to recruiter, candidate, matching, or marketplace workflows.",
+      "pattern_groups": [
+        [
+          "\\brecruiter\\b",
+          "\\bcandidate corpus\\b",
+          "\\bcandidate[- ]JD\\b",
+          "\\bmarketplace\\b",
+          "\\btime-to-shortlist\\b"
+        ]
+      ]
+    },
+    "distributed_inference": {
+      "category": "preferred",
+      "label": "Distributed systems or inference optimization",
+      "description": "Evidence of distributed infrastructure, serving optimization, batching, quantization, or reliability engineering.",
+      "pattern_groups": [
+        [
+          "\\bdistributed systems?\\b",
+          "\\bKubernetes\\b",
+          "\\bKafka\\b",
+          "\\bSpark Streaming\\b",
+          "\\bquantiz(?:ing|ation)\\b",
+          "\\bbatching\\b",
+          "\\brequest level\\b",
+          "\\breliability engineering\\b",
+          "\\blow latency\\b",
+          "\\bsub-\\d+ms\\b"
+        ]
+      ]
+    },
+    "external_validation": {
+      "category": "preferred",
+      "label": "External technical validation",
+      "description": "Open-source, papers, talks, or public technical validation.",
+      "pattern_groups": [
+        [
+          "\\bopen[- ]source\\b",
+          "\\bGitHub\\b",
+          "\\bpublished paper\\b",
+          "\\bconference talk\\b",
+          "\\btechnical talk\\b"
+        ]
+      ]
+    },
+    "mentoring_leadership": {
+      "category": "preferred",
+      "label": "Mentoring or technical leadership",
+      "description": "Evidence of mentoring engineers or leading a technical team through delivery.",
+      "pattern_groups": [
+        [
+          "\\bmentored\\b",
+          "\\bled a team\\b",
+          "\\bled the engineering team\\b",
+          "\\bteam grew from\\b",
+          "\\bmanaged a team of \\d+ engineers\\b"
+        ]
+      ]
+    },
+    "zero_to_one_ownership": {
+      "category": "preferred",
+      "label": "Zero-to-one or end-to-end ownership",
+      "description": "Evidence of building a new system, migration, or capability end to end.",
+      "pattern_groups": [
+        [
+          "\\bowned the end-to-end\\b",
+          "\\bfrom scratch\\b",
+          "\\bcompany's first\\b",
+          "\\bcomplete overhaul\\b",
+          "\\bled the migration\\b",
+          "\\bowned the design and rollout\\b",
+          "\\bdesigned and rollout\\b",
+          "\\bgoing from offline experimentation to live\\b"
+        ]
+      ]
+    },
+    "computer_vision_primary": {
+      "category": "risk_context",
+      "label": "Computer-vision-primary background",
+      "description": "The JD treats CV-primary candidates without significant NLP/IR exposure as a poor fit.",
+      "pattern_groups": [
+        [
+          "\\bcomputer vision\\b",
+          "\\bMost of my project work has been in CV\\b",
+          "\\bResNet\\b",
+          "\\bimage moderation\\b"
+        ]
+      ]
+    },
+    "consulting_services_context": {
+      "category": "risk_context",
+      "label": "Consulting or services context",
+      "description": "Consulting/services evidence. The JD disqualifier applies only when the entire career is services-only.",
+      "pattern_groups": [
+        [
+          "\\bconsulting firm\\b",
+          "\\bconsulting toolkit\\b",
+          "\\bclient(?:s)?\\b",
+          "\\badvisory\\b"
+        ]
+      ]
+    },
+    "llm_application_context": {
+      "category": "risk_context",
+      "label": "LLM application or RAG context",
+      "description": "LLM/RAG application evidence that requires candidate-level recency and depth checks before applying the JD's conditional negative.",
+      "pattern_groups": [
+        [
+          "\\bRAG[- ]based\\b",
+          "\\bOpenAI embeddings\\b",
+          "\\bGPT-4\\b",
+          "\\bLLM-based re-ranker\\b",
+          "\\banswer-generation layer\\b"
+        ]
+      ]
+    },
+    "research_only_context": {
+      "category": "risk_context",
+      "label": "Research-only context",
+      "description": "Explicit research-only or academic-only work without production evidence.",
+      "pattern_groups": [
+        [
+          "\\bpure research\\b",
+          "\\bresearch-only\\b",
+          "\\bacademic lab\\b",
+          "\\bwithout any production deployment\\b"
+        ]
+      ]
+    }
+  },
+  "compounds": {
+    "production_embeddings_retrieval": {
+      "category": "direct_requirement_compound",
+      "label": "Production embeddings-based retrieval",
+      "requires_all": [
+        "embeddings",
+        "retrieval_search",
+        "production_delivery"
+      ]
+    },
+    "production_vector_or_hybrid_search": {
+      "category": "direct_requirement_compound",
+      "label": "Production vector or hybrid-search infrastructure",
+      "requires_all": [
+        "vector_hybrid_infrastructure",
+        "production_delivery"
+      ]
+    },
+    "evaluated_ranking_system": {
+      "category": "direct_requirement_compound",
+      "label": "Ranking system with evaluation evidence",
+      "requires_all": [
+        "ranking_recommendation_matching",
+        "ranking_evaluation"
+      ]
+    },
+    "end_to_end_intelligence_ownership": {
+      "category": "core_role_compound",
+      "label": "End-to-end intelligence-system ownership",
+      "requires_all": [
+        "ranking_recommendation_matching",
+        "production_delivery",
+        "operational_ownership"
+      ]
+    },
+    "shipper_with_evaluation_depth": {
+      "category": "core_role_compound",
+      "label": "Shipper with evaluation depth",
+      "requires_all": [
+        "production_delivery",
+        "ranking_evaluation"
+      ]
+    }
+  },
+  "candidate_overlay_rules": {
+    "services_only_entire_career": {
+      "jd_strength": "explicit_negative",
+      "evaluation_scope": "entire_career",
+      "description": "Apply only when every substantive employer/role is consulting or services and there is no product-company history.",
+      "required_inputs": [
+        "all career companies",
+        "all career industries",
+        "consulting_services_context by role",
+        "product_context by role"
+      ],
+      "must_not_trigger_from": "A single consulting/services role when any prior product-company evidence exists.",
+      "automatic_tier_zero": false
+    },
+    "research_only_without_production": {
+      "jd_strength": "hard_disqualifier",
+      "evaluation_scope": "entire_career",
+      "description": "Apply only when the career is confined to academic/research-only work and no role has production deployment or delivery evidence.",
+      "required_inputs": [
+        "all career titles",
+        "all career industries",
+        "research_only_context by role",
+        "production_delivery by role"
+      ],
+      "must_not_trigger_from": "One research role when any other role demonstrates production deployment.",
+      "automatic_tier_zero": false
+    },
+    "recent_shallow_llm_only": {
+      "jd_strength": "conditional_negative",
+      "evaluation_scope": "career_timeline",
+      "description": "Apply only when AI experience is primarily under 12 months of shallow LLM application work and there is no substantial earlier production ML, retrieval, ranking, or recommendation evidence.",
+      "required_inputs": [
+        "role dates",
+        "llm_application_context by role",
+        "production_delivery by role",
+        "retrieval_search by role",
+        "ranking_recommendation_matching by role"
+      ],
+      "must_not_trigger_from": "RAG or LLM use inside a deep production retrieval/ranking system.",
+      "automatic_tier_zero": false
+    },
+    "senior_not_coding_recently": {
+      "jd_strength": "conditional_negative",
+      "evaluation_scope": "recent_18_months",
+      "description": "Apply only to senior candidates whose recent 18-month evidence shows architecture/leadership without hands-on production coding.",
+      "required_inputs": [
+        "current and recent titles",
+        "role dates",
+        "hands-on engineering evidence",
+        "production_delivery by role"
+      ],
+      "must_not_trigger_from": "A senior or lead title when the role description still demonstrates hands-on engineering.",
+      "automatic_tier_zero": false
+    }
+  }
+}

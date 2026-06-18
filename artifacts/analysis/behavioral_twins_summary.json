@@ -1,0 +1,625 @@
+{
+  "archetype_group_counts": {
+    "applied_ml": 5,
+    "data_backend_adjacent": 864,
+    "direct_occupation": 358,
+    "general_professional": 5190,
+    "general_software": 3354,
+    "generic_ml": 164
+  },
+  "behavior_by_archetype": {
+    "applied_ml": {
+      "candidate_count": 150,
+      "features": {
+        "inactive_days": {
+          "mean": 42.32666666666667,
+          "median": 45.5,
+          "p10": 11.0,
+          "p90": 72.1
+        },
+        "interview_completion": {
+          "mean": 0.7732000000000001,
+          "median": 0.79,
+          "p10": 0.6,
+          "p90": 0.94
+        },
+        "notice_period_days": {
+          "mean": 62.8,
+          "median": 60.0,
+          "p10": 28.500000000000007,
+          "p90": 120.0
+        },
+        "open_to_work": {
+          "mean": 0.7333333333333333,
+          "median": 1.0,
+          "p10": 0.0,
+          "p90": 1.0
+        },
+        "response_rate": {
+          "mean": 0.6680666666666668,
+          "median": 0.66,
+          "p10": 0.47,
+          "p90": 0.8709999999999999
+        },
+        "response_time_hours": {
+          "mean": 40.60466666666667,
+          "median": 39.150000000000006,
+          "p10": 7.8,
+          "p90": 72.35
+        },
+        "saved_by_recruiters": {
+          "mean": 33.03333333333333,
+          "median": 33.5,
+          "p10": 9.0,
+          "p90": 59.0
+        },
+        "willing_to_relocate": {
+          "mean": 0.44666666666666666,
+          "median": 0.0,
+          "p10": 0.0,
+          "p90": 1.0
+        }
+      }
+    },
+    "data_backend_adjacent": {
+      "candidate_count": 5000,
+      "features": {
+        "inactive_days": {
+          "mean": 70.2822,
+          "median": 71.0,
+          "p10": 18.0,
+          "p90": 122.0
+        },
+        "interview_completion": {
+          "mean": 0.712392000000003,
+          "median": 0.71,
+          "p10": 0.5,
+          "p90": 0.93
+        },
+        "notice_period_days": {
+          "mean": 82.746,
+          "median": 90.0,
+          "p10": 30.0,
+          "p90": 120.0
+        },
+        "open_to_work": {
+          "mean": 0.5054,
+          "median": 1.0,
+          "p10": 0.0,
+          "p90": 1.0
+        },
+        "response_rate": {
+          "mean": 0.4890460000000101,
+          "median": 0.49,
+          "p10": 0.22,
+          "p90": 0.75
+        },
+        "response_time_hours": {
+          "mean": 92.82051999999987,
+          "median": 93.0,
+          "p10": 21.590000000000003,
+          "p90": 162.2
+        },
+        "saved_by_recruiters": {
+          "mean": 14.9926,
+          "median": 15.0,
+          "p10": 3.0,
+          "p90": 27.0
+        },
+        "willing_to_relocate": {
+          "mean": 0.3454,
+          "median": 0.0,
+          "p10": 0.0,
+          "p90": 1.0
+        }
+      }
+    },
+    "direct_occupation": {
+      "candidate_count": 5517,
+      "features": {
+        "inactive_days": {
+          "mean": 125.28366866050389,
+          "median": 124.0,
+          "p10": 29.0,
+          "p90": 221.0
+        },
+        "interview_completion": {
+          "mean": 0.5891390248323473,
+          "median": 0.59,
+          "p10": 0.36,
+          "p90": 0.82
+        },
+        "notice_period_days": {
+          "mean": 85.47036432843937,
+          "median": 90.0,
+          "p10": 30.0,
+          "p90": 150.0
+        },
+        "open_to_work": {
+          "mean": 0.317926409280406,
+          "median": 0.0,
+          "p10": 0.0,
+          "p90": 1.0
+        },
+        "response_rate": {
+          "mean": 0.42170382454232486,
+          "median": 0.43,
+          "p10": 0.13,
+          "p90": 0.71
+        },
+        "response_time_hours": {
+          "mean": 145.20784846837032,
+          "median": 146.7,
+          "p10": 36.620000000000005,
+          "p90": 253.1
+        },
+        "saved_by_recruiters": {
+          "mean": 5.974805147725213,
+          "median": 6.0,
+          "p10": 1.0,
+          "p90": 11.0
+        },
+        "willing_to_relocate": {
+          "mean": 0.28185608120355266,
+          "median": 0.0,
+          "p10": 0.0,
+          "p90": 1.0
+        }
+      }
+    },
+    "general_professional": {
+      "candidate_count": 63304,
+      "features": {
+        "inactive_days": {
+          "mean": 124.66716163275622,
+          "median": 124.0,
+          "p10": 28.0,
+          "p90": 222.0
+        },
+        "interview_completion": {
+          "mean": 0.5905083407051704,
+          "median": 0.59,
+          "p10": 0.36,
+          "p90": 0.82
+        },
+        "notice_period_days": {
+          "mean": 85.63913812713257,
+          "median": 90.0,
+          "p10": 30.0,
+          "p90": 150.0
+        },
+        "open_to_work": {
+          "mean": 0.32239668899279667,
+          "median": 0.0,
+          "p10": 0.0,
+          "p90": 1.0
+        },
+        "response_rate": {
+          "mean": 0.41594085681789217,
+          "median": 0.42,
+          "p10": 0.12,
+          "p90": 0.71
+        },
+        "response_time_hours": {
+          "mean": 143.8230269809161,
+          "median": 143.8,
+          "p10": 35.4,
+          "p90": 252.8
+        },
+        "saved_by_recruiters": {
+          "mean": 5.992101604953874,
+          "median": 6.0,
+          "p10": 1.0,
+          "p90": 11.0
+        },
+        "willing_to_relocate": {
+          "mean": 0.27772336661190444,
+          "median": 0.0,
+          "p10": 0.0,
+          "p90": 1.0
+        }
+      }
+    },
+    "general_software": {
+      "candidate_count": 25000,
+      "features": {
+        "inactive_days": {
+          "mean": 95.18592,
+          "median": 95.0,
+          "p10": 23.0,
+          "p90": 168.0
+        },
+        "interview_completion": {
+          "mean": 0.6748732000000072,
+          "median": 0.67,
+          "p10": 0.45,
+          "p90": 0.89
+        },
+        "notice_period_days": {
+          "mean": 93.7956,
+          "median": 90.0,
+          "p10": 30.0,
+          "p90": 150.0
+        },
+        "open_to_work": {
+          "mean": 0.39504,
+          "median": 0.0,
+          "p10": 0.0,
+          "p90": 1.0
+        },
+        "response_rate": {
+          "mean": 0.47407119999997516,
+          "median": 0.47,
+          "p10": 0.17000000000000004,
+          "p90": 0.77
+        },
+        "response_time_hours": {
+          "mean": 113.42776799999976,
+          "median": 113.7,
+          "p10": 28.09000000000001,
+          "p90": 199.1
+        },
+        "saved_by_recruiters": {
+          "mean": 9.9348,
+          "median": 10.0,
+          "p10": 2.0,
+          "p90": 18.0
+        },
+        "willing_to_relocate": {
+          "mean": 0.29908,
+          "median": 0.0,
+          "p10": 0.0,
+          "p90": 1.0
+        }
+      }
+    },
+    "generic_ml": {
+      "candidate_count": 1000,
+      "features": {
+        "inactive_days": {
+          "mean": 50.203,
+          "median": 50.0,
+          "p10": 9.0,
+          "p90": 94.0
+        },
+        "interview_completion": {
+          "mean": 0.7452300000000003,
+          "median": 0.74,
+          "p10": 0.55,
+          "p90": 0.95
+        },
+        "notice_period_days": {
+          "mean": 76.5,
+          "median": 60.0,
+          "p10": 30.0,
+          "p90": 120.0
+        },
+        "open_to_work": {
+          "mean": 0.644,
+          "median": 1.0,
+          "p10": 0.0,
+          "p90": 1.0
+        },
+        "response_rate": {
+          "mean": 0.5845099999999996,
+          "median": 0.58,
+          "p10": 0.32,
+          "p90": 0.84
+        },
+        "response_time_hours": {
+          "mean": 56.93209999999997,
+          "median": 57.25,
+          "p10": 7.8,
+          "p90": 107.34000000000002
+        },
+        "saved_by_recruiters": {
+          "mean": 24.354,
+          "median": 25.0,
+          "p10": 6.0,
+          "p90": 41.0
+        },
+        "willing_to_relocate": {
+          "mean": 0.382,
+          "median": 0.0,
+          "p10": 0.0,
+          "p90": 1.0
+        }
+      }
+    },
+    "senior_explicit_ai": {
+      "candidate_count": 21,
+      "features": {
+        "inactive_days": {
+          "mean": 63.142857142857146,
+          "median": 36.0,
+          "p10": 9.0,
+          "p90": 180.0
+        },
+        "interview_completion": {
+          "mean": 0.8228571428571427,
+          "median": 0.8,
+          "p10": 0.68,
+          "p90": 0.97
+        },
+        "notice_period_days": {
+          "mean": 44.285714285714285,
+          "median": 30.0,
+          "p10": 15.0,
+          "p90": 90.0
+        },
+        "open_to_work": {
+          "mean": 0.6190476190476191,
+          "median": 1.0,
+          "p10": 0.0,
+          "p90": 1.0
+        },
+        "response_rate": {
+          "mean": 0.5885714285714285,
+          "median": 0.75,
+          "p10": 0.1,
+          "p90": 0.88
+        },
+        "response_time_hours": {
+          "mean": 72.87142857142857,
+          "median": 40.2,
+          "p10": 11.3,
+          "p90": 178.4
+        },
+        "saved_by_recruiters": {
+          "mean": 26.047619047619047,
+          "median": 22.0,
+          "p10": 3.0,
+          "p90": 55.0
+        },
+        "willing_to_relocate": {
+          "mean": 0.5238095238095238,
+          "median": 1.0,
+          "p10": 0.0,
+          "p90": 1.0
+        }
+      }
+    },
+    "senior_plain_language": {
+      "candidate_count": 8,
+      "features": {
+        "inactive_days": {
+          "mean": 41.5,
+          "median": 45.0,
+          "p10": 24.8,
+          "p90": 56.599999999999994
+        },
+        "interview_completion": {
+          "mean": 0.86125,
+          "median": 0.87,
+          "p10": 0.788,
+          "p90": 0.936
+        },
+        "notice_period_days": {
+          "mean": 33.75,
+          "median": 37.5,
+          "p10": 0.0,
+          "p90": 69.0
+        },
+        "open_to_work": {
+          "mean": 0.75,
+          "median": 1.0,
+          "p10": 0.0,
+          "p90": 1.0
+        },
+        "response_rate": {
+          "mean": 0.75125,
+          "median": 0.785,
+          "p10": 0.624,
+          "p90": 0.863
+        },
+        "response_time_hours": {
+          "mean": 29.987500000000004,
+          "median": 33.15,
+          "p10": 9.740000000000002,
+          "p90": 44.589999999999996
+        },
+        "saved_by_recruiters": {
+          "mean": 49.25,
+          "median": 54.0,
+          "p10": 19.1,
+          "p90": 77.2
+        },
+        "willing_to_relocate": {
+          "mean": 0.5,
+          "median": 0.5,
+          "p10": 0.0,
+          "p90": 1.0
+        }
+      }
+    }
+  },
+  "candidates_in_career_matched_groups": 44948,
+  "candidates_in_strict_education_subgroups": 597,
+  "career_matched_groups": 9935,
+  "career_matching_definition": {
+    "behavior_excluded_from_signature": true,
+    "education_excluded_from_primary_signature": true,
+    "same_normalized_current_title": true,
+    "same_one_year_experience_bucket": true,
+    "same_ordered_career_template_sequence": true,
+    "same_summary_archetype": true,
+    "skills_excluded_from_signature": "Skills are deliberately noisy in this synthetic dataset."
+  },
+  "contrast_counts": {
+    "interview_completion": 3735,
+    "notice_period": 4519,
+    "open_to_work": 6254,
+    "recent_vs_inactive": 2921,
+    "recruiter_saves": 234,
+    "relocation": 5840,
+    "response_rate": 3498,
+    "response_time": 4450
+  },
+  "dataset": "/mnt/e/contextmatch/India_runs_data_and_ai_challenge/candidates.jsonl",
+  "group_size_distribution": {
+    "2": 4999,
+    "3": 1862,
+    "4": 998,
+    "5": 615,
+    "6": 323,
+    "7": 228,
+    "8": 110,
+    "9": 81,
+    "10": 49,
+    "11": 41,
+    "12": 30,
+    "13": 33,
+    "14": 26,
+    "15": 25,
+    "16": 27,
+    "17": 35,
+    "18": 38,
+    "19": 26,
+    "20": 25,
+    "21": 30,
+    "22": 28,
+    "23": 19,
+    "24": 24,
+    "25": 17,
+    "26": 16,
+    "27": 17,
+    "28": 14,
+    "29": 16,
+    "30": 17,
+    "31": 8,
+    "32": 6,
+    "33": 7,
+    "34": 7,
+    "35": 10,
+    "36": 4,
+    "37": 7,
+    "38": 5,
+    "39": 7,
+    "40": 10,
+    "41": 4,
+    "42": 8,
+    "43": 12,
+    "44": 10,
+    "45": 14,
+    "46": 5,
+    "47": 6,
+    "48": 3,
+    "49": 6,
+    "50": 2,
+    "51": 4,
+    "52": 3,
+    "53": 2,
+    "54": 2,
+    "55": 3,
+    "56": 2,
+    "57": 3,
+    "58": 1,
+    "59": 1,
+    "61": 2,
+    "66": 1,
+    "67": 1
+  },
+  "pairs_with_at_least_one_large_contrast": 9685,
+  "record_count": 100000,
+  "reference_date": "2026-06-01",
+  "relevant_archetype_group_counts": {
+    "applied_ml": 5,
+    "generic_ml": 164
+  },
+  "relevant_contrast_counts": {
+    "interview_completion": 41,
+    "notice_period": 57,
+    "open_to_work": 88,
+    "recruiter_saves": 58,
+    "relocation": 89,
+    "response_rate": 46,
+    "response_time": 13
+  },
+  "relevant_representative_pairs": 169,
+  "relevant_signal_difference_summary": {
+    "inactive_days": {
+      "max": 96.0,
+      "median": 29.0,
+      "p90": 75.20000000000002
+    },
+    "interview_completion": {
+      "max": 0.5,
+      "median": 0.1399999999999999,
+      "p90": 0.33200000000000013
+    },
+    "notice_period_days": {
+      "max": 90.0,
+      "median": 30.0,
+      "p90": 78.00000000000026
+    },
+    "open_to_work": {
+      "max": 1.0,
+      "median": 1.0,
+      "p90": 1.0
+    },
+    "response_rate": {
+      "max": 0.6,
+      "median": 0.2300000000000001,
+      "p90": 0.49200000000000016
+    },
+    "response_time_hours": {
+      "max": 109.8,
+      "median": 41.5,
+      "p90": 93.60000000000002
+    },
+    "saved_by_recruiters": {
+      "max": 50.0,
+      "median": 12.0,
+      "p90": 31.0
+    },
+    "willing_to_relocate": {
+      "max": 1.0,
+      "median": 1.0,
+      "p90": 1.0
+    }
+  },
+  "representative_pairs": 9935,
+  "signal_difference_summary": {
+    "inactive_days": {
+      "max": 239.0,
+      "median": 74.0,
+      "p90": 162.0
+    },
+    "interview_completion": {
+      "max": 0.5800000000000001,
+      "median": 0.18999999999999995,
+      "p90": 0.41000000000000003
+    },
+    "notice_period_days": {
+      "max": 120.0,
+      "median": 30.0,
+      "p90": 90.0
+    },
+    "open_to_work": {
+      "max": 1.0,
+      "median": 1.0,
+      "p90": 1.0
+    },
+    "response_rate": {
+      "max": 0.76,
+      "median": 0.25999999999999995,
+      "p90": 0.54
+    },
+    "response_time_hours": {
+      "max": 268.5,
+      "median": 86.1,
+      "p90": 183.10000000000002
+    },
+    "saved_by_recruiters": {
+      "max": 50.0,
+      "median": 5.0,
+      "p90": 13.0
+    },
+    "willing_to_relocate": {
+      "max": 1.0,
+      "median": 1.0,
+      "p90": 1.0
+    }
+  },
+  "strict_education_matched_subgroups": 296
+}

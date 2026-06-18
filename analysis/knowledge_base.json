@@ -1,0 +1,67 @@
+{
+  "as_of": "2026-06-01",
+  "companies": {
+    "Krutrim": {
+      "founded_date": "2023-01-01",
+      "precision": "year",
+      "source": "https://www.indiaai.gov.in/article/india-s-first-ai-unicorn-krutrim"
+    },
+    "Niramai": {
+      "founded_date": "2016-01-01",
+      "precision": "year",
+      "source": "https://niramai.com/awards-recognition/"
+    },
+    "Observe.AI": {
+      "founded_date": "2017-01-01",
+      "precision": "year",
+      "source": "https://www.observe.ai/about-us"
+    },
+    "Rephrase.ai": {
+      "founded_date": "2019-01-01",
+      "precision": "year",
+      "source": "https://www.businesswire.com/news/home/20231122720025/en/Adobe-to-Acquire-Rephrase.ai"
+    },
+    "Sarvam AI": {
+      "founded_date": "2023-07-01",
+      "precision": "month",
+      "source": "https://www.sarvam.ai/blog/announcing-sarvam-ai"
+    },
+    "Yellow.ai": {
+      "founded_date": "2016-01-01",
+      "precision": "year",
+      "source": "https://yellow.ai/about-us"
+    }
+  },
+  "technologies": {
+    "GPT-4": {
+      "patterns": [
+        "\\bGPT-4\\b"
+      ],
+      "released_date": "2023-03-14",
+      "source": "https://openai.com/index/gpt-4-research/"
+    },
+    "Llama 2": {
+      "patterns": [
+        "\\bLLaMA-2\\b",
+        "\\bLlama 2\\b"
+      ],
+      "released_date": "2023-07-18",
+      "source": "https://ai.meta.com/blog/llama-2/"
+    },
+    "Mistral 7B": {
+      "patterns": [
+        "\\bMistral-7B\\b",
+        "\\bMistral 7B\\b"
+      ],
+      "released_date": "2023-09-27",
+      "source": "https://mistral.ai/news/announcing-mistral-7b/"
+    },
+    "QLoRA": {
+      "patterns": [
+        "\\bQLoRA\\b"
+      ],
+      "released_date": "2023-05-23",
+      "source": "https://arxiv.org/abs/2305.14314"
+    }
+  }
+}

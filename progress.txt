@@ -1,0 +1,1540 @@
+CONTEXTMATCH PROJECT PROGRESS
+Last updated: June 16, 2026
+
+
+1. PROJECT OBJECTIVE
+
+The challenge is to rank 100,000 candidate profiles for the supplied job
+description and submit the top candidates with factual explanations.
+
+The official leaderboard is hidden during the competition. We therefore cannot
+measure our real score until the final results. Our local evaluation must rely
+on reproducible proxy evidence, structural analysis, counterfactual tests, and
+agreement between independent methods.
+
+The important known evaluation facts are:
+
+- Relevance is graded rather than purely binary.
+- The composite is 0.50*NDCG@10 + 0.30*NDCG@50 + 0.15*MAP +
+  0.05*P@10.
+- Tier 3 or higher is treated as relevant for P@10.
+- Honeypots are forced to tier 0.
+- A honeypot rate above 10 percent in the submitted top 100 causes Stage-3
+  disqualification.
+- The documentation mentions a strong plain-language Tier 5 candidate.
+- The complete tier definitions and hidden gain mapping are not provided.
+- At most three submissions are allowed, and the last valid submission counts.
+
+This means that any locally assigned relevance tier is a hypothesis. It must
+not be described as recovered ground truth.
+
+
+2. GIT AND DATASET STATUS
+
+The original candidates.jsonl file is approximately 464.69 MB. A normal GitHub
+push failed because GitHub rejects individual regular Git objects larger than
+100 MB.
+
+The large dataset can only be pushed to GitHub by using Git LFS, splitting or
+compressing it into smaller files, publishing it as a release asset, or storing
+it outside the normal Git repository.
+
+The repository currently has Git LFS-related changes, but the Linux environment
+used for analysis does not have the git-lfs executable installed. The dataset
+push problem is not considered finished yet. It is separate from the ranking
+research and should be resolved before the repository is finalized.
+
+Important: candidates.jsonl must not be accidentally committed again as a
+normal 464 MB Git object.
+
+
+3. WHY MANUAL LABELING WAS REJECTED AS THE PRIMARY METHOD
+
+We discussed manually labeling candidates to create local evaluation data.
+Manual labels would have several weaknesses:
+
+- Different reviewers can interpret the same evidence differently.
+- One reviewer can change standards during a long labeling session.
+- Candidate order creates relativity and anchoring effects.
+- Fatigue reduces consistency.
+- The strongest candidates are rare, so random labeling is inefficient.
+- Synthetic traps can look persuasive to a human reviewer.
+- A large labeling exercise is slow and difficult to reproduce.
+
+Manual review may still be useful for a very small disagreement set, but it
+should not be the main source of proxy ground truth.
+
+
+4. THE TWO INDEPENDENT RESEARCH IDEAS
+
+We deliberately separated the work into Idea 1 and Idea 2.
+
+
+4.1 IDEA 1: UNCONSTRAINED TEACHER
+
+Idea 1 uses the strongest freely available models and as much offline compute
+time as necessary to produce a high-quality teacher ranking.
+
+Proposed teacher pipeline:
+
+1. Run deterministic integrity and honeypot checks.
+2. Use a strong embedding model for high-recall retrieval.
+3. Use a cross-encoder reranker on the shortlist.
+4. Use one or more reasoning models for structured candidate evaluation.
+5. Generate graded labels, pairwise preferences, evidence, and confidence.
+6. Train a compact student ranker for the official runtime constraints.
+
+The teacher is not official ground truth. It is an independent development
+oracle that may still contain model errors.
+
+Current Idea 1 status:
+
+- The design is documented in idea1.md.
+- No teacher inference pipeline has been implemented yet.
+- No teacher labels have been generated.
+- No teacher results have been used in Idea 2.
+
+
+4.2 IDEA 2: REVERSE-ENGINEER THE SYNTHETIC GENERATOR
+
+Idea 2 attempts to recover the process that generated the profiles, then use
+the documented rules and job description to formulate explicit hypotheses
+about the hidden labels.
+
+Idea 2 is intentionally independent from Idea 1. Until Idea 2 is frozen, it
+must not use:
+
+- Teacher judgments
+- LLM-generated labels
+- Semantic embeddings
+- Hidden leaderboard feedback
+
+Idea 2 may use:
+
+- Exact template analysis
+- Structured candidate fields
+- Deterministic statistics
+- The supplied job description
+- Documented challenge rules
+- Reproducible external chronology facts
+
+After Idea 2 produces a frozen ranking, Idea 1 will be built independently.
+Only then will the two rankings be compared. Idea 2 must not be retuned after
+seeing Idea 1.
+
+
+4.3 EVIDENCE TAXONOMY
+
+The project must keep five different evidence types separate:
+
+1. Documented constraints
+   External facts supplied by the competition. These include the metric
+   formula, Tier-3 relevance threshold, official honeypots being Tier 0, the
+   Stage-3 honeypot-rate rule, and the JD's stated requirements and
+   disqualifiers.
+
+2. Reconstructed structure
+   Observations recovered from the visible dataset, such as template counts,
+   static families, field dependencies, and contradiction clusters.
+
+3. JD-to-tier mapping
+   Hypotheses about how reconstructed profile evidence maps to hidden
+   relevance tiers. These are not ground truth.
+
+4. World stability
+   A robustness diagnostic showing whether a ranking survives different
+   plausible assumptions. Stability does not make those assumptions true.
+
+5. Teacher output
+   An independent model opinion from Idea 1. Agreement can increase practical
+   confidence but is not external validation and can share blind spots with
+   Idea 2.
+
+Only documented constraints are external facts available before final results.
+Reconstructed structure is observed evidence; the remaining three categories
+are hypotheses, diagnostics, or model opinions.
+
+Documented-anchor policy:
+
+- Official honeypots are Tier 0, but their candidate IDs are hidden. Our
+  detected contradiction records are proxies, not verified official labels.
+- A career confined to pure research with no production deployment is an
+  explicit hard JD disqualifier.
+- Recent LangChain/OpenAI-only experience without substantial earlier
+  production ML and not writing production code for 18 months are strong
+  conditional negatives. The JD says "probably not," so they should not be
+  silently converted into universal Tier-0 rules.
+- The Tier-5 note establishes that demonstrated recommendation/product work can
+  outweigh missing AI keywords. It does not prove that any entire reconstructed
+  cohort is Tier 5.
+
+
+5. WORK COMPLETED FOR IDEA 2
+
+
+5.1 PROFILE AND TEMPLATE CATALOG
+
+We streamed all 100,000 candidates and cataloged their repeated structures.
+
+Observed:
+
+- 100,000 candidate records
+- 300,171 career-history entries
+- 76 normalized summary templates
+- 179 normalized headline templates
+- Only 44 exact career-description templates
+
+The presence of only 44 career descriptions across more than 300,000 roles is
+very strong evidence that the dataset is synthetic and generated from a compact
+template library.
+
+Candidate-level archetype assignments and summary reports were generated by:
+
+- analysis/profile_archetypes.py
+- artifacts/analysis/archetype_summary.json
+- artifacts/analysis/archetype_report.md
+
+
+5.2 OBSERVED PROFILE COHORTS
+
+The first deterministic summary analysis found these cohorts:
+
+- 8 plain-language senior system builders
+- 21 explicit senior AI engineers
+- 150 applied ML/search/recommendation engineers
+- 1,000 generic ML/data-science candidates
+- 5,000 data/backend-adjacent candidates
+- 25,000 general software candidates
+- 5,517 direct-occupation profiles
+- 63,304 general-professional profiles
+
+The direct-occupation and general-professional summaries initially appeared as
+separate text archetypes. Later generator reconstruction showed that they share
+the same broader emitted career/title branch, so they form a combined coarse
+generator family of 68,821 candidates.
+
+These population sizes appear deliberately generated. They are not yet proven
+official relevance tiers.
+
+
+5.3 INTEGRITY AND HONEYPOT ENGINE
+
+We implemented deterministic consistency rules in:
+
+- analysis/integrity_checks.py
+- analysis/knowledge_base.json
+
+The knowledge base stores versioned company-founding and technology-release
+facts with source URLs. This makes chronology checks reproducible.
+
+The integrity engine distinguishes:
+
+- High-confidence contradiction evidence
+- General profile-integrity issues
+- Soft consistency issues
+- Common behavioral data-quality issues
+
+Main results:
+
+- 162 candidates have at least one strong contradiction.
+- 108 of those 162 are in ML-looking cohorts.
+- 104 candidates match the two strongest documented-pattern proxy families:
+  company pre-founding employment or three-plus expert zero-duration skills.
+- 24,895 behavioral data-quality records were kept separate because they are
+  too common to be automatic honeypot exclusions.
+
+The 104 candidates are not claimed to be the hidden official honeypot set.
+
+
+5.4 COMPANY PRE-FOUNDING CONTRADICTIONS
+
+The strongest finding is the company chronology cluster:
+
+- 83 unique candidates
+- 84 issue occurrences because one candidate has two occurrences
+- 71 generic ML candidates
+- 8 applied ML candidates
+- 4 explicit senior AI candidates
+
+The affected companies are:
+
+- Sarvam AI: 44 occurrences
+- Krutrim: 38 occurrences
+- Rephrase.ai: 2 occurrences
+
+This is close to the challenge documentation's approximate count of 80
+honeypots. It is also concentrated exactly in ML-looking cohorts where a
+keyword or embedding ranker is likely to focus.
+
+Current interpretation:
+
+This is strong evidence of a deliberately injected company/date mutation
+family. It is not absolute proof that every one of these records belongs to the
+official hidden honeypot set, but it is the sharpest proxy we currently have.
+
+
+5.5 ZERO-DURATION EXPERT CONTRADICTIONS
+
+We found:
+
+- 21 candidates with at least three expert skills having zero duration
+- 11 general-professional candidates
+- 8 general-software candidates
+- 2 data/backend-adjacent candidates
+
+This population is disjoint from the company pre-founding group.
+
+Current interpretation:
+
+This appears to be a second injected trap family, probably designed to catch
+skills-only rankers and keyword-stuffing systems. It affects a different
+population from the chronology mutation, which supports the hypothesis that
+the generator applies multiple independent trap mechanisms.
+
+
+5.6 OTHER STRONG CONTRADICTION FAMILIES
+
+We also reconstructed:
+
+- 25 candidates with technology chronology contradictions
+- 37 candidates with large duration corruption
+
+Technology chronology is concentrated in applied ML and explicit senior AI
+profiles. Examples include claimed use before release of GPT-4, Llama 2,
+Mistral 7B, or QLoRA.
+
+Duration corruption is spread more broadly and includes general-professional,
+general-software, applied-ML, data/backend, and senior-AI records.
+
+Current interpretation:
+
+These are strong anomaly signals, but their relationship to the official
+honeypot definition is less certain than the 83 company pre-founding cases.
+They should remain independently auditable features instead of being merged
+into one unexplained penalty.
+
+
+5.7 BEHAVIORAL TWINS
+
+We implemented behavioral-twin analysis in:
+
+- analysis/behavioral_twins.py
+- artifacts/analysis/behavioral_twins_summary.json
+- artifacts/analysis/behavioral_twins_report.md
+
+The analysis groups candidates with matching static career evidence while
+excluding behavior from the matching signature.
+
+Results:
+
+- 9,935 career-matched groups
+- 44,948 candidates covered
+- 169 ML-relevant matched groups
+- 164 generic-ML groups
+- 5 applied-ML groups
+- No senior-profile twin groups
+
+Behavioral contrasts exist within otherwise similar profiles, including:
+
+- Active versus inactive
+- Open versus not open to work
+- High versus low response rate
+- Short versus long response time
+- Short versus long notice period
+- Relocation willingness
+- Recruiter-save differences
+- Interview-completion differences
+
+Important limitation:
+
+The 8 plain-language senior candidates and 21 explicit senior AI candidates are
+too small and structurally unique to form twin groups. Twin analysis therefore
+cannot calibrate behavior for the candidates most likely to dominate the top
+of the ranking.
+
+
+5.8 GENERATOR RECONSTRUCTION
+
+We implemented a dedicated reverse-engineering layer in:
+
+- analysis/generator_reconstruction.py
+- artifacts/analysis/generator_manifest.json
+- artifacts/analysis/generator_dependencies.json
+- artifacts/analysis/generator_assignments.csv
+- artifacts/analysis/generator_reconstruction_report.md
+
+This stage does not use summary wording as a clustering input. Instead, it
+treats summary templates as generator atoms and clusters them according to what
+they emit:
+
+- Title-family distributions
+- Current career-template distributions
+- Historical career-template distributions
+- Industry distributions
+- Skill distributions
+- Role-count distributions
+
+The system evaluates hierarchical clustering solutions from k=4 through k=12.
+
+The strongest structural elbow occurs at k=7:
+
+- k=6 silhouette: 0.5623
+- k=7 silhouette: 0.6737
+- Gain: 0.1114
+
+The maximum silhouette occurs at k=12:
+
+- k=12 silhouette: 0.8006
+
+We interpret these as two levels:
+
+- 7 coarse generator families
+- 12 fine generator atoms
+
+This avoids mistaking rare individual senior templates for twelve separate
+relevance classes.
+
+
+5.9 SEVEN RECONSTRUCTED STATIC GENERATOR FAMILIES
+
+The seven coarse families are:
+
+1. Explicit senior AI
+   Candidates: 21
+   Summary templates: 20
+
+2. Applied ML/search/recommendation
+   Candidates: 150
+   Summary templates: 20
+
+3. Generic ML/data science
+   Candidates: 1,000
+   Summary templates: 12
+
+4. Data/backend adjacent
+   Candidates: 5,000
+   Summary templates: 4
+
+5. General software
+   Candidates: 25,000
+   Summary templates: 4
+
+6. Plain-language senior systems
+   Candidates: 8
+   Summary templates: 1
+
+7. General professional/direct occupation
+   Candidates: 68,821
+   Summary templates: 15
+
+The clustering did not use the manually assigned summary archetypes. We used
+those archetypes only after clustering to interpret the discovered classes.
+
+Agreement between discovered classes and manual archetypes:
+
+- Normalized mutual information: 0.894
+- Adjusted mutual information: 0.894
+
+This is strong evidence that the generator has real latent profile families.
+
+
+5.10 GENERATOR DEPENDENCIES
+
+The strongest measured categorical dependencies are:
+
+- Static class -> title family: NMI 0.933
+- Static class -> summary archetype: NMI 0.894
+- Summary template -> summary archetype: NMI 0.611
+- Summary template -> title family: NMI 0.485
+- Static class -> current career template: NMI 0.440
+- Current career template -> summary archetype: NMI 0.418
+- Headline template -> summary archetype: NMI 0.366
+- Static class -> industry: NMI 0.159
+
+Important interpretation:
+
+Titles and static family are strongly coupled. Career templates are associated
+with family but vary inside each family. Headlines are archetype-pure but have
+many variants. Industry is a much weaker class indicator.
+
+The broad general-professional summaries are especially noisy. Some summaries
+describe a marketing manager even when the current occupation differs. This
+shows that individual text fields can be decorative or generated independently
+and should not be trusted without cross-field career evidence.
+
+
+5.11 BEHAVIORAL STRUCTURE
+
+The mathematical optimum among two through six behavioral clusters is k=2, but
+the silhouette is only 0.113.
+
+The strongest separation between these two groups is:
+
+- Missing offer history
+- Offer-acceptance value
+
+Other behavioral differences between the two groups are small.
+
+Current interpretation:
+
+There are not two strong natural behavior classes. Behavior should be modeled
+as mostly continuous latent factors plus explicit missing-data indicators.
+Calling these two groups real candidate types would be misleading.
+
+Static class explains some behavioral variance:
+
+- Search appearances: eta-squared 0.111
+- Recruiter saves: eta-squared 0.109
+- GitHub score: eta-squared 0.078
+- Inactivity: eta-squared 0.070
+- Interview completion: eta-squared 0.068
+- Profile views: eta-squared 0.060
+- Response time: eta-squared 0.058
+- Offer acceptance: eta-squared 0.046
+
+This confirms behavioral confounding: better-looking static classes also tend
+to receive better generated behavior.
+
+Therefore, raw behavior must not be added to relevance without adjustment. It
+would reward a candidate once through static class and again through behavior
+that partly encodes the same class.
+
+Behavior policy should depend on cohort size:
+
+- For large families, normalize continuous behavior within family before
+  applying a bounded modifier.
+- For smaller families, use hierarchical shrinkage toward a pooled baseline.
+- For the 8- and 21-candidate senior families, use a near-zero cap because
+  within-family estimates are unstable and no behavioral twins exist.
+- Behavior may reorder candidates with comparable static relevance, but it
+  must not determine the base relevance family.
+
+
+5.12 DETERMINISTIC JD EVIDENCE CATALOG
+
+We implemented the first bridge from reconstructed generator structure to the
+actual job description:
+
+- analysis/jd_evidence_rubric.json
+- analysis/jd_evidence_catalog.py
+- artifacts/analysis/jd_evidence_catalog.json
+- artifacts/analysis/jd_evidence_report.md
+
+The rubric is versioned and separates:
+
+- Direct requirements
+- Core role evidence
+- Preferred evidence
+- Risk contexts
+- Compound evidence that must occur within the same career template
+- Structured candidate-level overlay rules, introduced in rubric version 1.0.2
+- Versioned skill-signal patterns, introduced in rubric version 1.0.4, used
+  only by the candidate-level skill overlay
+
+The catalog annotates all 44 career templates with exact matched patterns and
+snippets. It then streams all 100,000 candidates and calculates
+candidate-weighted evidence prevalence for all 12 fine atoms.
+
+The catalog does not assign relevance tiers or a combined score. A missing
+career-text match means "not observed," not "candidate lacks this skill."
+
+Main findings:
+
+- All 8 plain-language senior candidates have evaluated-ranking evidence in at
+  least one career template, even though only 12.5 percent have explicit
+  production embedding/vector evidence. The rubric was derived from the JD, so
+  this is not independent label validation. It demonstrates that the
+  deterministic catalog can operationalize the documented Tier-5 anchor
+  without requiring fashionable AI keywords.
+- The explicit senior AI atoms generally show very high production retrieval,
+  vector/hybrid, ranking-evaluation, and end-to-end ownership evidence.
+- The 150 applied-ML candidates are heterogeneous:
+  - 82.7 percent have evaluated-ranking evidence.
+  - 76.7 percent have production delivery plus evaluation depth.
+  - 35.3 percent have direct production embedding-retrieval evidence.
+  - 35.3 percent have direct production vector/hybrid evidence.
+- The 1,000 generic-ML candidates have no direct evaluated-ranking,
+  production-embedding-retrieval, or production-vector/hybrid compound in the
+  career template library. About 75.1 percent have explicit Python evidence,
+  and 32.0 percent have a computer-vision-primary context.
+- Data/backend and general-software atoms contain substantial explicit Python
+  evidence but no direct ranking/retrieval compounds in their career
+  templates.
+- Python is not explicitly mentioned in the senior and applied-ML career
+  templates. Candidate skills and assessments are therefore essential before
+  interpreting career-text absence as a weakness.
+- Career-text Python prevalence is not an ordinal quality signal. It is higher
+  in generic ML, data/backend, and software cohorts than in the senior cohorts.
+  Direct-requirement compounds and demonstrated system ownership must not be
+  replaced by a naive count of atomic keyword matches.
+- LLM/RAG context appears in several strong applied and senior atoms. It is a
+  review context, not an automatic negative; the JD's conditional negative
+  depends on recency, shallowness, and absence of earlier production ML.
+- Fine-atom differences provide ordering hypotheses, not a finished ordering.
+  For example, `fine_atom_01` has broader compound coverage than
+  `fine_atom_03`, but candidate recency, skills, integrity, and behavior have
+  not yet been overlaid.
+- `fine_atom_04` has 100 percent LLM application context and 100 percent on the
+  main retrieval/evaluation compounds. This is deep LLM integration in a
+  production ranking system, not evidence of the shallow wrapper pattern
+  rejected by the JD.
+- No career template contains direct open-source, paper, talk, or public
+  technical-validation evidence. That requirement must be checked through
+  candidate-level signals or other profile fields.
+
+The first audit caught and removed two false positives:
+
+- A customer-support "feedback loop" is not online experimentation.
+- The "production side" of brand/packaging work is not technical production
+  delivery.
+
+Compound requirements are intentionally not assembled across unrelated jobs.
+For example, embeddings in one role and deployment in a different role do not
+automatically become "production embeddings-based retrieval."
+
+Rubric version 1.0.2 added a structured `candidate_overlay_rules` block. These
+rules are not prose-only reminders anymore; they are schema-checked inputs for
+the candidate-level overlay stage:
+
+- Services-only disqualifier: evaluate the entire career; one consulting role
+  is insufficient when product-company experience exists.
+- Research-only disqualifier: evaluate the entire career and require absence
+  of production deployment across all roles.
+- Recent shallow-LLM conditional negative: require under-12-month shallow LLM
+  work and no substantial earlier production ML/retrieval/ranking evidence.
+- Senior-not-coding conditional negative: evaluate hands-on work in the most
+  recent 18 months rather than penalizing a senior title by itself.
+
+The contract is enforced in code: `load_rubric()` now rejects a malformed
+overlay block, including missing `evaluation_scope`, missing
+`automatic_tier_zero`, wrong field types, or an empty `required_inputs` list.
+The unit tests include both a positive shape check and a negative malformed
+rubric fixture.
+
+Rubric version 1.0.3 records the Tier-A audit fixes. The changes are narrow
+phrase-level additions tied to the JD's explicit evaluation language:
+
+- `ranking_evaluation` now catches recruiter engagement metrics, A/B testing
+  alongside a ranker, A/B testing infrastructure, live A/B tests, A/B test
+  outcomes, and online A/B engagement metrics.
+- `retrieval_search` now catches `query understanding`, which appears in a
+  plain-language senior search/retrieval template.
+- `production_delivery` now uses a narrower serving pattern, e.g. `serving
+  10M+ users`, instead of matching only the first digit after `serving`.
+
+These changes added evaluated-ranking evidence to `career_25f609f7c6ec`,
+`career_773c6b592e7d`, and `career_f526a9742420`, and retrieval/search
+evidence to `career_e8f80c98b493`. No non-Tier-A template gained
+`ranking_evaluation` or `retrieval_search` from these additions.
+
+Rubric version 1.0.4 moved the skill overlay regexes out of
+`candidate_overlay.py` and into the versioned rubric. This closes the
+auditability gap where career evidence was frozen but skill evidence was a
+second, unversioned keyword set. `load_rubric()` now validates the
+`skill_signal_patterns` block, including regex compilation. Skill evidence
+remains firewalled from career-template compounds: it can fill candidate-level
+gaps or expose keyword-stuffing, but it does not create production/retrieval
+career evidence by itself.
+
+The skill patterns were also tightened. In particular, `retrieval_search` no
+longer matches bare `search`; it requires explicit retrieval/vector/semantic
+search wording, BM25, or exact `RAG`. This prevents ordinary skills such as
+`Job Search` from leaking into retrieval evidence.
+
+
+5.13 RUBRIC AUDIT WORKSHEET
+
+Because every one of the 300,171 career entries is a copy of one of only 44
+career templates, the rubric's regex behavior is fully determined by a finite,
+enumerable input space. A complete human read of all 44 templates therefore
+makes extraction errors enumerable and correctable across the visible
+career-template library, which is normally impossible for text matching at this
+scale. It does not make the extractor infallible; the result is still subject
+to human and rubric judgment.
+
+We added a reproducible layout tool:
+
+- analysis/build_audit_worksheet.py
+- artifacts/analysis/jd_evidence_audit_worksheet.md
+
+The tool changes no annotations. It lays out all 44 templates with full text,
+assigned signals by category, exact matched terms, a snippet, occurrence counts,
+and verdict lines, ordered by ranking decisiveness:
+
+- Tier A: senior and applied-ML templates. Verify every signal and every
+  absence; one error can materially change a top-cohort candidate, and these
+  templates can decide NDCG@10/@50.
+- Tier C: generic-ML, the borderline Tier-3 region.
+- Tier B: high-population non-ML templates. Confirm only that no false
+  direct-requirement match leaks in; false negatives are lower priority but
+  should still be noted for tail-exception audits.
+
+It is intentionally not wired into run_all; it is a one-time audit aid, not part
+of the analysis pipeline.
+
+Reassuring finding from the first scan: no non-ML template fires any
+direct-requirement compound. The keyword-trap risk of a stuffer template
+manufacturing top-cohort evidence is therefore not observed in the current
+catalog. The only non-ML hits are isolated core-role signals (product context,
+production delivery, operational ownership) on legitimately product/engineering
+roles, and they do not change the current top-cohort evidence interpretation.
+Two judgment calls were noted for the manual pass: whether a bare
+"Shipped"/"deployment" should count as production delivery in a data/backend
+template, and whether one data/backend template that lights up product,
+ownership, and delivery together is fully supported by its text.
+
+Audit status: the full 44-template review is complete. The Tier-A pass produced
+rubric version 1.0.3 and the four objective fixes listed in §5.12. Rubric
+version 1.0.4 moved candidate skill patterns into the audited schema.
+
+The final Tier-B/C freeze review produced rubric version 1.0.5 with two narrow
+false-positive removals:
+
+- `career_9ab513003702` no longer receives `production_delivery` merely from
+  `model-serving`; another team built the service and this candidate owned
+  integration and observability.
+- `career_03ab1210df1d` no longer receives `operational_ownership` from
+  `productionization` inside a sentence saying the role was modeling rather
+  than productionization.
+
+The three previously open production-delivery judgments are resolved:
+
+- `career_2e516f229493`: accepted because predictive features were explicitly
+  shipped.
+- `career_8f5eedb01688`: accepted because the SaaS application has explicit
+  Docker/Kubernetes deployment.
+- `career_9ab513003702`: rejected as delivery ownership.
+
+Tier C was reviewed in both directions across all six generic-ML templates.
+Tier B was reviewed for direct-requirement leakage and broad false positives.
+No non-ML template creates a direct retrieval/ranking compound. The Tier-B/C
+audit is signed off for the pre-teacher Idea 2 freeze at rubric version 1.0.5.
+
+
+5.14 CANDIDATE-SPECIFIC EVIDENCE OVERLAY
+
+We implemented the candidate-level join stage in:
+
+- analysis/candidate_overlay.py
+- artifacts/analysis/candidate_overlay_summary.json
+- artifacts/analysis/candidate_overlay_report.md
+- artifacts/analysis/candidate_overlay.jsonl
+
+The JSONL output is ignored by Git because it is a large generated
+candidate-level artifact. The summary and report are compact review artifacts.
+
+This stage streams all 100,000 candidates and joins:
+
+- Reconstructed static class, fine atom, and summary archetype
+- Current and historical career-template signals and compounds
+- Candidate skill evidence
+- Recency, availability, behavior, and logistics
+- Integrity flags and high-confidence contradiction rules
+- The four structured `candidate_overlay_rules`
+
+The overlay still does not assign relevance tiers or a score. It produces the
+rankable candidate-level feature table that the probabilistic Idea 2 scorer can
+consume after the template audit gate.
+
+Current overlay results:
+
+- Candidates processed: 100,000
+- Rubric version: 1.0.5
+- services_only_entire_career fired: 5,345 candidates
+- recent_shallow_llm_only fired: 1,868 candidates
+- research_only_without_production fired: 2 candidates
+- senior_not_coding_recently fired: 428 candidates
+- Integrity join recovered the same 162 high-risk candidates, including
+  83 company_pre_founding and 21 expert_zero_duration_3plus proxy honeypot
+  records.
+- Career-level evaluated-ranking compounds are now inherited by 153 candidates,
+  up from 129 before the Tier-A audit fixes. `shipper_with_evaluation_depth`
+  is inherited by 141 candidates, up from 113.
+
+Important correction from the first overlay run: a draft version treated any
+`Manager` title as senior-coded and fired `senior_not_coding_recently` on
+22,363 candidates. That was too broad and was fixed. The rule now requires
+senior/leadership wording or a technical-manager title, plus absence of recent
+hands-on engineering evidence.
+
+Follow-up correction from the senior-rule audit: the hands-on guard no longer
+uses title text alone as hands-on evidence. It requires explicit career signals
+or production-delivery evidence. After this change,
+`senior_not_coding_recently` fires on 428 data/backend-adjacent candidates and
+zero candidates in the 8-person plain-language senior cohort or the 21-person
+explicit senior-AI cohort. The 29 senior candidates still deserve manual
+Tier-A review, but the rule is no longer structurally exempting every
+`Senior AI Engineer` by title alone.
+
+Residual senior-rule risk: the 428 firings are concentrated entirely in the
+5,000-candidate data/backend-adjacent cohort, mostly `Senior Data Engineer` and
+`Senior Software Engineer` records whose templates lack the narrow hands-on
+signals. This is probably mild over-firing and low stakes for the main cutoff,
+but any data/backend tail exception should be manually checked so the bounded
+penalty does not wrongly suppress a genuinely hands-on candidate.
+
+The top-29 senior candidates are not title-auto-cleared in the current code.
+Their `senior_not_coding_recently` verdicts are guarded by recent hands-on
+career evidence such as production delivery, retrieval/search, ranking, or
+embedding signals. The Tier-A manual audit still needs to confirm that these
+templates really describe hands-on building, because this rule should not be
+the only protection against a non-coding senior architect entering the top
+ranked set.
+
+Follow-up correction from the services/research spot-check: the
+`research_only_without_production` implementation no longer matches the bare
+word `research`. A content/SEO template containing "using LLM tools for
+research, drafting, and editing" was a false positive. The rule now requires
+explicit `research_only_context`, research-scientist style titles, academic or
+research-lab context, or direct "research-only"/"pure research" wording. This
+reduced firings from 1,418 to 2. Services-only has zero product-context or
+product-industry guard leaks in the current overlay; 97 services-only records
+also show production-delivery evidence, so this rule should remain a bounded
+services-career penalty rather than an automatic tier-zero kill.
+
+
+5.15 FIRST IDEA 2 MULTI-WORLD SCORER
+
+We implemented the first deterministic Idea 2 proxy scorer in:
+
+- analysis/idea2_scorer.py
+- artifacts/analysis/idea2_score_summary.json
+- artifacts/analysis/idea2_score_report.md
+- artifacts/analysis/idea2_top100.csv
+- artifacts/analysis/idea2_scores.csv
+- artifacts/analysis/idea2_submission.csv
+
+`idea2_scores.csv` is ignored by Git because it is a 100,000-row generated
+candidate-level artifact. The summary, report, and top-100 CSV are compact
+review artifacts.
+
+The scorer consumes `candidate_overlay.jsonl` and evaluates six plausible
+worlds:
+
+- conservative
+- senior_heavy
+- applied_ml_friendly
+- generic_tail_friendly
+- behavior_medium
+- mutation_uncertain
+
+The score is not a hidden-label estimate. It is a deterministic robustness
+harness that combines:
+
+- static/fine-atom tier priors
+- a small bounded current-title alignment term
+- career-template evidence
+- skill overlays
+- bounded behavior and logistics modifiers
+- overlay-rule penalties
+- integrity and honeypot-proxy policies
+
+Current first-scorer results:
+
+- Candidates scored: 100,000
+- Top-10 stability: 6 candidates are common to all worlds; 15 candidates appear
+  in at least one world's top 10.
+- Top-50 stability: 44 common / 56 union.
+- Top-100 stability: 87 common / 113 union.
+- Top-100 safeguards: zero high-risk candidates and zero honeypot-proxy
+  candidates in every world.
+- The generic_tail_friendly world admits 3 generic-ML candidates into its top
+  100, while the other worlds' top 100 remains 79 applied-ML + 21 senior
+  candidates. This gives a real boundary stress test without letting generic
+  skills dominate the main model.
+
+The current top-10 by mean score is entirely senior:
+
+- 6 senior_explicit_ai
+- 4 senior_plain_language
+
+This is consistent with the JD reading, but it is still an Idea 2 assumption.
+The official class-to-tier mapping remains unobserved.
+
+Important caveat: all six current worlds keep the same top-level ordering
+invariant: senior system-builder cohorts remain above applied/generic cohorts,
+and honeypot proxies are suppressed. That is defensible from the JD and
+challenge documentation, but stability across these worlds proves robustness to
+weights, behavior, mutation policy, and boundary assumptions, not robustness to
+a fundamentally different tier ordering. `BASE_TIER_BY_ATOM` remains the core
+unvalidated JD-to-tier hypothesis and needs deliberate sign-off before freeze.
+
+Regression tests were added for the scorer:
+
+- Honeypot proxies are strongly suppressed, and hard-policy worlds push them
+  below any plausible shortlist.
+- Bounded behavior cannot promote an irrelevant active profile above a strong
+  senior profile.
+- `senior_not_coding_recently` remains a bounded data/backend-tail penalty.
+- Removing career evidence lowers the score while preserving independent skill
+  evidence.
+- Changing a relevant ML title to an irrelevant title lowers the score through
+  a bounded title term rather than overriding career evidence.
+- Worsening activity, notice period, response behavior, or location moves the
+  score downward by a bounded amount.
+- Replacing product context with a services-only career applies a penalty, not
+  an automatic disqualification.
+
+Scorer version 0.2.0 also writes a challenge-shaped submission artifact with
+exactly 100 rows and candidate-specific factual reasoning. The organizer's
+`validate_submission.py` accepts the generated file. All 100 IDs were
+cross-checked against the candidate overlay, all 100 reasoning strings are
+unique, and the output contains zero high-risk or detected honeypot-proxy
+candidates. This is still an Idea 2 review artifact, not the final constrained
+`rank.py` deliverable or the registered-participant filename.
+
+
+6. CURRENT RECONSTRUCTED GENERATOR GRAPH
+
+The best current model of the data-generation process is:
+
+Latent static profile family
+    |
+    +-- summary template
+    +-- headline template
+    +-- title family and current title
+    +-- current and historical career templates
+    +-- industry and company distributions
+    +-- skill distribution
+    +-- experience and role-count distributions
+    |
+    +-- behavior distribution conditioned partly on profile family
+    |
+    +-- optional rare post-generation contradiction mutation
+            |
+            +-- company chronology mutation
+            +-- technology chronology mutation
+            +-- duration corruption
+            +-- zero-duration expert mutation
+
+This dependency graph is the actual reverse engineering in Idea 2. It goes
+beyond manually writing a relevance rubric: it attempts to identify the latent
+generator families, their emitted fields, and the mechanisms that alter a small
+number of records after normal profile generation.
+
+
+7. WHAT WE CURRENTLY BELIEVE
+
+High-confidence beliefs:
+
+- The dataset is heavily synthetic.
+- The static candidate population was generated from a small number of latent
+  profile families.
+- Career descriptions are template-generated.
+- The 7-family reconstruction is meaningful and reproducible.
+- Several contradiction families were deliberately injected.
+- Company pre-founding mutations are strongly concentrated in ML cohorts.
+- Zero-duration expert mutations target a different, non-ML-heavy population.
+- Behavior is partly conditioned on static class.
+- Behavior is better treated continuously than as two discrete classes.
+- Exact template IDs are useful for analysis but dangerous as final production
+  model features because they can overfit this one dataset.
+
+Medium-confidence beliefs:
+
+- The 8 plain-language senior and 21 explicit senior AI candidates are likely
+  among the most relevant static cohorts.
+- Applied ML/search/recommendation candidates are probably the next strongest
+  broad cohort.
+- Generic ML candidates likely contain relevant and borderline profiles rather
+  than one uniform tier.
+- Data/backend and general software candidates may contain rare relevant
+  exceptions, but most are probably below the dedicated ML cohorts.
+- Company pre-founding records are likely intended honeypots.
+
+Low-confidence or unresolved beliefs:
+
+- Exact archetype-to-tier mapping
+- Exact NDCG gain values
+- Exact behavioral modifier strength
+- Whether all 83 company chronology cases are official honeypots
+- Whether technology and duration contradictions force tier 0
+- Whether the hidden labels include random or manual adjustments
+- Whether the plain-language senior cohort should rank above every explicit AI
+  profile or merely within the same top tier
+
+
+8. MAIN RISKS
+
+
+8.1 ARCHETYPE IS NOT AUTOMATICALLY RELEVANCE
+
+Recovering generator classes does not prove their official relevance grades.
+The generator may create profile classes first and apply additional label rules
+later.
+
+
+8.2 BEHAVIORAL DOUBLE COUNTING
+
+Behavior improves with static class. A ranker that uses both without
+deconfounding can count the same latent quality twice.
+
+
+8.3 TOP-TIER BEHAVIOR HAS NO TWIN COVERAGE
+
+There are no behavioral twins for the senior cohorts. Their behavioral
+adjustment must remain conservative and uncertain.
+
+
+8.4 KNOWLEDGE-BASE COVERAGE
+
+Chronology detection currently depends on a small, versioned list of companies
+and technologies. Unknown young companies can create false negatives.
+
+
+8.5 GENERATOR OVERFITTING
+
+Exact template reconstruction may score this synthetic dataset well while
+failing on real or newly worded profiles. The final constrained student should
+learn general career evidence rather than candidate IDs or exact template IDs.
+
+
+8.6 HIDDEN LABEL RULES
+
+The organizers may have applied rules, randomness, or manual adjustments that
+are not recoverable from visible data alone.
+
+
+9. VALIDATION COMPLETED
+
+The complete deterministic pipeline runs successfully over all 100,000
+candidates:
+
+python3 -m analysis.run_all
+
+The pipeline performs:
+
+1. Profile archetype analysis
+2. Integrity and chronology checks
+3. Behavioral twin analysis
+4. Generator reconstruction
+5. Deterministic JD evidence catalog generation
+6. Candidate-specific evidence overlay generation
+7. Multi-world Idea 2 score generation
+8. Consolidated report generation
+
+All thirty-one current unit tests pass.
+
+Analysis dependencies are documented in:
+
+- analysis/requirements.txt
+
+Large candidate-level generated CSV and JSONL artifacts are ignored by Git
+where appropriate, while compact reports and manifests remain available for
+review.
+
+
+10. CURRENT STATE OF LOCAL SCORING
+
+We still do not have a trustworthy scalar local score representing expected
+hidden leaderboard performance.
+
+What we do have is a set of measurable proxy dimensions and the first
+multi-world proxy scorer:
+
+- Recovery of high-confidence contradiction families
+- Stability of reconstructed static classes
+- Career-template evidence
+- Behavioral sensitivity among matched twins
+- Stability of the first Idea 2 scorer across six plausible worlds
+- Counterfactual direction checks, once implemented
+- Agreement between independent deterministic rankers
+- Eventually, agreement with an independent Idea 1 teacher
+
+The current local evaluator does not report one unsupported "accuracy" number.
+It reports stability across multiple plausible hidden-label worlds.
+
+World construction should vary the structural granularity as well as the
+scoring assumptions:
+
+- 7 coarse families
+- 12 fine atoms
+- 76 summary templates where evidence supports template-level distinctions
+
+If rankings are stable across these granularities, that is useful robustness
+evidence. If they change substantially, bucket choice is controlling the
+conclusion.
+
+
+11. WHAT I THINK WE SHOULD DO NEXT
+
+The next stage should remain entirely inside Idea 2.
+
+
+STEP 1: CHARACTERIZE THE GENERATOR LIBRARY - COMPLETED
+
+Give the 44 career templates and 12 fine atoms deterministic, human-readable
+evidence annotations. For each template or atom, record:
+
+- Production search and retrieval
+- Recommendation and ranking
+- Learning-to-rank
+- Embeddings and vector search
+- Evaluation frameworks
+- Online experiments and A/B testing
+- Production ML ownership
+- Python and engineering depth
+- Product-company shipping experience
+- Seniority and system ownership
+- Founding-team or zero-to-one responsibility
+- Which JD requirements are absent
+- Whether the evidence is current or historical
+- Whether the text demonstrates shipped work or only mentions keywords
+
+This catalog must not use LLM-generated candidate judgments or scores. AI tools
+may assist with code, but the catalog itself must be produced by explicit,
+reviewable rules or direct human interpretation of the compact template
+library.
+
+Status: completed with rubric version 1.0.5 for automated extraction and
+reporting. All 44 career templates and 12 fine atoms are cataloged. Tier A,
+Tier B, and Tier C are signed off for the pre-teacher freeze, including the
+three production-delivery judgment calls documented in §5.13.
+
+
+STEP 2: BUILD A CANDIDATE EVIDENCE EXTRACTOR - COMPLETED
+
+Candidates should inherit evidence from their career templates and fine atoms.
+Candidate-specific processing should add only:
+
+- Current versus historical position
+- Dates and recency
+- Companies and industries
+- Experience and seniority
+- Location and logistics
+- Behavior
+- Integrity mutations
+
+This is a small and reproducible task because the generator library is compact.
+It does not require labeling 100,000 candidates individually.
+
+Status: completed by `analysis/candidate_overlay.py`. The generated overlay
+joins template evidence to candidate-specific skills, recency, companies,
+location, behavior, logistics, and integrity flags, then evaluates the four
+structured overlay rules without assigning tiers or scores.
+
+
+STEP 3: DEFINE PROBABILISTIC RELEVANCE HYPOTHESES - COMPLETED, FIRST VERSION
+
+Do not assign one fixed tier immediately. For each static family and fine atom,
+define a distribution over possible tiers.
+
+Example:
+
+P(Tier 5), P(Tier 4), P(Tier 3), P(Tier 2), P(Tier 1), P(Tier 0)
+
+The distributions should be derived from:
+
+- Job-description evidence
+- Career-template semantics
+- Seniority
+- Production ownership
+- Integrity mutations
+- Documented challenge clues
+
+The uncertainty must be explicit.
+
+Status: implemented in `analysis/idea2_scorer.py` as six explicit scoring
+worlds. The distributions are operationalized as tier-like priors over fine
+atoms rather than as hidden-label claims.
+
+
+STEP 4: MODEL BEHAVIOR AS BOUNDED LATENT FACTORS - COMPLETED, FIRST VERSION
+
+Construct continuous factors such as:
+
+- Availability
+- Responsiveness
+- Recruiter demand
+- Interview reliability
+- Verification/trust
+
+Normalize them within static family where possible. This reduces class leakage.
+
+Behavior should only reorder candidates with similar static relevance. It
+should not promote an active irrelevant candidate above a strong but less
+active relevant candidate.
+
+Status: implemented as a bounded behavior component in the scorer. Unit tests
+check that an active irrelevant profile cannot outrank a strong senior profile
+through behavior alone.
+
+
+STEP 5: DEFINE MUTATION POLICIES - COMPLETED, FIRST VERSION
+
+Create versioned policies for each contradiction family:
+
+- Hard tier-0 interpretation
+- Strong penalty interpretation
+- Uncertainty-only interpretation
+
+Official honeypots are documented as Tier 0, but detected proxy IDs are not
+verified official labels. Evaluate alternative policies for proxy detections
+rather than silently treating every anomaly as known Tier 0. The final
+submission can still adopt a conservative hard-exclusion policy for the
+strongest factual contradictions.
+
+Status: implemented as hard and strong integrity policies across scorer worlds.
+The mutation_uncertain world applies a strong penalty rather than a hard
+exclusion to detected honeypot proxies, while the main worlds hard-suppress
+them.
+
+
+STEP 6: CREATE PLAUSIBLE HIDDEN-LABEL WORLDS - COMPLETED, FIRST VERSION
+
+Sample many possible hidden scoring systems that are consistent with known
+documentation:
+
+- Different family-to-tier mappings
+- Different granularity: 7 families, 12 atoms, or selected template-level maps
+- Different gains for tiers
+- Different treatments of borderline generic ML candidates
+- Different behavioral strengths
+- Different honeypot policies
+- Different treatment of location and availability
+
+For every proposed ranker, calculate:
+
+- Mean proxy NDCG across worlds
+- Worst-case proxy NDCG
+- Proxy NDCG variance
+- Proxy P@10 across worlds
+- Honeypot count in top 10 and top 100
+- Top-10 and top-50 stability
+
+Status: implemented for six worlds. Current stability is 6/15 top-10
+intersection/union, 44/56 top-50, and 87/113 top-100. Every world's top 100 has
+zero high-risk and zero honeypot-proxy candidates.
+
+
+STEP 7: BUILD MULTIPLE INDEPENDENT IDEA 2 RANKERS - PARTIALLY COMPLETE
+
+Suggested deterministic baselines:
+
+- Title-only
+- Skills-only
+- Career-template-only
+- Static generator-family prior
+- JD evidence rubric
+- Behavior-only
+- Integrity-aware rubric
+- Full probabilistic Idea 2 model
+
+Their disagreements will reveal which assumptions control the ranking.
+
+Status: the full probabilistic Idea 2 model is implemented. Separate
+title-only, skills-only, career-template-only, behavior-only, and
+integrity-aware baseline rankers are not yet implemented. These are useful
+diagnostics, but they are not the current freeze blocker.
+
+
+STEP 8: RUN COUNTERFACTUAL TESTS - COMPLETED, FIRST VERSION
+
+Create controlled candidate modifications:
+
+- Remove career evidence but keep skills
+- Change an ML title to an irrelevant title
+- Make activity six months old
+- Increase notice period
+- Add an impossible employment date
+- Replace product experience with services-only experience
+
+The ranker must move in the expected direction and by a bounded amount.
+
+Status: completed for the first scorer version. Automated tests cover career
+evidence removal, title contradiction, degraded activity and notice period,
+location degradation, services-only career context, behavior dominance, and
+hard/strong honeypot policies. The documented impossible-employment mutation
+is represented by the integrity proxy fixture and is hard-suppressed in the
+main worlds.
+
+
+STEP 9: FREEZE IDEA 2
+
+Before running any teacher model, save:
+
+- Versioned scoring specification
+- Feature definitions
+- Integrity policies
+- Tier distributions
+- Random seeds
+- Candidate scores
+- Final Idea 2 top 100
+- Uncertainty report
+- Source-code commit hash
+
+No Idea 2 changes should be made after viewing Idea 1 results unless the change
+is clearly recorded as a new post-comparison version.
+
+
+STEP 10: BUILD IDEA 1 INDEPENDENTLY
+
+After Idea 2 is frozen:
+
+1. Implement embedding retrieval.
+2. Implement cross-encoder reranking.
+3. Run structured reasoning-model judgments.
+4. Measure prompt and order stability.
+5. Produce an independent teacher ranking.
+
+
+STEP 11: COMPARE, DO NOT IMMEDIATELY MERGE
+
+Compare frozen Idea 2 and Idea 1 using:
+
+- Rank correlation
+- Top-10, top-50, and top-100 overlap
+- Pairwise agreement
+- Honeypot disagreement
+- Per-candidate evidence disagreement
+- Stability under alternative proxy worlds
+
+Candidates selected by both systems may have higher practical confidence, but
+agreement is not proof because both systems can share assumptions or blind
+spots. Candidates selected by only one system should be investigated rather
+than automatically accepted or rejected.
+
+
+12. IMMEDIATE IMPLEMENTATION PRIORITY
+
+The immediate next coding task should be:
+
+Complete the Idea 2 freeze review, then build the constrained reproduction
+entry point.
+
+The candidate-specific evidence overlay is built, the first multi-world scorer
+is implemented, and the 44-template audit is complete enough to continue
+engineering. Idea 2 is not frozen yet.
+
+This is the correct next step because:
+
+- The generator structure, template catalog, overlay, and first scorer are
+  complete.
+- Counterfactual direction tests and a validator-ready 100-row export now
+  exist.
+- The evidence audit, production-delivery judgments, rubric version, and
+  scorer version are signed off. The remaining freeze mechanics are a
+  deliberate `BASE_TIER_BY_ATOM` sign-off, a source snapshot commit, and a
+  generated manifest hashing the runtime assets.
+- After sign-off, implement root `rank.py` so one command reads
+  `candidates.jsonl` and emits the final CSV within 5 minutes, 16 GB RAM, CPU
+  only, and no network. The current analysis pipeline uses precomputed
+  reconstruction artifacts and is not yet that constrained deliverable.
+- Add the real root README reproduction instructions and
+  `submission_metadata.yaml` only when participant/contact/sandbox values are
+  known; do not fabricate those fields.
+- It keeps Idea 2 independent from the teacher.
+- It creates a reproducible pre-teacher frozen artifact that can later be
+  compared with Idea 1 instead of silently merged.
+
+
+13. CURRENT BOTTOM LINE
+
+We have not recovered the official hidden ranking.
+
+We have recovered strong evidence about how the visible candidate data was
+generated:
+
+- Seven coarse static profile families
+- Twelve fine template atoms
+- Forty-four reusable career templates
+- A versioned deterministic JD evidence catalog
+- A candidate-specific evidence overlay over all 100,000 candidates
+- Partly class-conditioned continuous behavior
+- Four rare contradiction-mutation families
+
+The most important discovery is that the problem can be reduced from manually
+judging 100,000 independent profiles to understanding a compact generator
+library and then handling candidate-specific skills, dates, companies,
+behavior, logistics, and integrity mutations.
+
+The next challenge is no longer discovering whether generator structure exists
+or whether candidate-level overlays can be assembled. It is auditing the
+high-impact template evidence, then converting the audited overlay into a
+transparent, probabilistic, and frozen Idea 2 ranking without pretending that
+our hypotheses are official labels.
+
+
+================================================================================
+APPENDIX A: INDEPENDENT REVIEW NOTES (added by Claude, June 15, 2026)
+================================================================================
+
+These notes are additive. They do not restate the body above. They record an
+independent reading of the code and artifacts, plus findings, opinions, and
+analysis that I think the body under-weights or omits. Numbers below were
+re-verified directly against the artifacts, not copied from the summary.
+
+
+A.1 WHAT THE NMI=0.894 RESULT ACTUALLY SUPPORTS
+
+The body treats the agreement between the unsupervised static classes and the
+manual archetypes as strong validation. That is correct, but the precise scope
+matters and should be stated sharply:
+
+- What IS strongly supported: the generator has discrete, reproducible profile
+  families, recoverable from emitted fields alone, at stable population sizes
+  (8 / 21 / 150 / 1,000 / 5,000 / 25,000 / 68,821).
+- What is NOT validated: that these families map to relevance tiers, or in what
+  order. Every emitted field co-varies with the latent class by construction, so
+  high cross-field agreement is partly guaranteed and says nothing about the
+  hidden label ordering.
+
+Conclusion: the seven-family recovery is well supported and reproducible,
+while the 12-atom hierarchy preserves granularity uncertainty. The
+class-to-tier ordinal mapping remains 100 percent hypothesis. This is the
+single most important thing not to lose sight of. Idea 1 can independently
+stress-test this ordering, but neither teacher agreement nor world stability
+can validate it as ground truth. Only the documented anchors are external
+constraints.
+
+
+A.2 THE SCORING MATH JUSTIFIES A HIGH-PRIORITY SHORTLIST, NOT A KNOWN RELEVANT POOL
+
+Composite = 0.50*NDCG@10 + 0.30*NDCG@50 + 0.15*MAP + 0.05*P@10. Eighty percent
+of the score lives in the top 50, and half the score lives in the top 10.
+
+The strongest reconstructed cohorts total 179 candidates (8 + 21 + 150), with
+generic ML adding 1,000 candidates. Together these 1,179 records are a sensible
+high-priority shortlist designed for high recall. Its recall has not yet been
+measured. It is not a known relevant pool, and the remaining candidates cannot
+be assumed irrelevant before checking for career-supported exceptions in
+software, data/backend, and direct occupations.
+
+Strategic consequences:
+
+- Expensive reasoning should concentrate on this shortlist after a high-recall
+  retrieval pass over all 100,000 candidates.
+- Idea 1 should retrieve broadly over the full dataset, then apply expensive
+  teacher judgments to approximately 1,200 candidates plus tail-audit samples.
+- The 29 senior candidates deserve disproportionate attention, but they are not
+  guaranteed to determine NDCG@10. Applied-ML candidates or exceptions from
+  broader cohorts may outrank some seniors under the hidden labels.
+- The internal ordering of the low-priority tail is lower value, but recall
+  audits are still required before excluding it from expensive analysis.
+
+
+A.3 URGENT: A NAIVE STRUCTURE-PRIOR RANKER COULD BE DISQUALIFIED
+
+Honeypot rate above 10 percent in the top 100 is an automatic Stage-3
+disqualification. I verified that 108 high-confidence-contradiction candidates
+sit inside the three high-priority ML-looking cohorts:
+
+- senior_explicit_ai: 8
+- applied_ml: 29
+- generic_ml: 71
+
+These are precisely the records a static-family prior would push toward the top.
+A ranker that orders by reconstructed class and ignores the integrity engine
+could pull more than 10 contradiction-flagged records into its top 100 and risk
+disqualification before scoring even matters. The exact count depends on the
+within-family ordering, so disqualification is a serious risk rather than a
+mathematical certainty.
+
+Therefore the integrity engine is not polish. It is survival. Integrity
+auditing must run before final selection, and the top 100 must be clean under
+the chosen versioned integrity policy. A conservative submission policy is
+zero company-pre-founding or three-plus zero-duration-expert records in the
+final top 100, explicit review of technology and duration flags, and a logged
+proxy-honeypot check as the last gate. This does not prove the official hidden
+honeypot rate is zero because the official IDs remain hidden.
+
+
+A.4 BEHAVIOR NORMALIZATION BREAKS EXACTLY WHERE IT MATTERS MOST
+
+Correction to an earlier overstatement: the static_class -> behavior_cluster
+NMI of 0.020 only says the WEAK two-cluster discretization of behavior is nearly
+independent of class. It does NOT make raw behavior independent of class. The
+operative measures are the median gradient (response rate rises 0.42 -> 0.79 up
+the family ladder) and the eta-squared values (up to ~0.11 for search
+appearances and recruiter saves). Roughly a tenth of the variance in some
+behavior features is explained by static class, so raw behavior leaks class
+moderately, and within-class normalization plus a bounded modifier IS justified.
+
+The catch is granularity-dependent. Within-class normalization is sound for
+large families such as generic ML and the larger adjacent classes. Applied ML
+may support shrinkage-assisted estimates. The 8- and 21-candidate senior
+families are too small to estimate stable within-family behavior distributions,
+and they have no twins.
+
+Recommendation: normalize behavior within family only where N is large enough.
+For smaller cohorts, use hierarchical shrinkage toward an appropriate pooled
+baseline. Apply a near-zero, explicit cap to the senior families. Behavior
+should break ties among statically comparable candidates, not decide base
+relevance or guarantee a senior a top-10 position.
+
+
+A.5 THE EVIDENCE IS A PROPERTY OF TEMPLATES, NOT CANDIDATES
+
+The compactness of the generator makes a fully independent per-candidate
+semantic pass unnecessary. There are only 44 career templates and 12 fine
+atoms. Evidence should be characterized once per template/atom, and candidates
+inherit it through the templates they carry, with candidate-specific overlays
+only for dates, companies, behavior, and mutations. The main plan above has
+been reordered accordingly: characterize the library first, then build the
+candidate overlay.
+
+
+A.6 INDEPENDENCE LEAK TO GUARD IN THE EVIDENCE CATALOG
+
+Writing the human-readable semantic description of each career template/atom is
+allowed within Idea 2 only if it is done by deterministic rules or by a human
+reading the text. An LLM-generated candidate judgment, semantic score, or
+template-to-tier decision would import teacher-like evidence into Idea 2 and
+break the intended comparison. AI coding assistance is not itself leakage if
+the resulting rules are explicit, deterministic, reviewed, and reproducible.
+Keyword/regex rules over the 44 templates are acceptable.
+
+
+A.7 THE UNCERTAINTY-WORLDS EVALUATOR IS A ROBUSTNESS HARNESS, NOT A LABEL ORACLE
+
+Because there is no leaderboard and only three submissions, multi-world
+evaluation should be a central development harness. It is not the only
+pre-submission signal: documented anchors, integrity checks, counterfactual
+tests, twin analysis, retrieval audits, and the independent teacher also
+provide evidence or diagnostics.
+
+Judge each ranker by mean, worst-case, and variance across worlds, plus
+top-10/top-50 stability. But remember that all worlds are constructed from our
+own assumptions. A ranker can be stable across a poorly chosen world set and
+still be wrong.
+
+A built-in regression test for the eventual scorer: the documented honeypot
+example ("8 years at a company founded 3 years ago") means the integrity gate
+must reject a synthetic fixture with that contradiction. A conservative Idea 2
+policy may hard-exclude the 83 detected company-pre-founding records, but tests
+should validate the rule behavior rather than claim that all 83 IDs are known
+official Tier-0 labels.
+
+
+A.8 OPEN ENGINEERING DEBTS (tracked so they are not forgotten)
+
+- Git LFS push is still unresolved; git-lfs is not installed in this Linux
+  environment, so even `git status` currently errors. candidates.jsonl must
+  never be re-committed as a 464 MB normal object.
+- README.md at repo root is still a one-line stub. Stage 3 requires a real
+  README with a single reproduce command.
+- A validator-ready Idea 2 CSV export now exists, but root `rank.py` and
+  `submission_metadata.yaml` do not. The export proves formatting and factual
+  reasoning generation; it does not yet satisfy the one-command constrained
+  reproduction requirement.
+- __pycache__ and .pytest_cache are ignored. .pytest_cache is present locally;
+  remove it before committing only if you want a cleaner working tree.
+- The constrained 5-minute CPU student ranker (Idea 1 step 6 / final path) has
+  no implementation yet. The sklearn clustering in generator_reconstruction.py
+  is oracle-stage only and must stay out of the submission runtime path.
+
+
+A.9 MY BOTTOM LINE
+
+The Idea 2 reconstruction is better than I expected when we started, and the
+discipline (no teacher leakage, hedged language, reproducible artifacts, tests)
+is exactly what survives the Stage 3-5 human review. The structure half is
+essentially done.
+
+The remaining risk is no longer technical recovery. It is two things: (1) the
+unvalidated class-to-tier ordering, which documented anchors constrain and the
+independent teacher plus multi-world evaluation can only stress-test, and (2)
+forgetting that integrity filtering is a disqualification gate, not merely a
+feature. If the next stage produces a frozen, integrity-gated,
+multi-world-evaluated probabilistic ranking over a shortlist designed for high
+recall, with audits of the excluded tail, Idea 2 will have done its job well.

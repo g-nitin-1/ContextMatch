@@ -1,0 +1,110 @@
+{
+  "analysis_as_of": "2026-06-01",
+  "candidate_count": 100000,
+  "career_compound_candidate_counts": {
+    "end_to_end_intelligence_ownership": 25,
+    "evaluated_ranking_system": 153,
+    "production_embeddings_retrieval": 73,
+    "production_vector_or_hybrid_search": 73,
+    "shipper_with_evaluation_depth": 141
+  },
+  "dataset": "/mnt/e/contextmatch/India_runs_data_and_ai_challenge/candidates.jsonl",
+  "fine_atom_counts": {
+    "fine_atom_00": 150,
+    "fine_atom_01": 7,
+    "fine_atom_02": 1000,
+    "fine_atom_03": 4,
+    "fine_atom_04": 4,
+    "fine_atom_05": 8,
+    "fine_atom_06": 68821,
+    "fine_atom_07": 5000,
+    "fine_atom_08": 3,
+    "fine_atom_09": 25000,
+    "fine_atom_10": 2,
+    "fine_atom_11": 1
+  },
+  "high_confidence_integrity_rule_counts": {
+    "career_duration_exceeds_experience": 23,
+    "company_pre_founding": 83,
+    "expert_zero_duration_3plus": 21,
+    "role_duration_large_mismatch": 33,
+    "technology_before_release": 25
+  },
+  "honeypot_proxy_rule_counts": {
+    "company_pre_founding": 83,
+    "expert_zero_duration_3plus": 21
+  },
+  "integrity_risk_counts": {
+    "high": 162,
+    "low": 27040,
+    "medium": 32,
+    "none": 72766
+  },
+  "location_bucket_counts": {
+    "india_other": 58446,
+    "ncr": 8198,
+    "noida": 4283,
+    "outside_india": 17756,
+    "outside_india_relocatable": 7131,
+    "pune": 4186
+  },
+  "overlay_path": "/mnt/e/contextmatch/artifacts/analysis/candidate_overlay.jsonl",
+  "overlay_rule_fired_by_archetype": {
+    "recent_shallow_llm_only": {
+      "data_backend_adjacent": 106,
+      "direct_occupation": 1549,
+      "general_software": 245,
+      "generic_ml": 7
+    },
+    "research_only_without_production": {
+      "generic_ml": 2
+    },
+    "senior_not_coding_recently": {
+      "data_backend_adjacent": 428
+    },
+    "services_only_entire_career": {
+      "data_backend_adjacent": 265,
+      "direct_occupation": 295,
+      "general_professional": 3178,
+      "general_software": 1590,
+      "generic_ml": 17
+    }
+  },
+  "overlay_rule_fired_counts": {
+    "recent_shallow_llm_only": 1907,
+    "research_only_without_production": 2,
+    "senior_not_coding_recently": 428,
+    "services_only_entire_career": 5345
+  },
+  "rubric_version": "1.0.5",
+  "skill_signal_candidate_counts": {
+    "computer_vision_primary": 12989,
+    "embeddings": 7551,
+    "llm_application_context": 10359,
+    "llm_finetuning": 8599,
+    "ml_depth": 21530,
+    "python_engineering": 24623,
+    "ranking_recommendation_matching": 6393,
+    "retrieval_search": 11448,
+    "vector_hybrid_infrastructure": 14158
+  },
+  "static_class_counts": {
+    "static_class_00": 21,
+    "static_class_01": 150,
+    "static_class_02": 1000,
+    "static_class_03": 5000,
+    "static_class_04": 25000,
+    "static_class_05": 8,
+    "static_class_06": 68821
+  },
+  "summary_archetype_counts": {
+    "applied_ml": 150,
+    "data_backend_adjacent": 5000,
+    "direct_occupation": 5517,
+    "general_professional": 63304,
+    "general_software": 25000,
+    "generic_ml": 1000,
+    "senior_explicit_ai": 21,
+    "senior_plain_language": 8
+  }
+}
