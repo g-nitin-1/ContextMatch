@@ -1006,6 +1006,68 @@ The complete suite now contains 49 passing tests. Frozen Idea 2 source,
 rubric, manifest, and submission remain unchanged.
 
 
+5.18 CLASS-NORMALIZED SKILL-ASSESSMENT EXPERIMENT
+
+We implemented the class-normalized variant proposed after the absolute
+assessment experiment:
+
+- `analysis/normalized_skill_assessment_experiment.py`
+- `analysis/tests/test_normalized_skill_assessment_experiment.py`
+- `artifacts/analysis/skill_assessment_normalized_summary.json`
+- `artifacts/analysis/skill_assessment_normalized_report.md`
+- `artifacts/analysis/skill_assessment_normalized_top100.csv`
+
+The first draft normalized the aggregate modifier. That was rejected because
+the aggregate mixes assessment quality with assessment breadth: a candidate
+with one excellent assessment could be penalized relative to a candidate who
+completed several average assessments.
+
+The corrected experiment is `assessment-normalized-exp-0.2.0`. It:
+
+- Normalizes every relevant numeric assessment score against assessment scores
+  in the same reconstructed archetype.
+- Pools the two tiny senior archetypes into one 29-candidate senior group.
+- Pools general-professional and direct-occupation profiles into one tail
+  group.
+- Keeps candidates without relevant assessments exactly neutral.
+- Applies the existing signal-specific skill weights after normalization.
+- Gives one within-group standard deviation a multiplier of `1.75`, so a
+  clearly above-peer assessment can outweigh self-declared
+  proficiency/duration for that signal.
+- Caps the total raw modifier to `[-0.15, 0.30]`.
+- Does not create career evidence or alter integrity policies.
+
+Corrected comparison:
+
+- Top 10 overlap with frozen: 9/10.
+- Top 10 overlap with absolute assessment: 9/10.
+- Top 50 overlap with frozen: 43/50.
+- Top 50 overlap with absolute assessment: 41/50.
+- Top 100 overlap with frozen: 94/100.
+- Top 100 overlap with absolute assessment: 93/100.
+- Three-way intersection: 8 top-10, 36 top-50, and 88 top-100 candidates.
+
+The one top-10 substitution versus frozen is directionally coherent:
+`CAND_0080766`, with an 84.5 vector-infrastructure assessment, replaces
+`CAND_0081846`, whose relevant retrieval assessment is 64.8 against a pooled
+senior assessment mean of 78.6.
+
+All six new top-100 candidates versus frozen are applied-ML candidates with
+existing career compounds. None enters through assessments alone. The
+normalized top 100 contains zero high-risk candidates and zero detected
+honeypot proxies.
+
+Current judgment: the class-normalized variant is methodologically stronger
+than the absolute assessment variant because it reduces generator-class
+double-counting while preserving assessment quality as stronger evidence than
+self-declared skill metadata. It is the preferred assessment-aware hypothesis
+for later comparison with Idea 1, but it still does not prove hidden-label
+improvement and therefore does not replace frozen `idea2-1.0.0`.
+
+The complete suite now contains 55 passing tests. Frozen Idea 2 source, rubric,
+manifest, and submission remain unchanged.
+
+
 6. CURRENT RECONSTRUCTED GENERATOR GRAPH
 
 The best current model of the data-generation process is:

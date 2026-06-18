@@ -23,6 +23,7 @@ python3 -m analysis.jd_evidence_catalog
 python3 -m analysis.candidate_overlay
 python3 -m analysis.idea2_scorer
 python3 -m analysis.skill_assessment_experiment
+python3 -m analysis.normalized_skill_assessment_experiment
 python3 -m analysis.build_report
 ```
 
@@ -64,6 +65,12 @@ leaderboard score.
 bounded modifier from Redrob per-skill assessment scores, compares the result
 with frozen `idea2-1.0.0`, and does not modify the freeze manifest or frozen
 submission.
+
+`normalized_skill_assessment_experiment.py` removes the average
+assessment-score advantage of each reconstructed archetype. It normalizes each
+numeric assessment against peer scores before signal-weighted aggregation and
+compares the result with both frozen Idea 2 and the absolute assessment
+variant.
 
 The integrity knowledge base is versioned in `analysis/knowledge_base.json`.
 External chronology checks preserve their source URLs in the generated issue
