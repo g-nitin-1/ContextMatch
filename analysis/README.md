@@ -22,6 +22,7 @@ python3 -m analysis.generator_reconstruction
 python3 -m analysis.jd_evidence_catalog
 python3 -m analysis.candidate_overlay
 python3 -m analysis.idea2_scorer
+python3 -m analysis.skill_assessment_experiment
 python3 -m analysis.build_report
 ```
 
@@ -58,6 +59,11 @@ rubric, but still does not assign relevance tiers or scores.
 multi-world deterministic proxy ranking. It reports stability across plausible
 worlds and writes full candidate scores, but it is not a validated local
 leaderboard score.
+
+`skill_assessment_experiment.py` is a post-freeze experiment. It adds a
+bounded modifier from Redrob per-skill assessment scores, compares the result
+with frozen `idea2-1.0.0`, and does not modify the freeze manifest or frozen
+submission.
 
 The integrity knowledge base is versioned in `analysis/knowledge_base.json`.
 External chronology checks preserve their source URLs in the generated issue

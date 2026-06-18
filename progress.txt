@@ -939,6 +939,73 @@ The test suite now contains 43 passing tests, including freeze-asset hash
 validation and all scorer counterfactual checks.
 
 
+5.17 POST-FREEZE SKILL-ASSESSMENT EXPERIMENT
+
+We implemented a separate assessment experiment without modifying frozen
+`idea2-1.0.0`:
+
+- `analysis/skill_assessment_experiment.py`
+- `analysis/tests/test_skill_assessment_experiment.py`
+- `artifacts/analysis/skill_assessment_summary.json`
+- `artifacts/analysis/skill_assessment_report.md`
+- `artifacts/analysis/skill_assessment_top100.csv`
+
+Experiment version: `assessment-exp-0.1.0`.
+
+Policy:
+
+- Missing assessments are neutral.
+- Only assessment names mapped by the existing versioned skill-signal patterns
+  affect scores.
+- An assessment score of 80 or higher contributes more than the maximum
+  proficiency-and-duration bonus for one self-declared skill signal.
+- Assessment evidence remains below strong production career evidence.
+- The total raw assessment modifier is capped to `[-0.15, 0.50]`.
+- Assessments cannot create career signals or production compounds.
+
+Coverage:
+
+- 24,244 of 100,000 candidates have at least one assessment.
+- There are 35,895 assessment entries.
+- 9,581 candidates have at least one assessment mapped to a positively scored
+  JD signal.
+- The frozen top 100 contains 76 candidates with a nonzero scored assessment;
+  the experiment top 100 contains 82.
+
+Ranking change versus frozen Idea 2:
+
+- Top 10 overlap: 8/10.
+- Top 50 overlap: 38/50.
+- Top 100 overlap: 91/100.
+- All 9 new top-100 candidates are applied-ML candidates.
+- All 9 have existing career compounds; none enters through assessment
+  evidence alone.
+- The experimental top 100 still contains zero high-risk candidates and zero
+  detected honeypot proxies.
+
+The important caveat is class leakage. Assessment availability is strongly
+conditioned on the reconstructed generator family:
+
+- senior_explicit_ai: 95.2%
+- senior_plain_language: 87.5%
+- generic_ml: 82.4%
+- applied_ml: 80.0%
+- data_backend_adjacent: 75.2%
+- general_software: 44.3%
+- general/direct occupations: about 12%
+
+Therefore an absolute assessment modifier can partly reward the static class a
+second time even when missing values are individually neutral. The experiment
+supports the user's evidence hierarchy -- tested skill knowledge is stronger
+than a self-declared skill -- but it does not yet prove that the absolute
+modifier improves hidden-label ranking. Keep it separate from the frozen
+submission until it is compared with Idea 1 and a class-normalized assessment
+variant.
+
+The complete suite now contains 49 passing tests. Frozen Idea 2 source,
+rubric, manifest, and submission remain unchanged.
+
+
 6. CURRENT RECONSTRUCTED GENERATOR GRAPH
 
 The best current model of the data-generation process is:

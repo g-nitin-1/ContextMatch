@@ -1,0 +1,367 @@
+{
+  "baseline_freeze": "idea2-1.0.0",
+  "coverage": {
+    "assessment_candidate_share": 0.24244,
+    "assessment_coverage_by_archetype": {
+      "applied_ml": {
+        "any_assessment_share": 0.8,
+        "candidates": 150,
+        "mean_modifier_when_scored": 0.206601,
+        "with_any_assessment": 120,
+        "with_scored_assessment": 106
+      },
+      "data_backend_adjacent": {
+        "any_assessment_share": 0.7518,
+        "candidates": 5000,
+        "mean_modifier_when_scored": 0.070608,
+        "with_any_assessment": 3759,
+        "with_scored_assessment": 2262
+      },
+      "direct_occupation": {
+        "any_assessment_share": 0.121805,
+        "candidates": 5517,
+        "mean_modifier_when_scored": 0.012793,
+        "with_any_assessment": 672,
+        "with_scored_assessment": 99
+      },
+      "general_professional": {
+        "any_assessment_share": 0.12263,
+        "candidates": 63304,
+        "mean_modifier_when_scored": 0.012845,
+        "with_any_assessment": 7763,
+        "with_scored_assessment": 1037
+      },
+      "general_software": {
+        "any_assessment_share": 0.44316,
+        "candidates": 25000,
+        "mean_modifier_when_scored": 0.037157,
+        "with_any_assessment": 11079,
+        "with_scored_assessment": 5434
+      },
+      "generic_ml": {
+        "any_assessment_share": 0.824,
+        "candidates": 1000,
+        "mean_modifier_when_scored": 0.118958,
+        "with_any_assessment": 824,
+        "with_scored_assessment": 620
+      },
+      "senior_explicit_ai": {
+        "any_assessment_share": 0.952381,
+        "candidates": 21,
+        "mean_modifier_when_scored": 0.263622,
+        "with_any_assessment": 20,
+        "with_scored_assessment": 16
+      },
+      "senior_plain_language": {
+        "any_assessment_share": 0.875,
+        "candidates": 8,
+        "mean_modifier_when_scored": 0.312614,
+        "with_any_assessment": 7,
+        "with_scored_assessment": 7
+      }
+    },
+    "assessment_entries": 35895,
+    "assessment_score_buckets": {
+      "moderate_positive": 695,
+      "negative": 2089,
+      "neutral": 14675,
+      "strong_positive": 123,
+      "weak_positive": 6662
+    },
+    "candidate_count": 100000,
+    "candidates_with_assessments": 24244,
+    "candidates_with_scored_signals": 9581,
+    "mapped_signal_candidate_counts": {
+      "computer_vision_primary": 3284,
+      "embeddings": 648,
+      "llm_application_context": 1234,
+      "llm_finetuning": 1240,
+      "ml_depth": 4689,
+      "python_engineering": 623,
+      "ranking_recommendation_matching": 647,
+      "retrieval_search": 1552,
+      "vector_hybrid_infrastructure": 2435
+    },
+    "scored_signal_candidate_counts": {
+      "embeddings": 648,
+      "llm_finetuning": 1240,
+      "ml_depth": 4689,
+      "python_engineering": 623,
+      "ranking_recommendation_matching": 647,
+      "retrieval_search": 1552,
+      "vector_hybrid_infrastructure": 2435
+    }
+  },
+  "experiment_version": "assessment-exp-0.1.0",
+  "frozen_top100_assessment_coverage": {
+    "with_scored_assessment": 76
+  },
+  "policy": {
+    "assessment_score_bounds": [
+      -0.15,
+      0.5
+    ],
+    "assessment_weights": {
+      "embeddings": 0.09,
+      "llm_finetuning": 0.06,
+      "ml_depth": 0.06,
+      "python_engineering": 0.07,
+      "ranking_evaluation": 0.1,
+      "ranking_recommendation_matching": 0.09,
+      "retrieval_search": 0.1,
+      "vector_hybrid_infrastructure": 0.1
+    },
+    "career_compounds_unchanged": true,
+    "missing_assessment": "neutral",
+    "world_scaling": "multiply by each frozen world's skill_weight"
+  },
+  "top100_assessment_coverage": {
+    "negative": 0,
+    "strong_positive": 26,
+    "with_scored_assessment": 82
+  },
+  "top100_entrant_audit": {
+    "archetypes": {
+      "applied_ml": 9
+    },
+    "count": 9,
+    "without_career_compounds": 0,
+    "without_scored_assessment": 0
+  },
+  "top100_integrity": {
+    "high_risk": 0,
+    "honeypot_proxy": 0
+  },
+  "top100_path": "/mnt/e/contextmatch/artifacts/analysis/skill_assessment_top100.csv",
+  "top20": [
+    {
+      "assessment_score_raw": 0.36465,
+      "assessment_signal_scores": "llm_finetuning:87.1;vector_hybrid_infrastructure:93.6",
+      "candidate_id": "CAND_0088025",
+      "frozen_top100_rank": 1,
+      "mean_score": 8.161486,
+      "rank": 1
+    },
+    {
+      "assessment_score_raw": 0.420175,
+      "assessment_signal_scores": "embeddings:64.4;llm_finetuning:88.7;python_engineering:89.9;vector_hybrid_infrastructure:63",
+      "candidate_id": "CAND_0006567",
+      "frozen_top100_rank": 3,
+      "mean_score": 8.105468,
+      "rank": 2
+    },
+    {
+      "assessment_score_raw": 0.323,
+      "assessment_signal_scores": "llm_finetuning:96.5;ml_depth:80.5;vector_hybrid_infrastructure:61.5",
+      "candidate_id": "CAND_0039754",
+      "frozen_top100_rank": 2,
+      "mean_score": 8.088125,
+      "rank": 3
+    },
+    {
+      "assessment_score_raw": 0.5,
+      "assessment_signal_scores": "ml_depth:79.9;ranking_recommendation_matching:79.3;retrieval_search:92.7;vector_hybrid_infrastructure:92.7",
+      "candidate_id": "CAND_0086022",
+      "frozen_top100_rank": 7,
+      "mean_score": 8.045224,
+      "rank": 4
+    },
+    {
+      "assessment_score_raw": 0.5,
+      "assessment_signal_scores": "embeddings:97;ml_depth:97;retrieval_search:80.5",
+      "candidate_id": "CAND_0030468",
+      "frozen_top100_rank": 10,
+      "mean_score": 8.017021,
+      "rank": 5
+    },
+    {
+      "assessment_score_raw": 0.328,
+      "assessment_signal_scores": "llm_finetuning:74;retrieval_search:72.2;vector_hybrid_infrastructure:72.2",
+      "candidate_id": "CAND_0037980",
+      "frozen_top100_rank": 4,
+      "mean_score": 8.014592,
+      "rank": 6
+    },
+    {
+      "assessment_score_raw": 0.38305,
+      "assessment_signal_scores": "ml_depth:86.7;retrieval_search:66.4;vector_hybrid_infrastructure:77.1",
+      "candidate_id": "CAND_0046525",
+      "frozen_top100_rank": 13,
+      "mean_score": 7.926161,
+      "rank": 7
+    },
+    {
+      "assessment_score_raw": 0.209025,
+      "assessment_signal_scores": "embeddings:92.9",
+      "candidate_id": "CAND_0005538",
+      "frozen_top100_rank": 8,
+      "mean_score": 7.830026,
+      "rank": 8
+    },
+    {
+      "assessment_score_raw": 0.1602,
+      "assessment_signal_scores": "ranking_recommendation_matching:77.8",
+      "candidate_id": "CAND_0008425",
+      "frozen_top100_rank": 6,
+      "mean_score": 7.805592,
+      "rank": 9
+    },
+    {
+      "assessment_score_raw": 0.21125,
+      "assessment_signal_scores": "vector_hybrid_infrastructure:84.5",
+      "candidate_id": "CAND_0080766",
+      "frozen_top100_rank": 12,
+      "mean_score": 7.8042,
+      "rank": 10
+    },
+    {
+      "assessment_score_raw": 0.074,
+      "assessment_signal_scores": "retrieval_search:64.8",
+      "candidate_id": "CAND_0081846",
+      "frozen_top100_rank": 5,
+      "mean_score": 7.768399,
+      "rank": 11
+    },
+    {
+      "assessment_score_raw": 0.23625,
+      "assessment_signal_scores": "ml_depth:80.5;python_engineering:65.9;ranking_recommendation_matching:63.3",
+      "candidate_id": "CAND_0094759",
+      "frozen_top100_rank": 15,
+      "mean_score": 7.765022,
+      "rank": 12
+    },
+    {
+      "assessment_score_raw": 0.0,
+      "assessment_signal_scores": "",
+      "candidate_id": "CAND_0068351",
+      "frozen_top100_rank": 9,
+      "mean_score": 7.668208,
+      "rank": 13
+    },
+    {
+      "assessment_score_raw": 0.46135,
+      "assessment_signal_scores": "embeddings:73.1;ml_depth:73.1;ranking_recommendation_matching:86.6;vector_hybrid_infrastructure:64",
+      "candidate_id": "CAND_0093193",
+      "frozen_top100_rank": 18,
+      "mean_score": 7.666711,
+      "rank": 14
+    },
+    {
+      "assessment_score_raw": 0.04935,
+      "assessment_signal_scores": "python_engineering:64.1",
+      "candidate_id": "CAND_0046064",
+      "frozen_top100_rank": 14,
+      "mean_score": 7.666521,
+      "rank": 15
+    },
+    {
+      "assessment_score_raw": 0.0,
+      "assessment_signal_scores": "",
+      "candidate_id": "CAND_0005260",
+      "frozen_top100_rank": 11,
+      "mean_score": 7.651217,
+      "rank": 16
+    },
+    {
+      "assessment_score_raw": 0.066,
+      "assessment_signal_scores": "retrieval_search:63.2",
+      "candidate_id": "CAND_0077337",
+      "frozen_top100_rank": 16,
+      "mean_score": 7.548812,
+      "rank": 17
+    },
+    {
+      "assessment_score_raw": 0.17385,
+      "assessment_signal_scores": "embeddings:61.7;ml_depth:80.8",
+      "candidate_id": "CAND_0060072",
+      "frozen_top100_rank": 20,
+      "mean_score": 7.380015,
+      "rank": 18
+    },
+    {
+      "assessment_score_raw": 0.0,
+      "assessment_signal_scores": "",
+      "candidate_id": "CAND_0041611",
+      "frozen_top100_rank": 17,
+      "mean_score": 7.3657,
+      "rank": 19
+    },
+    {
+      "assessment_score_raw": 0.0585,
+      "assessment_signal_scores": "llm_finetuning:69.5",
+      "candidate_id": "CAND_0061257",
+      "frozen_top100_rank": 19,
+      "mean_score": 7.314434,
+      "rank": 20
+    }
+  ],
+  "top_k_overlap_with_frozen": {
+    "10": {
+      "entered": [
+        "CAND_0046525",
+        "CAND_0080766"
+      ],
+      "exited": [
+        "CAND_0068351",
+        "CAND_0081846"
+      ],
+      "intersection_count": 8
+    },
+    "100": {
+      "entered": [
+        "CAND_0006557",
+        "CAND_0032515",
+        "CAND_0032807",
+        "CAND_0036437",
+        "CAND_0047721",
+        "CAND_0066999",
+        "CAND_0076831",
+        "CAND_0078042",
+        "CAND_0087364"
+      ],
+      "exited": [
+        "CAND_0010770",
+        "CAND_0022812",
+        "CAND_0039521",
+        "CAND_0039838",
+        "CAND_0049538",
+        "CAND_0049896",
+        "CAND_0058575",
+        "CAND_0078002",
+        "CAND_0083879"
+      ],
+      "intersection_count": 91
+    },
+    "50": {
+      "entered": [
+        "CAND_0006418",
+        "CAND_0009024",
+        "CAND_0009691",
+        "CAND_0020877",
+        "CAND_0028793",
+        "CAND_0045250",
+        "CAND_0047721",
+        "CAND_0055992",
+        "CAND_0061265",
+        "CAND_0070202",
+        "CAND_0081686",
+        "CAND_0095528"
+      ],
+      "exited": [
+        "CAND_0005649",
+        "CAND_0007009",
+        "CAND_0011162",
+        "CAND_0012957",
+        "CAND_0030031",
+        "CAND_0030348",
+        "CAND_0031593",
+        "CAND_0054123",
+        "CAND_0064270",
+        "CAND_0065195",
+        "CAND_0096172",
+        "CAND_0099806"
+      ],
+      "intersection_count": 38
+    }
+  }
+}
