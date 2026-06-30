@@ -274,12 +274,14 @@ class RankerTests(unittest.TestCase):
         self.assertIn("Senior AI Engineer", reasoning)
         self.assertIn("SearchCo", reasoning)
         self.assertIn("7.0 years", reasoning)
-        self.assertIn("JD", reasoning)
+        self.assertRegex(reasoning, r"requirement|ask|preference|bar")
         self.assertTrue("Python" in reasoning or "BM25" in reasoning)
         self.assertNotIn("evidence=", reasoning)
         self.assertNotIn("semantic=", reasoning)
         self.assertNotIn("evaluated_ranking_system", reasoning)
         self.assertNotIn("production_embeddings_retrieval", reasoning)
+        self.assertNotIn("Matches the JD's production retrieval", reasoning)
+        self.assertNotIn("No major integrity issue surfaced", reasoning)
 
     def test_reasoning_surfaces_honest_concern(self) -> None:
         candidate = overlay(
@@ -298,10 +300,17 @@ class RankerTests(unittest.TestCase):
         self.assertIn("90-day notice", reasoning)
 
     def test_rank_tone_changes_by_rank_band(self) -> None:
-        reasoning = "Senior AI Engineer at SearchCo with 7.0 years. Concern: no major issue."
+        reasoning = (
+            "Senior AI Engineer at SearchCo, 7.0 years — career history "
+            "worked on production retrieval infrastructure for the role's retrieval ask."
+        )
+        top = apply_rank_tone(reasoning, 5)
+        tail = apply_rank_tone(reasoning, 95)
 
-        self.assertTrue(apply_rank_tone(reasoning, 5).startswith("High-confidence"))
-        self.assertTrue(apply_rank_tone(reasoning, 95).startswith("Viable"))
+        self.assertTrue(top.startswith("Senior AI Engineer at SearchCo"))
+        self.assertNotIn("High-confidence shortlist fit", top)
+        self.assertRegex(top, r"strong|high-signal|stronger")
+        self.assertRegex(tail, r"near-cutoff|borderline|lower-ranked")
 
     def test_junior_jd_penalizes_staff_profile(self) -> None:
         junior_spec = spec_from_jd_text(

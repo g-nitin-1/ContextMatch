@@ -114,6 +114,43 @@ SIGNAL_REASON_PHRASES = {
     "vector_hybrid_infrastructure": "vector or hybrid-search infrastructure",
     "python_engineering": "Python engineering",
 }
+REQUIREMENT_REASON_PHRASES = {
+    "production_retrieval": (
+        "the JD's production-retrieval ask",
+        "the role's retrieval and ranking requirement",
+        "the core search/matching systems requirement",
+    ),
+    "evaluated_ranking": (
+        "the JD's evaluation-depth requirement",
+        "the relevance-quality measurement ask",
+        "the ranking-evaluation requirement",
+    ),
+    "end_to_end_ownership": (
+        "the senior IC ownership requirement",
+        "the role's end-to-end ownership expectation",
+        "the JD's shipped-system ownership bar",
+    ),
+    "ml_engineering": (
+        "the applied ML engineering requirement",
+        "the role's AI engineering depth",
+        "the ML systems requirement",
+    ),
+    "vector_hybrid_search": (
+        "the vector/hybrid search preference",
+        "the search-infrastructure requirement",
+        "the retrieval-infrastructure preference",
+    ),
+    "senior_leadership": (
+        "the senior technical-leadership signal",
+        "the mentoring and ownership preference",
+        "the senior IC scope expectation",
+    ),
+    "people_leadership": (
+        "the management-track requirement",
+        "the people-leadership requirement",
+        "the team-management ask",
+    ),
+}
 INTERNAL_REASONING_PATTERNS = (
     "evidence=",
     "semantic=",
@@ -772,49 +809,41 @@ def build_reasoning(
     except (TypeError, ValueError):
         years_text = "undisclosed experience"
 
-    jd_bits = matched_requirement_phrases(spec, signals, compounds)
+    jd_phrase = matched_requirement_phrase(spec, signals, compounds, candidate_id)
     evidence_bits = evidence_reason_phrases(candidate_id, signals, compounds)
     skill_bits = selected_skill_names(overlay)
     availability_bits = availability_facts(overlay)
     concern = strongest_concern(spec, overlay, evidence, semantic, signals, compounds)
 
-    jd_sentence = (
-        f"Matches the JD's {human_join(jd_bits[:2])}."
-        if jd_bits
-        else "Has adjacent career evidence for the parsed JD."
-    )
-    evidence_sentence = (
-        f"Career history {human_join(evidence_bits[:2])}."
+    evidence_text = (
+        human_join(evidence_bits[:2])
         if evidence_bits
-        else "Career history has relevant technical signals, but fewer explicit system details."
+        else "shows relevant technical signals with fewer explicit system details"
     )
-    skill_sentence = (
-        f"Named skills include {human_join(skill_bits[:3])}."
+    skill_text = (
+        f"skills include {human_join(skill_bits[:3])}"
         if skill_bits
-        else "The ranking is driven by career evidence rather than a keyword-heavy skills list."
+        else "career evidence carries the match more than listed skills"
     )
-    availability_sentence = (
-        f"Platform signals: {human_join(availability_bits[:2])}."
-        if availability_bits
-        else "Platform availability signals are not the deciding factor here."
-    )
-
+    availability_text = selected_availability_fact(candidate_id, availability_bits, concern)
+    availability_clause = f"; {availability_text}" if availability_text else ""
+    concern_clause = f"; {concern.rstrip('.')}" if concern else ""
     skeletons = (
-        "{lead}; {evidence} {jd} {skills} {concern}",
-        "{lead}. {jd} {evidence} {skills} {availability} {concern}",
-        "{lead}; {skills} {evidence} {jd} {concern}",
-        "{lead}. {evidence} {skills} {availability} {jd} {concern}",
-        "{lead}; {jd} {skills} {availability} {concern}",
+        "{lead} — career history {evidence} for {jd}; {skills}{availability}{concern}.",
+        "{lead} — {skills}; career history {evidence}, fitting {jd}{availability}{concern}.",
+        "{lead} — fits {jd} through career evidence that {evidence}; {skills}{concern}.",
+        "{lead} — career evidence {evidence}; {skills} for {jd}{availability}{concern}.",
+        "{lead} — {skills}, while career history {evidence} for {jd}{availability}{concern}.",
     )
-    lead = f"{title} at {company} with {years_text}"
+    lead = f"{title} at {company}, {years_text}"
     skeleton = stable_choice(candidate_id, skeletons)
     reasoning = skeleton.format(
         lead=lead,
-        evidence=evidence_sentence,
-        jd=jd_sentence,
-        skills=skill_sentence,
-        availability=availability_sentence,
-        concern=concern,
+        evidence=evidence_text,
+        jd=jd_phrase,
+        skills=skill_text,
+        availability=availability_clause,
+        concern=concern_clause,
     )
     return compact_reasoning(reasoning)
 
@@ -837,19 +866,30 @@ def human_join(items: Any) -> str:
     return f"{', '.join(values[:-1])}, and {values[-1]}"
 
 
-def matched_requirement_phrases(
+def matched_requirement_phrase(
     spec: RequirementSpec,
     signals: set[str],
     compounds: set[str],
-) -> list[str]:
-    matches = []
+    candidate_id: str,
+) -> str:
+    matches: list[tuple[float, str, str]] = []
     for item in spec.must_have + spec.nice_to_have:
         compound_hit = bool(compounds & set(item.compounds))
         signal_hit = bool(signals & set(item.evidence_signals))
         if compound_hit or signal_hit:
-            desc = item.desc.strip().rstrip(".")
-            matches.append(desc[:1].lower() + desc[1:])
-    return matches
+            phrases = REQUIREMENT_REASON_PHRASES.get(item.id)
+            if phrases:
+                phrase = stable_choice(f"{candidate_id}:req:{item.id}", phrases)
+            else:
+                desc = item.desc.strip().rstrip(".")
+                phrase = desc[:1].lower() + desc[1:]
+            matches.append((float(item.weight), item.id, phrase))
+    if not matches:
+        return "the parsed JD's adjacent technical requirements"
+    matches.sort(key=lambda value: (-value[0], value[1]))
+    top_weight = matches[0][0]
+    top_matches = tuple(phrase for weight, _, phrase in matches if weight == top_weight)
+    return stable_choice(f"{candidate_id}:req-choice", top_matches)
 
 
 def evidence_reason_phrases(
@@ -914,6 +954,27 @@ def availability_facts(overlay: dict[str, Any]) -> list[str]:
     return facts
 
 
+def selected_availability_fact(
+    candidate_id: str,
+    facts: list[str],
+    concern: str,
+) -> str:
+    if not facts:
+        return ""
+    concern_lower = concern.lower()
+    filtered = [
+        fact
+        for fact in facts
+        if not (
+            ("notice" in concern_lower and "notice" in fact)
+            or ("response" in concern_lower and "response" in fact)
+            or ("inactive" in concern_lower and "active" in fact)
+        )
+    ]
+    choices = tuple(filtered or facts)
+    return stable_choice(f"{candidate_id}:availability", choices)
+
+
 def strongest_concern(
     spec: RequirementSpec,
     overlay: dict[str, Any],
@@ -950,7 +1011,7 @@ def strongest_concern(
         return "Concern: relevant evidence is present but not as complete as the highest-ranked profiles."
     if semantic < 0.45:
         return "Concern: wording is less directly aligned to the JD than the strongest matches."
-    return "No major integrity issue surfaced; main trade-off is comparing depth against other strong matches."
+    return ""
 
 
 def unsatisfied_must_have(
@@ -974,12 +1035,27 @@ def compact_reasoning(reasoning: str) -> str:
 
 def apply_rank_tone(reasoning: str, rank: int) -> str:
     if rank <= 10:
-        prefix = "High-confidence shortlist fit."
+        tones = (
+            "a strong shortlist match",
+            "a high-signal fit",
+            "one of the stronger matches",
+        )
     elif rank <= 50:
-        prefix = "Strong shortlist fit with trade-offs."
+        tones = (
+            "a solid shortlist fit with trade-offs",
+            "a credible shortlist option",
+            "a good fit with a few trade-offs",
+        )
     else:
-        prefix = "Viable shortlist candidate near the cutoff."
-    return f"{prefix} {reasoning}"
+        tones = (
+            "a viable near-cutoff option",
+            "a borderline but relevant fit",
+            "a lower-ranked shortlist option",
+        )
+    tone = stable_choice(f"{rank}:{reasoning}", tones)
+    if " — " in reasoning:
+        return reasoning.replace(" — ", f" is {tone}: ", 1)
+    return f"{reasoning} This is {tone}."
 
 
 def write_submission(rows: list[ScoreBreakdown], path: Path) -> None:
