@@ -1,0 +1,41 @@
+{
+  "archetype_counts": {
+    "applied_ml": 79,
+    "senior_explicit_ai": 13,
+    "senior_plain_language": 8
+  },
+  "audit_scope": "local_benchmark_only",
+  "direct_occupation_top100_count": 0,
+  "integrity": {
+    "issue_rule_counts": {
+      "activity_before_signup": 4,
+      "career_history_incomplete": 4,
+      "salary_range_order": 2,
+      "skill_duration_exceeds_experience": 34
+    },
+    "risk_counts": {
+      "low": 40,
+      "none": 60
+    },
+    "unsafe_top100": [],
+    "unsafe_top100_count": 0
+  },
+  "proxy_overlaps": {
+    "idea1_top100": {
+      "common_count": 71,
+      "path": "/mnt/e/contextmatch/idea1_top100.csv",
+      "reference_only_count": 29,
+      "solution_only_count": 29,
+      "top100_count": 100
+    },
+    "idea2_top100": {
+      "common_count": 84,
+      "path": "/mnt/e/contextmatch/artifacts/analysis/idea2_submission.csv",
+      "reference_only_count": 16,
+      "solution_only_count": 16,
+      "top100_count": 100
+    }
+  },
+  "submission": "/mnt/e/contextmatch/artifacts/analysis/solution_embedding_experiment.csv",
+  "top100_count": 100
+}

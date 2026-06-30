@@ -1,0 +1,397 @@
+{
+  "audit_scope": "local_benchmark_only",
+  "baseline": "/mnt/e/contextmatch/artifacts/analysis/solution_ranker_submission.csv",
+  "baseline_archetype_counts": {
+    "10": {
+      "applied_ml": 5,
+      "senior_explicit_ai": 2,
+      "senior_plain_language": 3
+    },
+    "100": {
+      "applied_ml": 79,
+      "senior_explicit_ai": 13,
+      "senior_plain_language": 8
+    },
+    "20": {
+      "applied_ml": 11,
+      "senior_explicit_ai": 5,
+      "senior_plain_language": 4
+    },
+    "30": {
+      "applied_ml": 19,
+      "senior_explicit_ai": 5,
+      "senior_plain_language": 6
+    },
+    "50": {
+      "applied_ml": 38,
+      "senior_explicit_ai": 5,
+      "senior_plain_language": 7
+    }
+  },
+  "baseline_senior_ranks": [
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0077337",
+      "company": "Paytm",
+      "rank": 2,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0030468",
+      "company": "Swiggy",
+      "rank": 4,
+      "title": "Senior Applied Scientist"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0006567",
+      "company": "Meta",
+      "rank": 6,
+      "title": "Senior AI Engineer"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0068351",
+      "company": "Sarvam AI",
+      "rank": 8,
+      "title": "Lead AI Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0008425",
+      "company": "Ola",
+      "rank": 10,
+      "title": "Senior NLP Engineer"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0005538",
+      "company": "Adobe",
+      "rank": 12,
+      "title": "Senior AI Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0046064",
+      "company": "Salesforce",
+      "rank": 15,
+      "title": "Senior NLP Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0088025",
+      "company": "Yellow.ai",
+      "rank": 16,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0039754",
+      "company": "Meta",
+      "rank": 19,
+      "title": "Senior Applied Scientist"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0080766",
+      "company": "Salesforce",
+      "rank": 23,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0061257",
+      "company": "LinkedIn",
+      "rank": 24,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0037980",
+      "company": "Niramai",
+      "rank": 35,
+      "title": "Senior Applied Scientist"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0060072",
+      "company": "Amazon",
+      "rank": 69,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0092278",
+      "company": "Microsoft",
+      "rank": 70,
+      "title": "Senior NLP Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0081846",
+      "company": "Razorpay",
+      "rank": 80,
+      "title": "Lead AI Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0005260",
+      "company": "Netflix",
+      "rank": 82,
+      "title": "Senior NLP Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0046525",
+      "company": "Genpact AI",
+      "rank": 85,
+      "title": "Senior Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0041611",
+      "company": "Locobuzz",
+      "rank": 87,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0086022",
+      "company": "Sarvam AI",
+      "rank": 88,
+      "title": "Senior Applied Scientist"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0093193",
+      "company": "Niramai",
+      "rank": 99,
+      "title": "Senior Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0094759",
+      "company": "Meta",
+      "rank": 100,
+      "title": "Lead AI Engineer"
+    }
+  ],
+  "baseline_vs_experiment": {
+    "rank_delta": {
+      "common_count": 100,
+      "max_abs_rank_delta": 18,
+      "mean_abs_rank_delta": 3.04,
+      "spearman": 0.9878
+    },
+    "top100_common": 100,
+    "topk_overlap": {
+      "10": 8,
+      "100": 100,
+      "20": 19,
+      "30": 29,
+      "50": 48
+    }
+  },
+  "experiment": "/mnt/e/contextmatch/artifacts/analysis/solution_senior_ordering_experiment.csv",
+  "experiment_archetype_counts": {
+    "10": {
+      "applied_ml": 4,
+      "senior_explicit_ai": 2,
+      "senior_plain_language": 4
+    },
+    "100": {
+      "applied_ml": 79,
+      "senior_explicit_ai": 13,
+      "senior_plain_language": 8
+    },
+    "20": {
+      "applied_ml": 11,
+      "senior_explicit_ai": 5,
+      "senior_plain_language": 4
+    },
+    "30": {
+      "applied_ml": 18,
+      "senior_explicit_ai": 5,
+      "senior_plain_language": 7
+    },
+    "50": {
+      "applied_ml": 38,
+      "senior_explicit_ai": 5,
+      "senior_plain_language": 7
+    }
+  },
+  "experiment_senior_ranks": [
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0030468",
+      "company": "Swiggy",
+      "rank": 3,
+      "title": "Senior Applied Scientist"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0077337",
+      "company": "Paytm",
+      "rank": 5,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0006567",
+      "company": "Meta",
+      "rank": 6,
+      "title": "Senior AI Engineer"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0068351",
+      "company": "Sarvam AI",
+      "rank": 7,
+      "title": "Lead AI Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0008425",
+      "company": "Ola",
+      "rank": 8,
+      "title": "Senior NLP Engineer"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0005538",
+      "company": "Adobe",
+      "rank": 9,
+      "title": "Senior AI Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0046064",
+      "company": "Salesforce",
+      "rank": 11,
+      "title": "Senior NLP Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0039754",
+      "company": "Meta",
+      "rank": 16,
+      "title": "Senior Applied Scientist"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0088025",
+      "company": "Yellow.ai",
+      "rank": 17,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0037980",
+      "company": "Niramai",
+      "rank": 22,
+      "title": "Senior Applied Scientist"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0080766",
+      "company": "Salesforce",
+      "rank": 24,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0061257",
+      "company": "LinkedIn",
+      "rank": 25,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0092278",
+      "company": "Microsoft",
+      "rank": 55,
+      "title": "Senior NLP Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0060072",
+      "company": "Amazon",
+      "rank": 67,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0081846",
+      "company": "Razorpay",
+      "rank": 78,
+      "title": "Lead AI Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0005260",
+      "company": "Netflix",
+      "rank": 82,
+      "title": "Senior NLP Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0046525",
+      "company": "Genpact AI",
+      "rank": 83,
+      "title": "Senior Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0086022",
+      "company": "Sarvam AI",
+      "rank": 86,
+      "title": "Senior Applied Scientist"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0041611",
+      "company": "Locobuzz",
+      "rank": 88,
+      "title": "Staff Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_plain_language",
+      "candidate_id": "CAND_0093193",
+      "company": "Niramai",
+      "rank": 94,
+      "title": "Senior Machine Learning Engineer"
+    },
+    {
+      "archetype": "senior_explicit_ai",
+      "candidate_id": "CAND_0094759",
+      "company": "Meta",
+      "rank": 98,
+      "title": "Lead AI Engineer"
+    }
+  ],
+  "reference_overlaps": {
+    "reference_a": {
+      "path": "/mnt/e/contextmatch/idea1_top100.csv",
+      "top100_common": 71,
+      "topk_overlap": {
+        "10": 3,
+        "100": 71,
+        "20": 6,
+        "30": 14,
+        "50": 25
+      }
+    },
+    "reference_b": {
+      "path": "/mnt/e/contextmatch/artifacts/analysis/idea2_submission.csv",
+      "top100_common": 84,
+      "topk_overlap": {
+        "10": 5,
+        "100": 84,
+        "20": 9,
+        "30": 17,
+        "50": 27
+      }
+    }
+  }
+}

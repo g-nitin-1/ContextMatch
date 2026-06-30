@@ -1,0 +1,10 @@
+{
+  "candidate_source": "/mnt/e/contextmatch/artifacts/solution/candidate_features.jsonl",
+  "elapsed_seconds": 6.777,
+  "errors": [],
+  "max_rss_mb": 28.1,
+  "passed": true,
+  "row_count": 100,
+  "submission": "/mnt/e/contextmatch/artifacts/analysis/solution_senior_ordering_experiment.csv",
+  "validator": "solution.validate_output"
+}

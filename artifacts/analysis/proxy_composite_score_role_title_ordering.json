@@ -1,0 +1,74 @@
+{
+  "audit_scope": "local_proxy_only",
+  "formula": "0.50*NDCG@10 + 0.30*NDCG@50 + 0.15*MAP@100 + 0.05*P@10",
+  "relevant_threshold": 3.0,
+  "submission": "/mnt/e/contextmatch/artifacts/analysis/solution_role_title_ordering_experiment.csv",
+  "truth_sets": {
+    "idea1_top100_truth__graded_by_idea2_tiers": {
+      "label_count": 100,
+      "relevant_count": 100,
+      "scores": {
+        "exp": {
+          "MAP@100": 0.575756,
+          "NDCG@10": 0.780323,
+          "NDCG@50": 0.739447,
+          "P@10": 1.0,
+          "composite": 0.748359
+        },
+        "linear": {
+          "MAP@100": 0.575756,
+          "NDCG@10": 0.909012,
+          "NDCG@50": 0.780424,
+          "P@10": 1.0,
+          "composite": 0.824996
+        }
+      },
+      "submission_labeled_overlap": 71,
+      "submission_relevant_count": 71
+    },
+    "idea2_full_tiers_truth": {
+      "label_count": 100000,
+      "relevant_count": 179,
+      "scores": {
+        "exp": {
+          "MAP@100": 1.0,
+          "NDCG@10": 0.780323,
+          "NDCG@50": 0.746553,
+          "P@10": 1.0,
+          "composite": 0.814127
+        },
+        "linear": {
+          "MAP@100": 1.0,
+          "NDCG@10": 0.909012,
+          "NDCG@50": 0.901208,
+          "P@10": 1.0,
+          "composite": 0.924868
+        }
+      },
+      "submission_labeled_overlap": 100,
+      "submission_relevant_count": 100
+    },
+    "idea2_top100_truth__graded_by_idea2_tiers": {
+      "label_count": 100,
+      "relevant_count": 100,
+      "scores": {
+        "exp": {
+          "MAP@100": 0.757639,
+          "NDCG@10": 0.780323,
+          "NDCG@50": 0.784483,
+          "P@10": 1.0,
+          "composite": 0.789152
+        },
+        "linear": {
+          "MAP@100": 0.757639,
+          "NDCG@10": 0.909012,
+          "NDCG@50": 0.855362,
+          "P@10": 1.0,
+          "composite": 0.87476
+        }
+      },
+      "submission_labeled_overlap": 84,
+      "submission_relevant_count": 84
+    }
+  }
+}

@@ -1,0 +1,4604 @@
+{
+  "as_of": "2026-06-01",
+  "by_skill": {
+    "Docker": {
+      "candidate_count_with_skill": 12062,
+      "examples": [],
+      "issue_count": 0,
+      "release": {
+        "age_months_as_of": 159,
+        "basis": "public project release",
+        "released_date": "2013-03-20",
+        "source": "https://www.docker.com/blog/happy-10th-birthday-docker/"
+      },
+      "unique_candidate_count": 0
+    },
+    "FAISS": {
+      "candidate_count_with_skill": 5052,
+      "examples": [],
+      "issue_count": 0,
+      "release": {
+        "age_months_as_of": 112,
+        "basis": "conservative open-source project-era date",
+        "released_date": "2017-02-01",
+        "source": "https://github.com/facebookresearch/faiss"
+      },
+      "unique_candidate_count": 0
+    },
+    "FastAPI": {
+      "candidate_count_with_skill": 11917,
+      "examples": [],
+      "issue_count": 0,
+      "release": {
+        "age_months_as_of": 90,
+        "basis": "first PyPI release",
+        "released_date": "2018-12-05",
+        "source": "https://pypi.org/project/fastapi/#history"
+      },
+      "unique_candidate_count": 0
+    },
+    "Haystack": {
+      "candidate_count_with_skill": 1333,
+      "examples": [
+        {
+          "candidate_id": "CAND_0008425",
+          "duration_months": 93,
+          "excess_months": 14,
+          "max_possible_months": 79,
+          "released_date": "2019-11-28",
+          "skill": "Haystack",
+          "summary_archetype": "senior_explicit_ai"
+        },
+        {
+          "candidate_id": "CAND_0030348",
+          "duration_months": 95,
+          "excess_months": 16,
+          "max_possible_months": 79,
+          "released_date": "2019-11-28",
+          "skill": "Haystack",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0031593",
+          "duration_months": 82,
+          "excess_months": 3,
+          "max_possible_months": 79,
+          "released_date": "2019-11-28",
+          "skill": "Haystack",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0064270",
+          "duration_months": 94,
+          "excess_months": 15,
+          "max_possible_months": 79,
+          "released_date": "2019-11-28",
+          "skill": "Haystack",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0093547",
+          "duration_months": 86,
+          "excess_months": 7,
+          "max_possible_months": 79,
+          "released_date": "2019-11-28",
+          "skill": "Haystack",
+          "summary_archetype": "senior_explicit_ai"
+        },
+        {
+          "candidate_id": "CAND_0099401",
+          "duration_months": 80,
+          "excess_months": 1,
+          "max_possible_months": 79,
+          "released_date": "2019-11-28",
+          "skill": "Haystack",
+          "summary_archetype": "applied_ml"
+        }
+      ],
+      "issue_count": 6,
+      "release": {
+        "age_months_as_of": 79,
+        "basis": "first PyPI release",
+        "released_date": "2019-11-28",
+        "source": "https://pypi.org/project/farm-haystack/#history"
+      },
+      "unique_candidate_count": 6
+    },
+    "Hugging Face Transformers": {
+      "candidate_count_with_skill": 5163,
+      "examples": [
+        {
+          "candidate_id": "CAND_0058575",
+          "duration_months": 96,
+          "excess_months": 5,
+          "max_possible_months": 91,
+          "released_date": "2018-11-17",
+          "skill": "Hugging Face Transformers",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0064270",
+          "duration_months": 96,
+          "excess_months": 5,
+          "max_possible_months": 91,
+          "released_date": "2018-11-17",
+          "skill": "Hugging Face Transformers",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0078492",
+          "duration_months": 92,
+          "excess_months": 1,
+          "max_possible_months": 91,
+          "released_date": "2018-11-17",
+          "skill": "Hugging Face Transformers",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0091909",
+          "duration_months": 94,
+          "excess_months": 3,
+          "max_possible_months": 91,
+          "released_date": "2018-11-17",
+          "skill": "Hugging Face Transformers",
+          "summary_archetype": "applied_ml"
+        }
+      ],
+      "issue_count": 4,
+      "release": {
+        "age_months_as_of": 91,
+        "basis": "first PyPI release in Hugging Face transformer-library lineage",
+        "released_date": "2018-11-17",
+        "source": "https://pypi.org/project/pytorch-pretrained-bert/#history"
+      },
+      "unique_candidate_count": 4
+    },
+    "Kubernetes": {
+      "candidate_count_with_skill": 12071,
+      "examples": [],
+      "issue_count": 0,
+      "release": {
+        "age_months_as_of": 144,
+        "basis": "public project-era date",
+        "released_date": "2014-06-07",
+        "source": "https://kubernetes.io/blog/2015/07/how-did-quake-demo-from-dockercon-work/"
+      },
+      "unique_candidate_count": 0
+    },
+    "LangChain": {
+      "candidate_count_with_skill": 5162,
+      "examples": [
+        {
+          "candidate_id": "CAND_0000210",
+          "duration_months": 48,
+          "excess_months": 4,
+          "max_possible_months": 44,
+          "released_date": "2022-10-25",
+          "skill": "LangChain",
+          "summary_archetype": "data_backend_adjacent"
+        },
+        {
+          "candidate_id": "CAND_0000238",
+          "duration_months": 56,
+          "excess_months": 12,
+          "max_possible_months": 44,
+          "released_date": "2022-10-25",
+          "skill": "LangChain",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0000944",
+          "duration_months": 45,
+          "excess_months": 1,
+          "max_possible_months": 44,
+          "released_date": "2022-10-25",
+          "skill": "LangChain",
+          "summary_archetype": "data_backend_adjacent"
+        },
+        {
+          "candidate_id": "CAND_0001330",
+          "duration_months": 49,
+          "excess_months": 5,
+          "max_possible_months": 44,
+          "released_date": "2022-10-25",
+          "skill": "LangChain",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0001498",
+          "duration_months": 49,
+          "excess_months": 5,
+          "max_possible_months": 44,
+          "released_date": "2022-10-25",
+          "skill": "LangChain",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0002025",
+          "duration_months": 84,
+          "excess_months": 40,
+          "max_possible_months": 44,
+          "released_date": "2022-10-25",
+          "skill": "LangChain",
+          "summary_archetype": "senior_explicit_ai"
+        },
+        {
+          "candidate_id": "CAND_0002516",
+          "duration_months": 46,
+          "excess_months": 2,
+          "max_possible_months": 44,
+          "released_date": "2022-10-25",
+          "skill": "LangChain",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0002793",
+          "duration_months": 45,
+          "excess_months": 1,
+          "max_possible_months": 44,
+          "released_date": "2022-10-25",
+          "skill": "LangChain",
+          "summary_archetype": "generic_ml"
+        }
+      ],
+      "issue_count": 282,
+      "release": {
+        "age_months_as_of": 44,
+        "basis": "first PyPI release",
+        "released_date": "2022-10-25",
+        "source": "https://pypi.org/project/langchain/#history"
+      },
+      "unique_candidate_count": 282
+    },
+    "LlamaIndex": {
+      "candidate_count_with_skill": 1308,
+      "examples": [
+        {
+          "candidate_id": "CAND_0000903",
+          "duration_months": 41,
+          "excess_months": 1,
+          "max_possible_months": 40,
+          "released_date": "2023-02-16",
+          "skill": "LlamaIndex",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0001268",
+          "duration_months": 58,
+          "excess_months": 18,
+          "max_possible_months": 40,
+          "released_date": "2023-02-16",
+          "skill": "LlamaIndex",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0001435",
+          "duration_months": 60,
+          "excess_months": 20,
+          "max_possible_months": 40,
+          "released_date": "2023-02-16",
+          "skill": "LlamaIndex",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0001889",
+          "duration_months": 56,
+          "excess_months": 16,
+          "max_possible_months": 40,
+          "released_date": "2023-02-16",
+          "skill": "LlamaIndex",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0002553",
+          "duration_months": 60,
+          "excess_months": 20,
+          "max_possible_months": 40,
+          "released_date": "2023-02-16",
+          "skill": "LlamaIndex",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0003152",
+          "duration_months": 47,
+          "excess_months": 7,
+          "max_possible_months": 40,
+          "released_date": "2023-02-16",
+          "skill": "LlamaIndex",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0003611",
+          "duration_months": 42,
+          "excess_months": 2,
+          "max_possible_months": 40,
+          "released_date": "2023-02-16",
+          "skill": "LlamaIndex",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0004492",
+          "duration_months": 45,
+          "excess_months": 5,
+          "max_possible_months": 40,
+          "released_date": "2023-02-16",
+          "skill": "LlamaIndex",
+          "summary_archetype": "general_software"
+        }
+      ],
+      "issue_count": 341,
+      "release": {
+        "age_months_as_of": 40,
+        "basis": "first PyPI release under llama-index",
+        "released_date": "2023-02-16",
+        "source": "https://pypi.org/project/llama-index/#history"
+      },
+      "unique_candidate_count": 341
+    },
+    "LoRA": {
+      "candidate_count_with_skill": 1371,
+      "examples": [
+        {
+          "candidate_id": "CAND_0006557",
+          "duration_months": 80,
+          "excess_months": 20,
+          "max_possible_months": 60,
+          "released_date": "2021-06-01",
+          "skill": "LoRA",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0007460",
+          "duration_months": 68,
+          "excess_months": 8,
+          "max_possible_months": 60,
+          "released_date": "2021-06-01",
+          "skill": "LoRA",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0009024",
+          "duration_months": 72,
+          "excess_months": 12,
+          "max_possible_months": 60,
+          "released_date": "2021-06-01",
+          "skill": "LoRA",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0009691",
+          "duration_months": 89,
+          "excess_months": 29,
+          "max_possible_months": 60,
+          "released_date": "2021-06-01",
+          "skill": "LoRA",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0011162",
+          "duration_months": 76,
+          "excess_months": 16,
+          "max_possible_months": 60,
+          "released_date": "2021-06-01",
+          "skill": "LoRA",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0020350",
+          "duration_months": 75,
+          "excess_months": 15,
+          "max_possible_months": 60,
+          "released_date": "2021-06-01",
+          "skill": "LoRA",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0024466",
+          "duration_months": 92,
+          "excess_months": 32,
+          "max_possible_months": 60,
+          "released_date": "2021-06-01",
+          "skill": "LoRA",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0027691",
+          "duration_months": 72,
+          "excess_months": 12,
+          "max_possible_months": 60,
+          "released_date": "2021-06-01",
+          "skill": "LoRA",
+          "summary_archetype": "applied_ml"
+        }
+      ],
+      "issue_count": 24,
+      "release": {
+        "age_months_as_of": 60,
+        "basis": "paper month",
+        "released_date": "2021-06-01",
+        "source": "https://arxiv.org/abs/2106.09685"
+      },
+      "unique_candidate_count": 24
+    },
+    "Milvus": {
+      "candidate_count_with_skill": 1384,
+      "examples": [
+        {
+          "candidate_id": "CAND_0030468",
+          "duration_months": 85,
+          "excess_months": 1,
+          "max_possible_months": 84,
+          "released_date": "2019-06-16",
+          "skill": "Milvus",
+          "summary_archetype": "senior_plain_language"
+        },
+        {
+          "candidate_id": "CAND_0049538",
+          "duration_months": 91,
+          "excess_months": 7,
+          "max_possible_months": 84,
+          "released_date": "2019-06-16",
+          "skill": "Milvus",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0058688",
+          "duration_months": 86,
+          "excess_months": 2,
+          "max_possible_months": 84,
+          "released_date": "2019-06-16",
+          "skill": "Milvus",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0074225",
+          "duration_months": 94,
+          "excess_months": 10,
+          "max_possible_months": 84,
+          "released_date": "2019-06-16",
+          "skill": "Milvus",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0081686",
+          "duration_months": 93,
+          "excess_months": 9,
+          "max_possible_months": 84,
+          "released_date": "2019-06-16",
+          "skill": "Milvus",
+          "summary_archetype": "applied_ml"
+        }
+      ],
+      "issue_count": 5,
+      "release": {
+        "age_months_as_of": 84,
+        "basis": "first PyPI client release",
+        "released_date": "2019-06-16",
+        "source": "https://pypi.org/project/pymilvus/#history"
+      },
+      "unique_candidate_count": 5
+    },
+    "OpenSearch": {
+      "candidate_count_with_skill": 1286,
+      "examples": [
+        {
+          "candidate_id": "CAND_0000014",
+          "duration_months": 59,
+          "excess_months": 2,
+          "max_possible_months": 57,
+          "released_date": "2021-09-20",
+          "skill": "OpenSearch",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0000508",
+          "duration_months": 59,
+          "excess_months": 2,
+          "max_possible_months": 57,
+          "released_date": "2021-09-20",
+          "skill": "OpenSearch",
+          "summary_archetype": "data_backend_adjacent"
+        },
+        {
+          "candidate_id": "CAND_0001237",
+          "duration_months": 58,
+          "excess_months": 1,
+          "max_possible_months": 57,
+          "released_date": "2021-09-20",
+          "skill": "OpenSearch",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0004754",
+          "duration_months": 58,
+          "excess_months": 1,
+          "max_possible_months": 57,
+          "released_date": "2021-09-20",
+          "skill": "OpenSearch",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0005193",
+          "duration_months": 59,
+          "excess_months": 2,
+          "max_possible_months": 57,
+          "released_date": "2021-09-20",
+          "skill": "OpenSearch",
+          "summary_archetype": "data_backend_adjacent"
+        },
+        {
+          "candidate_id": "CAND_0006557",
+          "duration_months": 72,
+          "excess_months": 15,
+          "max_possible_months": 57,
+          "released_date": "2021-09-20",
+          "skill": "OpenSearch",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0007009",
+          "duration_months": 96,
+          "excess_months": 39,
+          "max_possible_months": 57,
+          "released_date": "2021-09-20",
+          "skill": "OpenSearch",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0007411",
+          "duration_months": 86,
+          "excess_months": 29,
+          "max_possible_months": 57,
+          "released_date": "2021-09-20",
+          "skill": "OpenSearch",
+          "summary_archetype": "senior_explicit_ai"
+        }
+      ],
+      "issue_count": 77,
+      "release": {
+        "age_months_as_of": 57,
+        "basis": "first PyPI client release",
+        "released_date": "2021-09-20",
+        "source": "https://pypi.org/project/opensearch-py/#history"
+      },
+      "unique_candidate_count": 77
+    },
+    "PEFT": {
+      "candidate_count_with_skill": 1377,
+      "examples": [
+        {
+          "candidate_id": "CAND_0000182",
+          "duration_months": 55,
+          "excess_months": 14,
+          "max_possible_months": 41,
+          "released_date": "2023-01-19",
+          "skill": "PEFT",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0000467",
+          "duration_months": 53,
+          "excess_months": 12,
+          "max_possible_months": 41,
+          "released_date": "2023-01-19",
+          "skill": "PEFT",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0000705",
+          "duration_months": 59,
+          "excess_months": 18,
+          "max_possible_months": 41,
+          "released_date": "2023-01-19",
+          "skill": "PEFT",
+          "summary_archetype": "generic_ml"
+        },
+        {
+          "candidate_id": "CAND_0001227",
+          "duration_months": 43,
+          "excess_months": 2,
+          "max_possible_months": 41,
+          "released_date": "2023-01-19",
+          "skill": "PEFT",
+          "summary_archetype": "data_backend_adjacent"
+        },
+        {
+          "candidate_id": "CAND_0001405",
+          "duration_months": 49,
+          "excess_months": 8,
+          "max_possible_months": 41,
+          "released_date": "2023-01-19",
+          "skill": "PEFT",
+          "summary_archetype": "generic_ml"
+        },
+        {
+          "candidate_id": "CAND_0001475",
+          "duration_months": 44,
+          "excess_months": 3,
+          "max_possible_months": 41,
+          "released_date": "2023-01-19",
+          "skill": "PEFT",
+          "summary_archetype": "data_backend_adjacent"
+        },
+        {
+          "candidate_id": "CAND_0002184",
+          "duration_months": 54,
+          "excess_months": 13,
+          "max_possible_months": 41,
+          "released_date": "2023-01-19",
+          "skill": "PEFT",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0002426",
+          "duration_months": 55,
+          "excess_months": 14,
+          "max_possible_months": 41,
+          "released_date": "2023-01-19",
+          "skill": "PEFT",
+          "summary_archetype": "generic_ml"
+        }
+      ],
+      "issue_count": 315,
+      "release": {
+        "age_months_as_of": 41,
+        "basis": "first PyPI release",
+        "released_date": "2023-01-19",
+        "source": "https://pypi.org/project/peft/#history"
+      },
+      "unique_candidate_count": 315
+    },
+    "Pinecone": {
+      "candidate_count_with_skill": 5062,
+      "examples": [
+        {
+          "candidate_id": "CAND_0000031",
+          "duration_months": 88,
+          "excess_months": 22,
+          "max_possible_months": 66,
+          "released_date": "2020-12-31",
+          "skill": "Pinecone",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0001610",
+          "duration_months": 72,
+          "excess_months": 6,
+          "max_possible_months": 66,
+          "released_date": "2020-12-31",
+          "skill": "Pinecone",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0007412",
+          "duration_months": 96,
+          "excess_months": 30,
+          "max_possible_months": 66,
+          "released_date": "2020-12-31",
+          "skill": "Pinecone",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0011162",
+          "duration_months": 78,
+          "excess_months": 12,
+          "max_possible_months": 66,
+          "released_date": "2020-12-31",
+          "skill": "Pinecone",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0015578",
+          "duration_months": 90,
+          "excess_months": 24,
+          "max_possible_months": 66,
+          "released_date": "2020-12-31",
+          "skill": "Pinecone",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0022812",
+          "duration_months": 89,
+          "excess_months": 23,
+          "max_possible_months": 66,
+          "released_date": "2020-12-31",
+          "skill": "Pinecone",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0037566",
+          "duration_months": 74,
+          "excess_months": 8,
+          "max_possible_months": 66,
+          "released_date": "2020-12-31",
+          "skill": "Pinecone",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0042100",
+          "duration_months": 69,
+          "excess_months": 3,
+          "max_possible_months": 66,
+          "released_date": "2020-12-31",
+          "skill": "Pinecone",
+          "summary_archetype": "applied_ml"
+        }
+      ],
+      "issue_count": 18,
+      "release": {
+        "age_months_as_of": 66,
+        "basis": "first PyPI client release",
+        "released_date": "2020-12-31",
+        "source": "https://pypi.org/project/pinecone-client/#history"
+      },
+      "unique_candidate_count": 18
+    },
+    "PyTorch": {
+      "candidate_count_with_skill": 1378,
+      "examples": [],
+      "issue_count": 0,
+      "release": {
+        "age_months_as_of": 113,
+        "basis": "public project release",
+        "released_date": "2017-01-19",
+        "source": "https://pytorch.org/blog/a-year-in/"
+      },
+      "unique_candidate_count": 0
+    },
+    "QLoRA": {
+      "candidate_count_with_skill": 1401,
+      "examples": [
+        {
+          "candidate_id": "CAND_0001405",
+          "duration_months": 53,
+          "excess_months": 16,
+          "max_possible_months": 37,
+          "released_date": "2023-05-23",
+          "skill": "QLoRA",
+          "summary_archetype": "generic_ml"
+        },
+        {
+          "candidate_id": "CAND_0002025",
+          "duration_months": 81,
+          "excess_months": 44,
+          "max_possible_months": 37,
+          "released_date": "2023-05-23",
+          "skill": "QLoRA",
+          "summary_archetype": "senior_explicit_ai"
+        },
+        {
+          "candidate_id": "CAND_0002436",
+          "duration_months": 43,
+          "excess_months": 6,
+          "max_possible_months": 37,
+          "released_date": "2023-05-23",
+          "skill": "QLoRA",
+          "summary_archetype": "data_backend_adjacent"
+        },
+        {
+          "candidate_id": "CAND_0002665",
+          "duration_months": 52,
+          "excess_months": 15,
+          "max_possible_months": 37,
+          "released_date": "2023-05-23",
+          "skill": "QLoRA",
+          "summary_archetype": "data_backend_adjacent"
+        },
+        {
+          "candidate_id": "CAND_0002866",
+          "duration_months": 43,
+          "excess_months": 6,
+          "max_possible_months": 37,
+          "released_date": "2023-05-23",
+          "skill": "QLoRA",
+          "summary_archetype": "data_backend_adjacent"
+        },
+        {
+          "candidate_id": "CAND_0003027",
+          "duration_months": 59,
+          "excess_months": 22,
+          "max_possible_months": 37,
+          "released_date": "2023-05-23",
+          "skill": "QLoRA",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0003089",
+          "duration_months": 53,
+          "excess_months": 16,
+          "max_possible_months": 37,
+          "released_date": "2023-05-23",
+          "skill": "QLoRA",
+          "summary_archetype": "general_software"
+        },
+        {
+          "candidate_id": "CAND_0003290",
+          "duration_months": 47,
+          "excess_months": 10,
+          "max_possible_months": 37,
+          "released_date": "2023-05-23",
+          "skill": "QLoRA",
+          "summary_archetype": "generic_ml"
+        }
+      ],
+      "issue_count": 414,
+      "release": {
+        "age_months_as_of": 37,
+        "basis": "paper date",
+        "released_date": "2023-05-23",
+        "source": "https://arxiv.org/abs/2305.14314"
+      },
+      "unique_candidate_count": 414
+    },
+    "Qdrant": {
+      "candidate_count_with_skill": 1379,
+      "examples": [
+        {
+          "candidate_id": "CAND_0006557",
+          "duration_months": 74,
+          "excess_months": 10,
+          "max_possible_months": 64,
+          "released_date": "2021-02-09",
+          "skill": "Qdrant",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0008425",
+          "duration_months": 92,
+          "excess_months": 28,
+          "max_possible_months": 64,
+          "released_date": "2021-02-09",
+          "skill": "Qdrant",
+          "summary_archetype": "senior_explicit_ai"
+        },
+        {
+          "candidate_id": "CAND_0018549",
+          "duration_months": 74,
+          "excess_months": 10,
+          "max_possible_months": 64,
+          "released_date": "2021-02-09",
+          "skill": "Qdrant",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0022812",
+          "duration_months": 91,
+          "excess_months": 27,
+          "max_possible_months": 64,
+          "released_date": "2021-02-09",
+          "skill": "Qdrant",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0030827",
+          "duration_months": 70,
+          "excess_months": 6,
+          "max_possible_months": 64,
+          "released_date": "2021-02-09",
+          "skill": "Qdrant",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0030953",
+          "duration_months": 86,
+          "excess_months": 22,
+          "max_possible_months": 64,
+          "released_date": "2021-02-09",
+          "skill": "Qdrant",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0039754",
+          "duration_months": 67,
+          "excess_months": 3,
+          "max_possible_months": 64,
+          "released_date": "2021-02-09",
+          "skill": "Qdrant",
+          "summary_archetype": "senior_explicit_ai"
+        },
+        {
+          "candidate_id": "CAND_0041611",
+          "duration_months": 70,
+          "excess_months": 6,
+          "max_possible_months": 64,
+          "released_date": "2021-02-09",
+          "skill": "Qdrant",
+          "summary_archetype": "senior_explicit_ai"
+        }
+      ],
+      "issue_count": 25,
+      "release": {
+        "age_months_as_of": 64,
+        "basis": "first PyPI client release",
+        "released_date": "2021-02-09",
+        "source": "https://pypi.org/project/qdrant-client/#history"
+      },
+      "unique_candidate_count": 25
+    },
+    "React": {
+      "candidate_count_with_skill": 11811,
+      "examples": [],
+      "issue_count": 0,
+      "release": {
+        "age_months_as_of": 157,
+        "basis": "open-source announcement",
+        "released_date": "2013-05-29",
+        "source": "https://legacy.reactjs.org/blog/2013/06/05/why-react.html"
+      },
+      "unique_candidate_count": 0
+    },
+    "Sentence Transformers": {
+      "candidate_count_with_skill": 5081,
+      "examples": [
+        {
+          "candidate_id": "CAND_0008425",
+          "duration_months": 96,
+          "excess_months": 13,
+          "max_possible_months": 83,
+          "released_date": "2019-07-25",
+          "skill": "Sentence Transformers",
+          "summary_archetype": "senior_explicit_ai"
+        },
+        {
+          "candidate_id": "CAND_0022812",
+          "duration_months": 86,
+          "excess_months": 3,
+          "max_possible_months": 83,
+          "released_date": "2019-07-25",
+          "skill": "Sentence Transformers",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0029367",
+          "duration_months": 95,
+          "excess_months": 12,
+          "max_possible_months": 83,
+          "released_date": "2019-07-25",
+          "skill": "Sentence Transformers",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0036184",
+          "duration_months": 94,
+          "excess_months": 11,
+          "max_possible_months": 83,
+          "released_date": "2019-07-25",
+          "skill": "Sentence Transformers",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0036437",
+          "duration_months": 93,
+          "excess_months": 10,
+          "max_possible_months": 83,
+          "released_date": "2019-07-25",
+          "skill": "Sentence Transformers",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0078042",
+          "duration_months": 91,
+          "excess_months": 8,
+          "max_possible_months": 83,
+          "released_date": "2019-07-25",
+          "skill": "Sentence Transformers",
+          "summary_archetype": "applied_ml"
+        }
+      ],
+      "issue_count": 6,
+      "release": {
+        "age_months_as_of": 83,
+        "basis": "first PyPI release",
+        "released_date": "2019-07-25",
+        "source": "https://pypi.org/project/sentence-transformers/#history"
+      },
+      "unique_candidate_count": 6
+    },
+    "TensorFlow": {
+      "candidate_count_with_skill": 1381,
+      "examples": [],
+      "issue_count": 0,
+      "release": {
+        "age_months_as_of": 127,
+        "basis": "open-source announcement",
+        "released_date": "2015-11-09",
+        "source": "https://opensource.googleblog.com/2015/11/tensorflow-smarter-machine-learning-for.html"
+      },
+      "unique_candidate_count": 0
+    },
+    "Weaviate": {
+      "candidate_count_with_skill": 1389,
+      "examples": [
+        {
+          "candidate_id": "CAND_0006418",
+          "duration_months": 93,
+          "excess_months": 14,
+          "max_possible_months": 79,
+          "released_date": "2019-11-04",
+          "skill": "Weaviate",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0018499",
+          "duration_months": 88,
+          "excess_months": 9,
+          "max_possible_months": 79,
+          "released_date": "2019-11-04",
+          "skill": "Weaviate",
+          "summary_archetype": "senior_explicit_ai"
+        },
+        {
+          "candidate_id": "CAND_0018722",
+          "duration_months": 86,
+          "excess_months": 7,
+          "max_possible_months": 79,
+          "released_date": "2019-11-04",
+          "skill": "Weaviate",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0030953",
+          "duration_months": 82,
+          "excess_months": 3,
+          "max_possible_months": 79,
+          "released_date": "2019-11-04",
+          "skill": "Weaviate",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0039521",
+          "duration_months": 88,
+          "excess_months": 9,
+          "max_possible_months": 79,
+          "released_date": "2019-11-04",
+          "skill": "Weaviate",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0041568",
+          "duration_months": 81,
+          "excess_months": 2,
+          "max_possible_months": 79,
+          "released_date": "2019-11-04",
+          "skill": "Weaviate",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0071115",
+          "duration_months": 96,
+          "excess_months": 17,
+          "max_possible_months": 79,
+          "released_date": "2019-11-04",
+          "skill": "Weaviate",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0075574",
+          "duration_months": 82,
+          "excess_months": 3,
+          "max_possible_months": 79,
+          "released_date": "2019-11-04",
+          "skill": "Weaviate",
+          "summary_archetype": "applied_ml"
+        }
+      ],
+      "issue_count": 8,
+      "release": {
+        "age_months_as_of": 79,
+        "basis": "first PyPI client release",
+        "released_date": "2019-11-04",
+        "source": "https://pypi.org/project/weaviate-client/#history"
+      },
+      "unique_candidate_count": 8
+    },
+    "pgvector": {
+      "candidate_count_with_skill": 1394,
+      "examples": [
+        {
+          "candidate_id": "CAND_0005538",
+          "duration_months": 91,
+          "excess_months": 31,
+          "max_possible_months": 60,
+          "released_date": "2021-06-12",
+          "skill": "pgvector",
+          "summary_archetype": "senior_plain_language"
+        },
+        {
+          "candidate_id": "CAND_0011432",
+          "duration_months": 65,
+          "excess_months": 5,
+          "max_possible_months": 60,
+          "released_date": "2021-06-12",
+          "skill": "pgvector",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0016163",
+          "duration_months": 64,
+          "excess_months": 4,
+          "max_possible_months": 60,
+          "released_date": "2021-06-12",
+          "skill": "pgvector",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0030348",
+          "duration_months": 94,
+          "excess_months": 34,
+          "max_possible_months": 60,
+          "released_date": "2021-06-12",
+          "skill": "pgvector",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0039383",
+          "duration_months": 94,
+          "excess_months": 34,
+          "max_possible_months": 60,
+          "released_date": "2021-06-12",
+          "skill": "pgvector",
+          "summary_archetype": "applied_ml"
+        },
+        {
+          "candidate_id": "CAND_0039754",
+          "duration_months": 70,
+          "excess_months": 10,
+          "max_possible_months": 60,
+          "released_date": "2021-06-12",
+          "skill": "pgvector",
+          "summary_archetype": "senior_explicit_ai"
+        },
+        {
+          "candidate_id": "CAND_0041611",
+          "duration_months": 62,
+          "excess_months": 2,
+          "max_possible_months": 60,
+          "released_date": "2021-06-12",
+          "skill": "pgvector",
+          "summary_archetype": "senior_explicit_ai"
+        },
+        {
+          "candidate_id": "CAND_0043228",
+          "duration_months": 76,
+          "excess_months": 16,
+          "max_possible_months": 60,
+          "released_date": "2021-06-12",
+          "skill": "pgvector",
+          "summary_archetype": "applied_ml"
+        }
+      ],
+      "issue_count": 16,
+      "release": {
+        "age_months_as_of": 60,
+        "basis": "first PyPI package release",
+        "released_date": "2021-06-12",
+        "source": "https://pypi.org/project/pgvector/#history"
+      },
+      "unique_candidate_count": 16
+    },
+    "scikit-learn": {
+      "candidate_count_with_skill": 1288,
+      "examples": [],
+      "issue_count": 0,
+      "release": {
+        "age_months_as_of": 196,
+        "basis": "conservative project-era date",
+        "released_date": "2010-02-01",
+        "source": "https://scikit-learn.org/stable/about.html"
+      },
+      "unique_candidate_count": 0
+    }
+  },
+  "candidate_count": 100000,
+  "checked_skill_mentions": 91050,
+  "frozen_idea2_top100": {
+    "issue_candidate_count": 81,
+    "issue_candidates": [
+      {
+        "candidate_id": "CAND_0088025",
+        "issues": [
+          {
+            "duration_months": 83,
+            "excess_months": 46,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 61,
+            "excess_months": 1,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          }
+        ],
+        "rank": 1
+      },
+      {
+        "candidate_id": "CAND_0039754",
+        "issues": [
+          {
+            "duration_months": 67,
+            "excess_months": 3,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 71,
+            "excess_months": 14,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 70,
+            "excess_months": 10,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          }
+        ],
+        "rank": 2
+      },
+      {
+        "candidate_id": "CAND_0037980",
+        "issues": [
+          {
+            "duration_months": 75,
+            "excess_months": 15,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          }
+        ],
+        "rank": 4
+      },
+      {
+        "candidate_id": "CAND_0008425",
+        "issues": [
+          {
+            "duration_months": 92,
+            "excess_months": 28,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 96,
+            "excess_months": 13,
+            "max_possible_months": 83,
+            "released_date": "2019-07-25",
+            "skill": "Sentence Transformers"
+          },
+          {
+            "duration_months": 93,
+            "excess_months": 14,
+            "max_possible_months": 79,
+            "released_date": "2019-11-28",
+            "skill": "Haystack"
+          }
+        ],
+        "rank": 6
+      },
+      {
+        "candidate_id": "CAND_0086022",
+        "issues": [
+          {
+            "duration_months": 78,
+            "excess_months": 18,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 54,
+            "excess_months": 17,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 46,
+            "excess_months": 2,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 7
+      },
+      {
+        "candidate_id": "CAND_0005538",
+        "issues": [
+          {
+            "duration_months": 58,
+            "excess_months": 21,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 91,
+            "excess_months": 31,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          }
+        ],
+        "rank": 8
+      },
+      {
+        "candidate_id": "CAND_0068351",
+        "issues": [
+          {
+            "duration_months": 77,
+            "excess_months": 17,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 78,
+            "excess_months": 14,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 53,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 9
+      },
+      {
+        "candidate_id": "CAND_0030468",
+        "issues": [
+          {
+            "duration_months": 95,
+            "excess_months": 38,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 85,
+            "excess_months": 1,
+            "max_possible_months": 84,
+            "released_date": "2019-06-16",
+            "skill": "Milvus"
+          }
+        ],
+        "rank": 10
+      },
+      {
+        "candidate_id": "CAND_0080766",
+        "issues": [
+          {
+            "duration_months": 71,
+            "excess_months": 11,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 55,
+            "excess_months": 18,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 12
+      },
+      {
+        "candidate_id": "CAND_0046525",
+        "issues": [
+          {
+            "duration_months": 66,
+            "excess_months": 26,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 13
+      },
+      {
+        "candidate_id": "CAND_0046064",
+        "issues": [
+          {
+            "duration_months": 85,
+            "excess_months": 19,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          },
+          {
+            "duration_months": 92,
+            "excess_months": 51,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          },
+          {
+            "duration_months": 45,
+            "excess_months": 8,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 14
+      },
+      {
+        "candidate_id": "CAND_0077337",
+        "issues": [
+          {
+            "duration_months": 47,
+            "excess_months": 10,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 75,
+            "excess_months": 15,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 47,
+            "excess_months": 7,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 16
+      },
+      {
+        "candidate_id": "CAND_0041611",
+        "issues": [
+          {
+            "duration_months": 70,
+            "excess_months": 6,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 62,
+            "excess_months": 2,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 90,
+            "excess_months": 46,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 61,
+            "excess_months": 24,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 17
+      },
+      {
+        "candidate_id": "CAND_0093193",
+        "issues": [
+          {
+            "duration_months": 88,
+            "excess_months": 31,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          }
+        ],
+        "rank": 18
+      },
+      {
+        "candidate_id": "CAND_0092278",
+        "issues": [
+          {
+            "duration_months": 79,
+            "excess_months": 42,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 73,
+            "excess_months": 13,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 65,
+            "excess_months": 24,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 21
+      },
+      {
+        "candidate_id": "CAND_0068811",
+        "issues": [
+          {
+            "duration_months": 70,
+            "excess_months": 6,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 86,
+            "excess_months": 20,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          },
+          {
+            "duration_months": 70,
+            "excess_months": 13,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          }
+        ],
+        "rank": 22
+      },
+      {
+        "candidate_id": "CAND_0007009",
+        "issues": [
+          {
+            "duration_months": 69,
+            "excess_months": 28,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          },
+          {
+            "duration_months": 58,
+            "excess_months": 21,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 96,
+            "excess_months": 39,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          }
+        ],
+        "rank": 23
+      },
+      {
+        "candidate_id": "CAND_0079387",
+        "issues": [
+          {
+            "duration_months": 87,
+            "excess_months": 30,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 83,
+            "excess_months": 46,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 85,
+            "excess_months": 25,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          }
+        ],
+        "rank": 24
+      },
+      {
+        "candidate_id": "CAND_0051004",
+        "issues": [
+          {
+            "duration_months": 47,
+            "excess_months": 6,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 25
+      },
+      {
+        "candidate_id": "CAND_0064270",
+        "issues": [
+          {
+            "duration_months": 60,
+            "excess_months": 20,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 96,
+            "excess_months": 5,
+            "max_possible_months": 91,
+            "released_date": "2018-11-17",
+            "skill": "Hugging Face Transformers"
+          },
+          {
+            "duration_months": 59,
+            "excess_months": 2,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 15,
+            "max_possible_months": 79,
+            "released_date": "2019-11-28",
+            "skill": "Haystack"
+          }
+        ],
+        "rank": 26
+      },
+      {
+        "candidate_id": "CAND_0037944",
+        "issues": [
+          {
+            "duration_months": 58,
+            "excess_months": 21,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 84,
+            "excess_months": 27,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 81,
+            "excess_months": 41,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 27
+      },
+      {
+        "candidate_id": "CAND_0052328",
+        "issues": [
+          {
+            "duration_months": 54,
+            "excess_months": 17,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 28
+      },
+      {
+        "candidate_id": "CAND_0074225",
+        "issues": [
+          {
+            "duration_months": 94,
+            "excess_months": 10,
+            "max_possible_months": 84,
+            "released_date": "2019-06-16",
+            "skill": "Milvus"
+          },
+          {
+            "duration_months": 51,
+            "excess_months": 14,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 29
+      },
+      {
+        "candidate_id": "CAND_0087630",
+        "issues": [
+          {
+            "duration_months": 92,
+            "excess_months": 55,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 30
+      },
+      {
+        "candidate_id": "CAND_0041669",
+        "issues": [
+          {
+            "duration_months": 51,
+            "excess_months": 10,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 31
+      },
+      {
+        "candidate_id": "CAND_0027691",
+        "issues": [
+          {
+            "duration_months": 72,
+            "excess_months": 12,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 46,
+            "excess_months": 9,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 32
+      },
+      {
+        "candidate_id": "CAND_0011162",
+        "issues": [
+          {
+            "duration_months": 83,
+            "excess_months": 39,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 76,
+            "excess_months": 16,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 89,
+            "excess_months": 32,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 78,
+            "excess_months": 12,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          }
+        ],
+        "rank": 33
+      },
+      {
+        "candidate_id": "CAND_0084819",
+        "issues": [
+          {
+            "duration_months": 78,
+            "excess_months": 21,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 45,
+            "excess_months": 5,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 86,
+            "excess_months": 26,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          }
+        ],
+        "rank": 34
+      },
+      {
+        "candidate_id": "CAND_0065195",
+        "issues": [
+          {
+            "duration_months": 93,
+            "excess_months": 56,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 30,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 44,
+            "excess_months": 4,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 35
+      },
+      {
+        "candidate_id": "CAND_0039383",
+        "issues": [
+          {
+            "duration_months": 71,
+            "excess_months": 34,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 34,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          }
+        ],
+        "rank": 36
+      },
+      {
+        "candidate_id": "CAND_0030348",
+        "issues": [
+          {
+            "duration_months": 96,
+            "excess_months": 56,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 34,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 95,
+            "excess_months": 16,
+            "max_possible_months": 79,
+            "released_date": "2019-11-28",
+            "skill": "Haystack"
+          }
+        ],
+        "rank": 37
+      },
+      {
+        "candidate_id": "CAND_0005649",
+        "issues": [
+          {
+            "duration_months": 39,
+            "excess_months": 2,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 38
+      },
+      {
+        "candidate_id": "CAND_0075249",
+        "issues": [
+          {
+            "duration_months": 80,
+            "excess_months": 14,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          }
+        ],
+        "rank": 40
+      },
+      {
+        "candidate_id": "CAND_0096172",
+        "issues": [
+          {
+            "duration_months": 79,
+            "excess_months": 35,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 76,
+            "excess_months": 12,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          }
+        ],
+        "rank": 44
+      },
+      {
+        "candidate_id": "CAND_0042029",
+        "issues": [
+          {
+            "duration_months": 96,
+            "excess_months": 39,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          }
+        ],
+        "rank": 45
+      },
+      {
+        "candidate_id": "CAND_0054123",
+        "issues": [
+          {
+            "duration_months": 82,
+            "excess_months": 38,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 75,
+            "excess_months": 15,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 75,
+            "excess_months": 11,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          }
+        ],
+        "rank": 46
+      },
+      {
+        "candidate_id": "CAND_0031593",
+        "issues": [
+          {
+            "duration_months": 82,
+            "excess_months": 3,
+            "max_possible_months": 79,
+            "released_date": "2019-11-28",
+            "skill": "Haystack"
+          },
+          {
+            "duration_months": 73,
+            "excess_months": 29,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 47
+      },
+      {
+        "candidate_id": "CAND_0012957",
+        "issues": [
+          {
+            "duration_months": 61,
+            "excess_months": 17,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 48
+      },
+      {
+        "candidate_id": "CAND_0030031",
+        "issues": [
+          {
+            "duration_months": 95,
+            "excess_months": 35,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 61,
+            "excess_months": 24,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 49
+      },
+      {
+        "candidate_id": "CAND_0044855",
+        "issues": [
+          {
+            "duration_months": 81,
+            "excess_months": 24,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 71,
+            "excess_months": 34,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 74,
+            "excess_months": 10,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          }
+        ],
+        "rank": 50
+      },
+      {
+        "candidate_id": "CAND_0069905",
+        "issues": [
+          {
+            "duration_months": 56,
+            "excess_months": 12,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 51
+      },
+      {
+        "candidate_id": "CAND_0009691",
+        "issues": [
+          {
+            "duration_months": 89,
+            "excess_months": 29,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 85,
+            "excess_months": 41,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 44,
+            "excess_months": 7,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 52
+      },
+      {
+        "candidate_id": "CAND_0061265",
+        "issues": [
+          {
+            "duration_months": 76,
+            "excess_months": 12,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 53,
+            "excess_months": 9,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 56,
+            "excess_months": 19,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 53
+      },
+      {
+        "candidate_id": "CAND_0020877",
+        "issues": [
+          {
+            "duration_months": 83,
+            "excess_months": 46,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 54,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 62,
+            "excess_months": 21,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 54
+      },
+      {
+        "candidate_id": "CAND_0055992",
+        "issues": [
+          {
+            "duration_months": 53,
+            "excess_months": 9,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 55
+      },
+      {
+        "candidate_id": "CAND_0043228",
+        "issues": [
+          {
+            "duration_months": 76,
+            "excess_months": 16,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          }
+        ],
+        "rank": 56
+      },
+      {
+        "candidate_id": "CAND_0028793",
+        "issues": [
+          {
+            "duration_months": 92,
+            "excess_months": 32,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 43,
+            "excess_months": 6,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 58
+      },
+      {
+        "candidate_id": "CAND_0045250",
+        "issues": [
+          {
+            "duration_months": 85,
+            "excess_months": 41,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 74,
+            "excess_months": 33,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          },
+          {
+            "duration_months": 76,
+            "excess_months": 12,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          }
+        ],
+        "rank": 59
+      },
+      {
+        "candidate_id": "CAND_0000031",
+        "issues": [
+          {
+            "duration_months": 88,
+            "excess_months": 22,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          }
+        ],
+        "rank": 60
+      },
+      {
+        "candidate_id": "CAND_0092245",
+        "issues": [
+          {
+            "duration_months": 56,
+            "excess_months": 16,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 62
+      },
+      {
+        "candidate_id": "CAND_0099401",
+        "issues": [
+          {
+            "duration_months": 71,
+            "excess_months": 7,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 80,
+            "excess_months": 1,
+            "max_possible_months": 79,
+            "released_date": "2019-11-28",
+            "skill": "Haystack"
+          },
+          {
+            "duration_months": 81,
+            "excess_months": 41,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 64
+      },
+      {
+        "candidate_id": "CAND_0079284",
+        "issues": [
+          {
+            "duration_months": 38,
+            "excess_months": 1,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 65,
+            "excess_months": 25,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 65
+      },
+      {
+        "candidate_id": "CAND_0013536",
+        "issues": [
+          {
+            "duration_months": 74,
+            "excess_months": 37,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 82,
+            "excess_months": 42,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 66
+      },
+      {
+        "candidate_id": "CAND_0081686",
+        "issues": [
+          {
+            "duration_months": 93,
+            "excess_months": 9,
+            "max_possible_months": 84,
+            "released_date": "2019-06-16",
+            "skill": "Milvus"
+          },
+          {
+            "duration_months": 48,
+            "excess_months": 4,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 75,
+            "excess_months": 38,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 67
+      },
+      {
+        "candidate_id": "CAND_0042506",
+        "issues": [
+          {
+            "duration_months": 71,
+            "excess_months": 30,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 68
+      },
+      {
+        "candidate_id": "CAND_0091909",
+        "issues": [
+          {
+            "duration_months": 84,
+            "excess_months": 18,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          },
+          {
+            "duration_months": 89,
+            "excess_months": 52,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 59,
+            "excess_months": 2,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 3,
+            "max_possible_months": 91,
+            "released_date": "2018-11-17",
+            "skill": "Hugging Face Transformers"
+          },
+          {
+            "duration_months": 92,
+            "excess_months": 48,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 69
+      },
+      {
+        "candidate_id": "CAND_0081852",
+        "issues": [
+          {
+            "duration_months": 76,
+            "excess_months": 16,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          }
+        ],
+        "rank": 70
+      },
+      {
+        "candidate_id": "CAND_0083307",
+        "issues": [
+          {
+            "duration_months": 92,
+            "excess_months": 51,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          },
+          {
+            "duration_months": 76,
+            "excess_months": 10,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          }
+        ],
+        "rank": 71
+      },
+      {
+        "candidate_id": "CAND_0058688",
+        "issues": [
+          {
+            "duration_months": 91,
+            "excess_months": 51,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 86,
+            "excess_months": 2,
+            "max_possible_months": 84,
+            "released_date": "2019-06-16",
+            "skill": "Milvus"
+          }
+        ],
+        "rank": 74
+      },
+      {
+        "candidate_id": "CAND_0006418",
+        "issues": [
+          {
+            "duration_months": 93,
+            "excess_months": 14,
+            "max_possible_months": 79,
+            "released_date": "2019-11-04",
+            "skill": "Weaviate"
+          }
+        ],
+        "rank": 75
+      },
+      {
+        "candidate_id": "CAND_0081053",
+        "issues": [
+          {
+            "duration_months": 39,
+            "excess_months": 2,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 77
+      },
+      {
+        "candidate_id": "CAND_0044222",
+        "issues": [
+          {
+            "duration_months": 82,
+            "excess_months": 42,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 75,
+            "excess_months": 18,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 90,
+            "excess_months": 46,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 60,
+            "excess_months": 23,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 78
+      },
+      {
+        "candidate_id": "CAND_0058575",
+        "issues": [
+          {
+            "duration_months": 41,
+            "excess_months": 1,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 84,
+            "excess_months": 18,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          },
+          {
+            "duration_months": 96,
+            "excess_months": 5,
+            "max_possible_months": 91,
+            "released_date": "2018-11-17",
+            "skill": "Hugging Face Transformers"
+          }
+        ],
+        "rank": 80
+      },
+      {
+        "candidate_id": "CAND_0086151",
+        "issues": [
+          {
+            "duration_months": 73,
+            "excess_months": 9,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 49,
+            "excess_months": 8,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 81
+      },
+      {
+        "candidate_id": "CAND_0049896",
+        "issues": [
+          {
+            "duration_months": 58,
+            "excess_months": 18,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 82
+      },
+      {
+        "candidate_id": "CAND_0057563",
+        "issues": [
+          {
+            "duration_months": 94,
+            "excess_months": 37,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 48,
+            "excess_months": 11,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 83
+      },
+      {
+        "candidate_id": "CAND_0010770",
+        "issues": [
+          {
+            "duration_months": 53,
+            "excess_months": 13,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 84
+      },
+      {
+        "candidate_id": "CAND_0074735",
+        "issues": [
+          {
+            "duration_months": 63,
+            "excess_months": 23,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 86
+      },
+      {
+        "candidate_id": "CAND_0039521",
+        "issues": [
+          {
+            "duration_months": 88,
+            "excess_months": 9,
+            "max_possible_months": 79,
+            "released_date": "2019-11-04",
+            "skill": "Weaviate"
+          }
+        ],
+        "rank": 87
+      },
+      {
+        "candidate_id": "CAND_0050876",
+        "issues": [
+          {
+            "duration_months": 41,
+            "excess_months": 1,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 59,
+            "excess_months": 2,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 58,
+            "excess_months": 21,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 88
+      },
+      {
+        "candidate_id": "CAND_0076904",
+        "issues": [
+          {
+            "duration_months": 61,
+            "excess_months": 4,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          }
+        ],
+        "rank": 89
+      },
+      {
+        "candidate_id": "CAND_0009837",
+        "issues": [
+          {
+            "duration_months": 76,
+            "excess_months": 39,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 91
+      },
+      {
+        "candidate_id": "CAND_0049538",
+        "issues": [
+          {
+            "duration_months": 41,
+            "excess_months": 1,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 64,
+            "excess_months": 7,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 91,
+            "excess_months": 7,
+            "max_possible_months": 84,
+            "released_date": "2019-06-16",
+            "skill": "Milvus"
+          },
+          {
+            "duration_months": 53,
+            "excess_months": 16,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 92
+      },
+      {
+        "candidate_id": "CAND_0009024",
+        "issues": [
+          {
+            "duration_months": 43,
+            "excess_months": 2,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          },
+          {
+            "duration_months": 47,
+            "excess_months": 7,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 90,
+            "excess_months": 33,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 72,
+            "excess_months": 12,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          }
+        ],
+        "rank": 93
+      },
+      {
+        "candidate_id": "CAND_0078002",
+        "issues": [
+          {
+            "duration_months": 69,
+            "excess_months": 29,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 90,
+            "excess_months": 53,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 94
+      },
+      {
+        "candidate_id": "CAND_0039838",
+        "issues": [
+          {
+            "duration_months": 54,
+            "excess_months": 10,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 93,
+            "excess_months": 33,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 40,
+            "excess_months": 3,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 95
+      },
+      {
+        "candidate_id": "CAND_0056881",
+        "issues": [
+          {
+            "duration_months": 76,
+            "excess_months": 10,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          }
+        ],
+        "rank": 96
+      },
+      {
+        "candidate_id": "CAND_0066376",
+        "issues": [
+          {
+            "duration_months": 93,
+            "excess_months": 53,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 97
+      },
+      {
+        "candidate_id": "CAND_0022812",
+        "issues": [
+          {
+            "duration_months": 89,
+            "excess_months": 23,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          },
+          {
+            "duration_months": 91,
+            "excess_months": 27,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 86,
+            "excess_months": 3,
+            "max_possible_months": 83,
+            "released_date": "2019-07-25",
+            "skill": "Sentence Transformers"
+          },
+          {
+            "duration_months": 48,
+            "excess_months": 4,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 98
+      },
+      {
+        "candidate_id": "CAND_0024466",
+        "issues": [
+          {
+            "duration_months": 92,
+            "excess_months": 32,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 59,
+            "excess_months": 18,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 99
+      },
+      {
+        "candidate_id": "CAND_0089552",
+        "issues": [
+          {
+            "duration_months": 68,
+            "excess_months": 4,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          }
+        ],
+        "rank": 100
+      }
+    ]
+  },
+  "interpretation_boundary": "Skill-duration chronology is a data-quality diagnostic, not a hard honeypot rule, because violations are broad across strong cohorts and occur in structured skill metadata.",
+  "issue_count": 1541,
+  "known_skill_release_count": 22,
+  "scan_version": "skill-tech-age-scan-0.1.0",
+  "team_qwen_top100": {
+    "issue_candidate_count": 81,
+    "issue_candidates": [
+      {
+        "candidate_id": "CAND_0039754",
+        "issues": [
+          {
+            "duration_months": 67,
+            "excess_months": 3,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 71,
+            "excess_months": 14,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 70,
+            "excess_months": 10,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          }
+        ],
+        "rank": 2
+      },
+      {
+        "candidate_id": "CAND_0041669",
+        "issues": [
+          {
+            "duration_months": 51,
+            "excess_months": 10,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 3
+      },
+      {
+        "candidate_id": "CAND_0068811",
+        "issues": [
+          {
+            "duration_months": 70,
+            "excess_months": 6,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 86,
+            "excess_months": 20,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          },
+          {
+            "duration_months": 70,
+            "excess_months": 13,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          }
+        ],
+        "rank": 5
+      },
+      {
+        "candidate_id": "CAND_0039383",
+        "issues": [
+          {
+            "duration_months": 71,
+            "excess_months": 34,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 34,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          }
+        ],
+        "rank": 6
+      },
+      {
+        "candidate_id": "CAND_0037980",
+        "issues": [
+          {
+            "duration_months": 75,
+            "excess_months": 15,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          }
+        ],
+        "rank": 7
+      },
+      {
+        "candidate_id": "CAND_0046525",
+        "issues": [
+          {
+            "duration_months": 66,
+            "excess_months": 26,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 8
+      },
+      {
+        "candidate_id": "CAND_0077337",
+        "issues": [
+          {
+            "duration_months": 47,
+            "excess_months": 10,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 75,
+            "excess_months": 15,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 47,
+            "excess_months": 7,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 9
+      },
+      {
+        "candidate_id": "CAND_0007009",
+        "issues": [
+          {
+            "duration_months": 69,
+            "excess_months": 28,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          },
+          {
+            "duration_months": 58,
+            "excess_months": 21,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 96,
+            "excess_months": 39,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          }
+        ],
+        "rank": 10
+      },
+      {
+        "candidate_id": "CAND_0028793",
+        "issues": [
+          {
+            "duration_months": 92,
+            "excess_months": 32,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 43,
+            "excess_months": 6,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 12
+      },
+      {
+        "candidate_id": "CAND_0080766",
+        "issues": [
+          {
+            "duration_months": 71,
+            "excess_months": 11,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 55,
+            "excess_months": 18,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 13
+      },
+      {
+        "candidate_id": "CAND_0086022",
+        "issues": [
+          {
+            "duration_months": 78,
+            "excess_months": 18,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 54,
+            "excess_months": 17,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 46,
+            "excess_months": 2,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 14
+      },
+      {
+        "candidate_id": "CAND_0062247",
+        "issues": [
+          {
+            "duration_months": 90,
+            "excess_months": 26,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 45,
+            "excess_months": 4,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 15
+      },
+      {
+        "candidate_id": "CAND_0093193",
+        "issues": [
+          {
+            "duration_months": 88,
+            "excess_months": 31,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          }
+        ],
+        "rank": 17
+      },
+      {
+        "candidate_id": "CAND_0000031",
+        "issues": [
+          {
+            "duration_months": 88,
+            "excess_months": 22,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          }
+        ],
+        "rank": 19
+      },
+      {
+        "candidate_id": "CAND_0006557",
+        "issues": [
+          {
+            "duration_months": 72,
+            "excess_months": 15,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 66,
+            "excess_months": 26,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 74,
+            "excess_months": 10,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 80,
+            "excess_months": 20,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          }
+        ],
+        "rank": 20
+      },
+      {
+        "candidate_id": "CAND_0088025",
+        "issues": [
+          {
+            "duration_months": 83,
+            "excess_months": 46,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 61,
+            "excess_months": 1,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          }
+        ],
+        "rank": 21
+      },
+      {
+        "candidate_id": "CAND_0008425",
+        "issues": [
+          {
+            "duration_months": 92,
+            "excess_months": 28,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 96,
+            "excess_months": 13,
+            "max_possible_months": 83,
+            "released_date": "2019-07-25",
+            "skill": "Sentence Transformers"
+          },
+          {
+            "duration_months": 93,
+            "excess_months": 14,
+            "max_possible_months": 79,
+            "released_date": "2019-11-28",
+            "skill": "Haystack"
+          }
+        ],
+        "rank": 22
+      },
+      {
+        "candidate_id": "CAND_0050454",
+        "issues": [
+          {
+            "duration_months": 87,
+            "excess_months": 50,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 73,
+            "excess_months": 13,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          }
+        ],
+        "rank": 23
+      },
+      {
+        "candidate_id": "CAND_0055992",
+        "issues": [
+          {
+            "duration_months": 53,
+            "excess_months": 9,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 24
+      },
+      {
+        "candidate_id": "CAND_0068351",
+        "issues": [
+          {
+            "duration_months": 77,
+            "excess_months": 17,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 78,
+            "excess_months": 14,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 53,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 25
+      },
+      {
+        "candidate_id": "CAND_0092278",
+        "issues": [
+          {
+            "duration_months": 79,
+            "excess_months": 42,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 73,
+            "excess_months": 13,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 65,
+            "excess_months": 24,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 26
+      },
+      {
+        "candidate_id": "CAND_0005649",
+        "issues": [
+          {
+            "duration_months": 39,
+            "excess_months": 2,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 27
+      },
+      {
+        "candidate_id": "CAND_0046064",
+        "issues": [
+          {
+            "duration_months": 85,
+            "excess_months": 19,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          },
+          {
+            "duration_months": 92,
+            "excess_months": 51,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          },
+          {
+            "duration_months": 45,
+            "excess_months": 8,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 29
+      },
+      {
+        "candidate_id": "CAND_0010770",
+        "issues": [
+          {
+            "duration_months": 53,
+            "excess_months": 13,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 30
+      },
+      {
+        "candidate_id": "CAND_0005538",
+        "issues": [
+          {
+            "duration_months": 58,
+            "excess_months": 21,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 91,
+            "excess_months": 31,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          }
+        ],
+        "rank": 31
+      },
+      {
+        "candidate_id": "CAND_0041611",
+        "issues": [
+          {
+            "duration_months": 70,
+            "excess_months": 6,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 62,
+            "excess_months": 2,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 90,
+            "excess_months": 46,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 61,
+            "excess_months": 24,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 32
+      },
+      {
+        "candidate_id": "CAND_0042029",
+        "issues": [
+          {
+            "duration_months": 96,
+            "excess_months": 39,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          }
+        ],
+        "rank": 33
+      },
+      {
+        "candidate_id": "CAND_0030468",
+        "issues": [
+          {
+            "duration_months": 95,
+            "excess_months": 38,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 85,
+            "excess_months": 1,
+            "max_possible_months": 84,
+            "released_date": "2019-06-16",
+            "skill": "Milvus"
+          }
+        ],
+        "rank": 34
+      },
+      {
+        "candidate_id": "CAND_0075249",
+        "issues": [
+          {
+            "duration_months": 80,
+            "excess_months": 14,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          }
+        ],
+        "rank": 35
+      },
+      {
+        "candidate_id": "CAND_0099401",
+        "issues": [
+          {
+            "duration_months": 71,
+            "excess_months": 7,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 80,
+            "excess_months": 1,
+            "max_possible_months": 79,
+            "released_date": "2019-11-28",
+            "skill": "Haystack"
+          },
+          {
+            "duration_months": 81,
+            "excess_months": 41,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 36
+      },
+      {
+        "candidate_id": "CAND_0044222",
+        "issues": [
+          {
+            "duration_months": 82,
+            "excess_months": 42,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 75,
+            "excess_months": 18,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 90,
+            "excess_months": 46,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 60,
+            "excess_months": 23,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 39
+      },
+      {
+        "candidate_id": "CAND_0001610",
+        "issues": [
+          {
+            "duration_months": 72,
+            "excess_months": 6,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          }
+        ],
+        "rank": 40
+      },
+      {
+        "candidate_id": "CAND_0006418",
+        "issues": [
+          {
+            "duration_months": 93,
+            "excess_months": 14,
+            "max_possible_months": 79,
+            "released_date": "2019-11-04",
+            "skill": "Weaviate"
+          }
+        ],
+        "rank": 41
+      },
+      {
+        "candidate_id": "CAND_0089552",
+        "issues": [
+          {
+            "duration_months": 68,
+            "excess_months": 4,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          }
+        ],
+        "rank": 42
+      },
+      {
+        "candidate_id": "CAND_0031593",
+        "issues": [
+          {
+            "duration_months": 82,
+            "excess_months": 3,
+            "max_possible_months": 79,
+            "released_date": "2019-11-28",
+            "skill": "Haystack"
+          },
+          {
+            "duration_months": 73,
+            "excess_months": 29,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 43
+      },
+      {
+        "candidate_id": "CAND_0047721",
+        "issues": [
+          {
+            "duration_months": 94,
+            "excess_months": 30,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          }
+        ],
+        "rank": 44
+      },
+      {
+        "candidate_id": "CAND_0061265",
+        "issues": [
+          {
+            "duration_months": 76,
+            "excess_months": 12,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 53,
+            "excess_months": 9,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 56,
+            "excess_months": 19,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 45
+      },
+      {
+        "candidate_id": "CAND_0044883",
+        "issues": [
+          {
+            "duration_months": 80,
+            "excess_months": 43,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 47
+      },
+      {
+        "candidate_id": "CAND_0044855",
+        "issues": [
+          {
+            "duration_months": 81,
+            "excess_months": 24,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 71,
+            "excess_months": 34,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 74,
+            "excess_months": 10,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          }
+        ],
+        "rank": 48
+      },
+      {
+        "candidate_id": "CAND_0058575",
+        "issues": [
+          {
+            "duration_months": 41,
+            "excess_months": 1,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 84,
+            "excess_months": 18,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          },
+          {
+            "duration_months": 96,
+            "excess_months": 5,
+            "max_possible_months": 91,
+            "released_date": "2018-11-17",
+            "skill": "Hugging Face Transformers"
+          }
+        ],
+        "rank": 49
+      },
+      {
+        "candidate_id": "CAND_0052328",
+        "issues": [
+          {
+            "duration_months": 54,
+            "excess_months": 17,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 50
+      },
+      {
+        "candidate_id": "CAND_0016163",
+        "issues": [
+          {
+            "duration_months": 64,
+            "excess_months": 4,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          }
+        ],
+        "rank": 52
+      },
+      {
+        "candidate_id": "CAND_0057563",
+        "issues": [
+          {
+            "duration_months": 94,
+            "excess_months": 37,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 48,
+            "excess_months": 11,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 53
+      },
+      {
+        "candidate_id": "CAND_0018722",
+        "issues": [
+          {
+            "duration_months": 86,
+            "excess_months": 7,
+            "max_possible_months": 79,
+            "released_date": "2019-11-04",
+            "skill": "Weaviate"
+          },
+          {
+            "duration_months": 77,
+            "excess_months": 36,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 54
+      },
+      {
+        "candidate_id": "CAND_0069905",
+        "issues": [
+          {
+            "duration_months": 56,
+            "excess_months": 12,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 55
+      },
+      {
+        "candidate_id": "CAND_0011162",
+        "issues": [
+          {
+            "duration_months": 83,
+            "excess_months": 39,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 76,
+            "excess_months": 16,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 89,
+            "excess_months": 32,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 78,
+            "excess_months": 12,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          }
+        ],
+        "rank": 56
+      },
+      {
+        "candidate_id": "CAND_0083307",
+        "issues": [
+          {
+            "duration_months": 92,
+            "excess_months": 51,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          },
+          {
+            "duration_months": 76,
+            "excess_months": 10,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          }
+        ],
+        "rank": 57
+      },
+      {
+        "candidate_id": "CAND_0010685",
+        "issues": [
+          {
+            "duration_months": 71,
+            "excess_months": 31,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 58
+      },
+      {
+        "candidate_id": "CAND_0079387",
+        "issues": [
+          {
+            "duration_months": 87,
+            "excess_months": 30,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 83,
+            "excess_months": 46,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 85,
+            "excess_months": 25,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          }
+        ],
+        "rank": 59
+      },
+      {
+        "candidate_id": "CAND_0030348",
+        "issues": [
+          {
+            "duration_months": 96,
+            "excess_months": 56,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 34,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 95,
+            "excess_months": 16,
+            "max_possible_months": 79,
+            "released_date": "2019-11-28",
+            "skill": "Haystack"
+          }
+        ],
+        "rank": 60
+      },
+      {
+        "candidate_id": "CAND_0020877",
+        "issues": [
+          {
+            "duration_months": 83,
+            "excess_months": 46,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 54,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 62,
+            "excess_months": 21,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 61
+      },
+      {
+        "candidate_id": "CAND_0066376",
+        "issues": [
+          {
+            "duration_months": 93,
+            "excess_months": 53,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 62
+      },
+      {
+        "candidate_id": "CAND_0009691",
+        "issues": [
+          {
+            "duration_months": 89,
+            "excess_months": 29,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 85,
+            "excess_months": 41,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 44,
+            "excess_months": 7,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 63
+      },
+      {
+        "candidate_id": "CAND_0030031",
+        "issues": [
+          {
+            "duration_months": 95,
+            "excess_months": 35,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 61,
+            "excess_months": 24,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 64
+      },
+      {
+        "candidate_id": "CAND_0081053",
+        "issues": [
+          {
+            "duration_months": 39,
+            "excess_months": 2,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 65
+      },
+      {
+        "candidate_id": "CAND_0091909",
+        "issues": [
+          {
+            "duration_months": 84,
+            "excess_months": 18,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          },
+          {
+            "duration_months": 89,
+            "excess_months": 52,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 59,
+            "excess_months": 2,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 3,
+            "max_possible_months": 91,
+            "released_date": "2018-11-17",
+            "skill": "Hugging Face Transformers"
+          },
+          {
+            "duration_months": 92,
+            "excess_months": 48,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 67
+      },
+      {
+        "candidate_id": "CAND_0096172",
+        "issues": [
+          {
+            "duration_months": 79,
+            "excess_months": 35,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 76,
+            "excess_months": 12,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          }
+        ],
+        "rank": 69
+      },
+      {
+        "candidate_id": "CAND_0076163",
+        "issues": [
+          {
+            "duration_months": 75,
+            "excess_months": 31,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 86,
+            "excess_months": 46,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 71
+      },
+      {
+        "candidate_id": "CAND_0030827",
+        "issues": [
+          {
+            "duration_months": 59,
+            "excess_months": 19,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 70,
+            "excess_months": 6,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 96,
+            "excess_months": 52,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 72
+      },
+      {
+        "candidate_id": "CAND_0094056",
+        "issues": [
+          {
+            "duration_months": 79,
+            "excess_months": 38,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          },
+          {
+            "duration_months": 60,
+            "excess_months": 20,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 74
+      },
+      {
+        "candidate_id": "CAND_0018549",
+        "issues": [
+          {
+            "duration_months": 81,
+            "excess_months": 37,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 74,
+            "excess_months": 10,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          }
+        ],
+        "rank": 76
+      },
+      {
+        "candidate_id": "CAND_0027691",
+        "issues": [
+          {
+            "duration_months": 72,
+            "excess_months": 12,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 46,
+            "excess_months": 9,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 77
+      },
+      {
+        "candidate_id": "CAND_0051630",
+        "issues": [
+          {
+            "duration_months": 74,
+            "excess_months": 14,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          }
+        ],
+        "rank": 79
+      },
+      {
+        "candidate_id": "CAND_0086151",
+        "issues": [
+          {
+            "duration_months": 73,
+            "excess_months": 9,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 49,
+            "excess_months": 8,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 81
+      },
+      {
+        "candidate_id": "CAND_0081852",
+        "issues": [
+          {
+            "duration_months": 76,
+            "excess_months": 16,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          }
+        ],
+        "rank": 82
+      },
+      {
+        "candidate_id": "CAND_0042506",
+        "issues": [
+          {
+            "duration_months": 71,
+            "excess_months": 30,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          }
+        ],
+        "rank": 83
+      },
+      {
+        "candidate_id": "CAND_0039838",
+        "issues": [
+          {
+            "duration_months": 54,
+            "excess_months": 10,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 93,
+            "excess_months": 33,
+            "max_possible_months": 60,
+            "released_date": "2021-06-01",
+            "skill": "LoRA"
+          },
+          {
+            "duration_months": 40,
+            "excess_months": 3,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 84
+      },
+      {
+        "candidate_id": "CAND_0078002",
+        "issues": [
+          {
+            "duration_months": 69,
+            "excess_months": 29,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 90,
+            "excess_months": 53,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 85
+      },
+      {
+        "candidate_id": "CAND_0065195",
+        "issues": [
+          {
+            "duration_months": 93,
+            "excess_months": 56,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 94,
+            "excess_months": 30,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          },
+          {
+            "duration_months": 44,
+            "excess_months": 4,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 86
+      },
+      {
+        "candidate_id": "CAND_0013536",
+        "issues": [
+          {
+            "duration_months": 74,
+            "excess_months": 37,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 82,
+            "excess_months": 42,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 87
+      },
+      {
+        "candidate_id": "CAND_0027801",
+        "issues": [
+          {
+            "duration_months": 52,
+            "excess_months": 15,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          },
+          {
+            "duration_months": 68,
+            "excess_months": 11,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 55,
+            "excess_months": 15,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 88
+      },
+      {
+        "candidate_id": "CAND_0049538",
+        "issues": [
+          {
+            "duration_months": 41,
+            "excess_months": 1,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 64,
+            "excess_months": 7,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 91,
+            "excess_months": 7,
+            "max_possible_months": 84,
+            "released_date": "2019-06-16",
+            "skill": "Milvus"
+          },
+          {
+            "duration_months": 53,
+            "excess_months": 16,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 89
+      },
+      {
+        "candidate_id": "CAND_0050876",
+        "issues": [
+          {
+            "duration_months": 41,
+            "excess_months": 1,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 59,
+            "excess_months": 2,
+            "max_possible_months": 57,
+            "released_date": "2021-09-20",
+            "skill": "OpenSearch"
+          },
+          {
+            "duration_months": 58,
+            "excess_months": 21,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 91
+      },
+      {
+        "candidate_id": "CAND_0054123",
+        "issues": [
+          {
+            "duration_months": 82,
+            "excess_months": 38,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          },
+          {
+            "duration_months": 75,
+            "excess_months": 15,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          },
+          {
+            "duration_months": 75,
+            "excess_months": 11,
+            "max_possible_months": 64,
+            "released_date": "2021-02-09",
+            "skill": "Qdrant"
+          }
+        ],
+        "rank": 92
+      },
+      {
+        "candidate_id": "CAND_0012957",
+        "issues": [
+          {
+            "duration_months": 61,
+            "excess_months": 17,
+            "max_possible_months": 44,
+            "released_date": "2022-10-25",
+            "skill": "LangChain"
+          }
+        ],
+        "rank": 93
+      },
+      {
+        "candidate_id": "CAND_0042100",
+        "issues": [
+          {
+            "duration_months": 69,
+            "excess_months": 3,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          },
+          {
+            "duration_months": 84,
+            "excess_months": 47,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 94
+      },
+      {
+        "candidate_id": "CAND_0043228",
+        "issues": [
+          {
+            "duration_months": 76,
+            "excess_months": 16,
+            "max_possible_months": 60,
+            "released_date": "2021-06-12",
+            "skill": "pgvector"
+          }
+        ],
+        "rank": 96
+      },
+      {
+        "candidate_id": "CAND_0087630",
+        "issues": [
+          {
+            "duration_months": 92,
+            "excess_months": 55,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 97
+      },
+      {
+        "candidate_id": "CAND_0076831",
+        "issues": [
+          {
+            "duration_months": 61,
+            "excess_months": 21,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          }
+        ],
+        "rank": 98
+      },
+      {
+        "candidate_id": "CAND_0095619",
+        "issues": [
+          {
+            "duration_months": 74,
+            "excess_months": 8,
+            "max_possible_months": 66,
+            "released_date": "2020-12-31",
+            "skill": "Pinecone"
+          }
+        ],
+        "rank": 99
+      },
+      {
+        "candidate_id": "CAND_0024620",
+        "issues": [
+          {
+            "duration_months": 48,
+            "excess_months": 8,
+            "max_possible_months": 40,
+            "released_date": "2023-02-16",
+            "skill": "LlamaIndex"
+          },
+          {
+            "duration_months": 57,
+            "excess_months": 16,
+            "max_possible_months": 41,
+            "released_date": "2023-01-19",
+            "skill": "PEFT"
+          },
+          {
+            "duration_months": 70,
+            "excess_months": 33,
+            "max_possible_months": 37,
+            "released_date": "2023-05-23",
+            "skill": "QLoRA"
+          }
+        ],
+        "rank": 100
+      }
+    ]
+  },
+  "unique_candidates_with_issue": 1355,
+  "unique_issue_candidates_by_archetype": {
+    "applied_ml": 130,
+    "data_backend_adjacent": 341,
+    "general_software": 709,
+    "generic_ml": 152,
+    "senior_explicit_ai": 17,
+    "senior_plain_language": 6
+  }
+}

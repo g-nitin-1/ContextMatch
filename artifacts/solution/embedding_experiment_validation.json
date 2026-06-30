@@ -1,0 +1,10 @@
+{
+  "candidate_source": "/mnt/e/contextmatch/artifacts/solution/candidate_features.jsonl",
+  "elapsed_seconds": 10.571,
+  "errors": [],
+  "max_rss_mb": 28.4,
+  "passed": true,
+  "row_count": 100,
+  "submission": "/mnt/e/contextmatch/artifacts/analysis/solution_embedding_experiment.csv",
+  "validator": "solution.validate_output"
+}

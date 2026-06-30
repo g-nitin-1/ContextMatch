@@ -1,0 +1,10 @@
+{
+  "candidate_source": "/mnt/e/contextmatch/artifacts/solution/candidate_features.jsonl",
+  "elapsed_seconds": 12.998,
+  "errors": [],
+  "max_rss_mb": 28.0,
+  "passed": true,
+  "row_count": 100,
+  "submission": "/mnt/e/contextmatch/artifacts/analysis/solution_role_title_ordering_experiment.csv",
+  "validator": "solution.validate_output"
+}

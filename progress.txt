@@ -1,5 +1,5 @@
 CONTEXTMATCH PROJECT PROGRESS
-Last updated: June 16, 2026
+Last updated: June 22, 2026
 
 
 1. PROJECT OBJECTIVE
@@ -90,9 +90,17 @@ oracle that may still contain model errors.
 Current Idea 1 status:
 
 - The design is documented in idea1.md.
-- No teacher inference pipeline has been implemented yet.
-- No teacher labels have been generated.
-- No teacher results have been used in Idea 2.
+- The latest public team repository was cloned, reviewed, and then removed from
+  this repository to avoid committing nested git history.
+- Its final top-100 CSV is preserved as `idea1_top100.csv`.
+- It implements a Qwen3-14B-AWQ semantic reranker over 641 shortlisted
+  candidates and produces structured assessments, repeat scoring, comparative
+  reranking, and a top-100 CSV.
+- It does not implement the full independent Idea 1 design: there is no
+  full-dataset retrieval, cross-encoder, model ensemble, or constrained
+  student.
+- Idea 2 was frozen before these teacher results were inspected.
+- The review conclusions are consolidated in §5.19 below.
 
 
 4.2 IDEA 2: REVERSE-ENGINEER THE SYNTHETIC GENERATOR
@@ -1068,6 +1076,74 @@ The complete suite now contains 55 passing tests. Frozen Idea 2 source, rubric,
 manifest, and submission remain unchanged.
 
 
+5.19 TEAM IDEA 1 REPOSITORY REVIEW
+
+The latest public team Qwen repository and committed `Final_Results` artifacts
+were reviewed after the Idea 2 freeze. The cloned repository was removed after
+review; the final top-100 CSV is preserved as `idea1_top100.csv`. The current
+reviewed commit was `a66d830ee1e45269fab7c1ffb124b651ce5f05f3`.
+
+This version is materially better than the previous snapshot. Calibration now
+passes the documented gate:
+
+- fraction within 10 points: 0.875, required at least 0.80;
+- mean absolute error: 6.5, required at most 8;
+- missed reviewed disqualifier candidates: 0;
+- rows more than 10 points away: 4;
+- exact disqualifier-set mismatches: 9 of 32.
+
+The team changed integrity policy: technology release-date mismatches are
+ignored entirely, including skill-duration metadata and dated career-text
+mentions; `expert_skill_zero_usage` is suspicious metadata with a small
+deterministic penalty. This matches our conclusion that skill-duration
+chronology is generator noise, but it is broader than our preferred policy for
+career-text technology chronology. In the current final top 100 this does not
+create a local hard-tech issue.
+
+Team final top-100 integrity status under their policy is now 100 clean,
+0 suspicious, 0 verified failures. Compared with our `integrity_issues.jsonl`,
+two team top-100 candidates still hit our high/hard duration bucket:
+`CAND_0001610` at rank 40 and `CAND_0019480` at rank 46, both for career
+duration exceeding stated experience.
+
+The previous severe senior false caps are fixed:
+
+- `CAND_0041611`: frozen rank 17, team rank 32, stage-2 score 95, no cap.
+- `CAND_0092278`: frozen rank 21, team rank 26, stage-2 score 95, no cap.
+
+Team final top-100 composition now matches frozen Idea 2 at broad family level:
+8 senior-plain, 13 senior-explicit, and 79 applied-ML candidates. Membership
+differences are 23 frozen-only and 23 team-only candidates, all applied-ML.
+
+Agreement is now moderate rather than near-zero:
+
+- team versus frozen Idea 2 top-100 overlap: 77;
+- team versus frozen top-50 overlap: 31;
+- team versus frozen top-10 overlap: 3;
+- team versus skill-normalized top-100 overlap: 77;
+- team versus skill-normalized top-50 overlap: 32;
+- team versus skill-normalized top-10 overlap: 3;
+- Spearman on common frozen candidates: 0.592;
+- common-pair agreement: about 70%.
+
+The main provenance boundary remains: `top_700.jsonl` has 641 unique records
+and is not an independent full-dataset retrieval result. It contains 500
+frozen-Idea-2-top-500 candidates, all 104 detected honeypot proxies, and
+37 additional records. Therefore Qwen can test semantic ordering inside an
+Idea 2-shaped pool, but cannot validate recall outside that pool.
+
+Remaining defects: `Final_Results` still lacks a matching run report; the only
+`run_report.json` under `ru/` is stale and points to stage files that do not
+match `Final_Results`. The repeat/adjudication path still compares the first
+assessment against a merged first+second assessment rather than the raw second
+assessment.
+
+Current judgment: the latest Qwen result is credible as a teacher ordering
+signal and manual disagreement queue. It still should not be described as an
+independent end-to-end Idea 1 result because it did not perform full-corpus
+retrieval.
+
+
 6. CURRENT RECONSTRUCTED GENERATOR GRAPH
 
 The best current model of the data-generation process is:
@@ -1461,6 +1537,13 @@ After Idea 2 is frozen:
 4. Measure prompt and order stability.
 5. Produce an independent teacher ranking.
 
+Status: partially complete through the team's Qwen semantic-reranking
+repository, but not independent at the retrieval stage. Full-dataset retrieval,
+cross-encoder reranking, model-family stability, and student distillation
+remain unimplemented. The existing Qwen result must first be corrected for the
+suspicious-policy, calibration, false-disqualifier-cap, and reproducibility
+defects documented in §5.19.
+
 
 STEP 11: COMPARE, DO NOT IMMEDIATELY MERGE
 
@@ -1483,8 +1566,9 @@ than automatically accepted or rejected.
 
 The immediate next task should be:
 
-Build Idea 1 independently against the full dataset without modifying the
-frozen Idea 2 specification.
+Correct the team's Qwen teacher path without modifying frozen Idea 2, then
+either add genuinely independent full-dataset retrieval or explicitly retain
+the system as a semantic reranker over an Idea 2 shortlist.
 
 Idea 2 is frozen and reproducible. Any change made after inspecting Idea 1 must
 be recorded as a new post-comparison version rather than silently changing
@@ -1497,9 +1581,13 @@ This is the correct next step because:
   complete.
 - The one-command ranker is comfortably within the five-minute and 16 GB
   constraints and reproduces the frozen CSV exactly.
-- The next independent evidence source is Idea 1: broad retrieval, stronger
-  reranking/reasoning, and stability checks over the relevant shortlist plus
-  tail audits.
+- The existing Qwen result is useful semantic evidence, but its shortlist
+  provenance means it is not yet an independent retrieval result.
+- Suspicious QLoRA-duration policy, false senior disqualifier caps, and
+  final-run reproducibility must be repaired before any score blending or
+  student training.
+- A passing, versioned calibration report must become a required input to the
+  final teacher run.
 - Add `submission_metadata.yaml` only when participant, contact, compute,
   repository, and sandbox values are known; do not fabricate those fields.
 - It keeps Idea 2 independent from the teacher.
@@ -1715,3 +1803,87 @@ forgetting that integrity filtering is a disqualification gate, not merely a
 feature. If the next stage produces a frozen, integrity-gated,
 multi-world-evaluated probabilistic ranking over a shortlist designed for high
 recall, with audits of the excluded tail, Idea 2 will have done its job well.
+
+
+A.10 CURRENT SUBMISSION-PATH SOLUTION STATE
+
+The submission-facing `solution/` path is now a general JD-to-candidate ranker,
+not an Idea 1 or Idea 2 artifact. It parses the JD, builds a structured
+requirement spec, scores precomputed candidate features, hard-gates integrity
+and disqualifier failures, enforces a career-evidence floor, then ranks by a
+career-evidence-dominant score with bounded semantic, skill, seniority,
+behavior, logistics, and soft-negative terms.
+
+The latest scoring change adopted the senior-ordering experiment into
+`solution/ranker.py`. This is not a hardcoded senior boost. It reuses the
+existing JD-derived `seniority_alignment` signal, normalizes positive fit by the
+JD's seniority strength, and applies a capped ordering term of 0.4. It only
+affects candidates who already meet the career-evidence floor; it cannot admit
+skills-only, semantic-only, non-technical, or integrity-blocked profiles.
+
+Why it was adopted:
+
+- Top-100 membership stayed unchanged relative to the previous solution.
+- Top-10 composition moved from 5 applied / 3 plain senior / 2 explicit senior
+  to 4 applied / 4 plain senior / 2 explicit senior.
+- The main output now has all 8 plain-language seniors in the top 100 and keeps
+  13 of 21 explicit-senior-AI candidates.
+- Dataset audit is clean: 0 unsafe top-100 candidates and 0 direct-occupation
+  leakage.
+- It improved the local proxy composite under all tested truth/gain assumptions:
+  Idea1-top100 proxy, Idea2-full-tier proxy, and Idea2-top100 proxy, each under
+  exponential and linear gains.
+
+Current validated output:
+
+- `artifacts/analysis/solution_ranker_submission.csv`
+- `solution.validate_output`: passed for 100 rows against 100,000 candidates.
+- Organizer validator: "Submission is valid."
+- Runtime using precomputed features: about 18 seconds, about 18 MB max RSS.
+- Full solution test suite: 41 passed.
+
+The remaining caveat is unchanged: proxy scores are diagnostics, not official
+score estimates. The local proxy composite now ranges roughly 0.642 to 0.877
+depending on truth assumption and gain mapping, but the real hidden labels are
+unknown. The useful interpretation is relative: the adopted senior-ordering
+change improved every local proxy without weakening safety gates.
+
+
+A.11 FINAL ROLE-TITLE ORDERING STEP
+
+After the seniority-ordering adoption, the weak remaining metric was NDCG@10.
+The top-100 set was already clean and stable, but the first two ranks were still
+applied-ML profiles under the local proxy tiers. A final bounded experiment
+tested an additional JD-derived role-title ordering term:
+
+- only for senior/staff/principal IC-style JDs;
+- only for candidates already passing the career-evidence floor;
+- requires demonstrated ownership/scope in career evidence;
+- requires explicit senior/staff/lead/principal technical title alignment;
+- scores title-family/function fit from the parsed JD role title;
+- cap = 0.4, so it cannot overpower the evidence score or admit weak profiles.
+
+This is still a general JD feature, not an Idea 1/Idea 2 cohort boost. It uses
+the JD title and candidate title/evidence only.
+
+The experiment was adopted because it improved every local proxy cell while
+preserving all safety gates:
+
+- Top-100 membership unchanged: 100/100 common with the previous solution.
+- Top-100 audit unchanged: 0 unsafe, 0 direct-occupation leakage.
+- Top-10 mix became 4 plain senior, 3 explicit senior, 3 applied ML.
+- Proxy composite range improved to roughly 0.748 to 0.925.
+- NDCG@10 improved to 0.780 under exponential gain and 0.909 under linear gain.
+- Main output and experiment output are identical after adoption.
+
+Current final output remains:
+
+- `artifacts/analysis/solution_ranker_submission.csv`
+- `solution.validate_output`: passed.
+- Organizer validator: "Submission is valid."
+- Runtime using precomputed features: about 18 seconds, about 18 MB max RSS.
+- Full solution test suite: 45 passed.
+
+This is a reasonable freeze point. Further top-10 tuning would likely be
+optimizing against local proxies rather than adding a clearly defensible
+general recruiter signal.

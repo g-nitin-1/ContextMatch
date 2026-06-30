@@ -1,0 +1,141 @@
+{
+  "schema_version": "requirement-spec-0.1.0",
+  "role_title": "Senior AI Engineer",
+  "seniority": {
+    "level": "senior",
+    "track": "ic",
+    "min_years": 5,
+    "max_years": 9,
+    "hard": false,
+    "strength": 0.35,
+    "seniority_terms": [
+      "senior"
+    ],
+    "track_terms": [
+      "hands-on",
+      "founding team",
+      "writes code"
+    ]
+  },
+  "must_have": [
+    {
+      "id": "production_retrieval",
+      "desc": "Built and shipped production embeddings, retrieval, search, or ranking systems",
+      "weight": 1.0,
+      "evidence_signals": [
+        "embeddings",
+        "retrieval_search",
+        "ranking_recommendation_matching",
+        "production_delivery"
+      ],
+      "compound": "production_embeddings_retrieval",
+      "compounds": [
+        "production_embeddings_retrieval",
+        "production_vector_or_hybrid_search",
+        "end_to_end_intelligence_ownership",
+        "evaluated_ranking_system"
+      ]
+    },
+    {
+      "id": "evaluated_ranking",
+      "desc": "Owned ranking, recommendation, matching, or retrieval quality with offline/online evaluation",
+      "weight": 0.9,
+      "evidence_signals": [
+        "ranking_evaluation",
+        "online_experimentation",
+        "learning_to_rank",
+        "meaningful_scale"
+      ],
+      "compound": "evaluated_ranking_system",
+      "compounds": [
+        "evaluated_ranking_system",
+        "shipper_with_evaluation_depth",
+        "end_to_end_intelligence_ownership"
+      ]
+    },
+    {
+      "id": "end_to_end_ownership",
+      "desc": "Owned the intelligent-system layer end to end, not just prompts or dashboards",
+      "weight": 0.8,
+      "evidence_signals": [
+        "operational_ownership",
+        "zero_to_one_ownership",
+        "production_delivery",
+        "product_context"
+      ],
+      "compound": "end_to_end_intelligence_ownership",
+      "compounds": [
+        "end_to_end_intelligence_ownership",
+        "shipper_with_evaluation_depth"
+      ]
+    }
+  ],
+  "nice_to_have": [
+    {
+      "id": "vector_hybrid_search",
+      "desc": "Vector, hybrid, or search infrastructure depth",
+      "weight": 0.5,
+      "evidence_signals": [
+        "vector_hybrid_infrastructure",
+        "retrieval_search",
+        "embeddings"
+      ],
+      "compound": "production_vector_or_hybrid_search",
+      "compounds": [
+        "production_vector_or_hybrid_search",
+        "production_embeddings_retrieval"
+      ]
+    },
+    {
+      "id": "python_engineering",
+      "desc": "Practical Python/ML engineering implementation ability",
+      "weight": 0.25,
+      "evidence_signals": [
+        "python_engineering"
+      ]
+    },
+    {
+      "id": "senior_leadership",
+      "desc": "Senior IC or tech-lead evidence without losing hands-on depth",
+      "weight": 0.25,
+      "evidence_signals": [
+        "mentoring_leadership",
+        "operational_ownership"
+      ]
+    }
+  ],
+  "hard_disqualifiers": [
+    {
+      "id": "services_only_entire_career",
+      "scope": "entire_career"
+    },
+    {
+      "id": "research_only_without_production",
+      "scope": "entire_career"
+    }
+  ],
+  "soft_negatives": [
+    {
+      "id": "recent_shallow_llm_only",
+      "scope": "career_timeline"
+    },
+    {
+      "id": "senior_not_coding_recently",
+      "scope": "recent_roles"
+    }
+  ],
+  "location": {
+    "preferred": [
+      "Pune",
+      "Noida",
+      "NCR"
+    ],
+    "relocate_ok": true
+  },
+  "semantic_queries": [
+    "built and shipped a production ranking recommendation or retrieval system",
+    "designed embeddings vector search hybrid retrieval and evaluation at scale",
+    "owned candidate job matching search relevance learning to rank ndcg mrr experiments",
+    "senior hands on engineer owning intelligent systems end to end"
+  ]
+}

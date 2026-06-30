@@ -8,3 +8,9 @@ __pycache__/
 /artifacts/analysis/generator_assignments.csv
 /artifacts/analysis/idea2_scores.csv
 /artifacts/analysis/integrity_issues.jsonl
+/artifacts/solution/candidate_features.jsonl
+/artifacts/solution/candidate_embedding_ids.json
+/artifacts/solution/candidate_embeddings_minilm_l12.npy
+/artifacts/solution/candidate_embeddings_manifest.json
+/artifacts/solution/candidate_features_manifest.json
+/candidates_with_label.json

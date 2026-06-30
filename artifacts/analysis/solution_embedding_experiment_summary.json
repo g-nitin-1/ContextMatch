@@ -1,0 +1,31 @@
+{
+  "baseline_overlap": {
+    "baseline": "/mnt/e/contextmatch/artifacts/analysis/solution_ranker_submission.csv",
+    "baseline_only": 0,
+    "experiment_only": 0,
+    "top100_common": 100
+  },
+  "blocked_count": 99566,
+  "candidate_count": 100000,
+  "elapsed_seconds": 18.98,
+  "eligible_count": 434,
+  "experiment": "embedding-semantic-0.1.0",
+  "inputs": {
+    "candidate_ids": "/mnt/e/contextmatch/artifacts/solution/candidate_embedding_ids.json",
+    "embeddings": "/mnt/e/contextmatch/artifacts/solution/candidate_embeddings_minilm_l12.npy",
+    "features": "/mnt/e/contextmatch/artifacts/solution/candidate_features.jsonl",
+    "model": "/home/nitin/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L12-v2/snapshots/c004d8e3e901237d8fa7e9fff12774962e391ce5"
+  },
+  "max_rss_mb": 1016.7,
+  "outputs": {
+    "submission": "/mnt/e/contextmatch/artifacts/analysis/solution_embedding_experiment.csv"
+  },
+  "role_title": "Job Description: Senior AI Engineer \u2014 Founding Team",
+  "semantic": {
+    "max_score": 0.646501,
+    "mean_score": 0.37812,
+    "method": "mean-pooled MiniLM embeddings",
+    "min_score": 0.102641,
+    "weight": 0.45
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "baseline_overlap": {
+    "baseline": "/mnt/e/contextmatch/artifacts/analysis/solution_ranker_submission.csv",
+    "baseline_only": 0,
+    "experiment_only": 0,
+    "top100_common": 100
+  },
+  "blocked_count": 99566,
+  "boosted_eligible_count": 47,
+  "candidate_count": 100000,
+  "elapsed_seconds": 22.753,
+  "eligible_count": 434,
+  "experiment": "role-title-ordering-0.1.0",
+  "inputs": {
+    "features": "/mnt/e/contextmatch/artifacts/solution/candidate_features.jsonl"
+  },
+  "max_modifier": 0.4,
+  "max_rss_mb": 18.4,
+  "mean_positive_modifier": 0.196162,
+  "ordering_cap": 0.4,
+  "outputs": {
+    "submission": "/mnt/e/contextmatch/artifacts/analysis/solution_role_title_ordering_experiment.csv"
+  },
+  "role_title": "Job Description: Senior AI Engineer \u2014 Founding Team"
+}
