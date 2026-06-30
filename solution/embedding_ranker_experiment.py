@@ -127,7 +127,7 @@ def score_overlay_with_embedding(
         penalties=penalties,
         blocked=bool(blocked_reasons),
         blocked_reasons=blocked_reasons,
-        reasoning=build_reasoning(overlay, evidence, semantic, blocked_reasons),
+        reasoning=build_reasoning(spec, overlay, evidence, semantic, blocked_reasons),
     )
 
 

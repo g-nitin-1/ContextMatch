@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import re
 import resource
@@ -70,6 +71,58 @@ SENIOR_TITLE_RE = re.compile(r"\b(senior|staff|lead|principal)\b", re.IGNORECASE
 TECHNICAL_TITLE_RE = re.compile(
     r"\b(engineer|scientist|developer|architect|ml|ai|data|search|backend|software)\b",
     re.IGNORECASE,
+)
+COMPOUND_REASON_PHRASES = {
+    "production_embeddings_retrieval": (
+        "shipped production embedding and retrieval systems",
+        "worked on production retrieval infrastructure",
+        "has production retrieval-system evidence",
+    ),
+    "production_vector_or_hybrid_search": (
+        "built vector or hybrid search infrastructure",
+        "worked with search infrastructure beyond keyword matching",
+        "shows vector or hybrid-search delivery",
+    ),
+    "evaluated_ranking_system": (
+        "evaluated ranking quality with relevance metrics",
+        "worked on ranking systems with quality evaluation",
+        "connected ranking work to measurable relevance outcomes",
+    ),
+    "shipper_with_evaluation_depth": (
+        "shipped systems with evaluation depth",
+        "combined delivery ownership with model-quality measurement",
+        "has shipping evidence tied to evaluation",
+    ),
+    "end_to_end_intelligence_ownership": (
+        "owned an intelligence system end to end",
+        "drove ranking or intelligence work from design into production",
+        "shows end-to-end ownership of applied AI systems",
+    ),
+}
+SIGNAL_REASON_PHRASES = {
+    "embeddings": "embedding work",
+    "retrieval_search": "retrieval/search work",
+    "ranking_recommendation_matching": "ranking, recommendation, or matching work",
+    "ranking_evaluation": "ranking evaluation",
+    "online_experimentation": "online experimentation",
+    "learning_to_rank": "learning-to-rank exposure",
+    "production_delivery": "production delivery",
+    "operational_ownership": "operational ownership",
+    "zero_to_one_ownership": "zero-to-one ownership",
+    "meaningful_scale": "meaningful scale",
+    "mentoring_leadership": "technical mentoring",
+    "vector_hybrid_infrastructure": "vector or hybrid-search infrastructure",
+    "python_engineering": "Python engineering",
+}
+INTERNAL_REASONING_PATTERNS = (
+    "evidence=",
+    "semantic=",
+    "mean_",
+    "idea1",
+    "idea2",
+    "proxy",
+    "archetype",
+    "_",
 )
 
 
@@ -584,7 +637,7 @@ def score_overlay(
         penalties=penalties,
         blocked=bool(blocked_reasons),
         blocked_reasons=blocked_reasons,
-        reasoning=build_reasoning(overlay, evidence, semantic, blocked_reasons),
+        reasoning=build_reasoning(spec, overlay, evidence, semantic, blocked_reasons),
     )
 
 
@@ -695,29 +748,238 @@ def rank_raw_with_summary(
 
 
 def build_reasoning(
+    spec: RequirementSpec,
     overlay: dict[str, Any],
     evidence: float,
     semantic: float,
     blocked_reasons: tuple[str, ...],
 ) -> str:
     static = overlay.get("static", {})
-    title = static.get("current_title") or "Candidate"
-    company = static.get("current_company") or "current employer"
+    candidate_id = str(overlay.get("candidate_id") or "")
+    title = str(static.get("current_title") or "Candidate")
+    company = str(static.get("current_company") or "current employer")
     years = static.get("years_of_experience")
     career = overlay.get("career_evidence", {})
-    compounds = list(career.get("any_career_compound_ids", []))
-    signals = list(career.get("any_career_signal_ids", []))
+    compounds = _as_set(career.get("any_career_compound_ids"))
+    signals = _as_set(career.get("any_career_signal_ids"))
     if blocked_reasons:
-        return f"{title} at {company} is blocked by {', '.join(blocked_reasons)}."
-    evidence_bits = compounds[:2] or signals[:2] or ["adjacent career evidence"]
+        return (
+            f"{title} at {company} is not shortlist-ready because deterministic "
+            f"screening found {human_join(blocked_reasons)}."
+        )
     try:
         years_text = f"{float(years):.1f} years"
     except (TypeError, ValueError):
         years_text = "undisclosed experience"
-    return (
-        f"{title} at {company} with {years_text}; evidence={evidence:.2f}, "
-        f"semantic={semantic:.2f}, matched {', '.join(evidence_bits)}."
+
+    jd_bits = matched_requirement_phrases(spec, signals, compounds)
+    evidence_bits = evidence_reason_phrases(candidate_id, signals, compounds)
+    skill_bits = selected_skill_names(overlay)
+    availability_bits = availability_facts(overlay)
+    concern = strongest_concern(spec, overlay, evidence, semantic, signals, compounds)
+
+    jd_sentence = (
+        f"Matches the JD's {human_join(jd_bits[:2])}."
+        if jd_bits
+        else "Has adjacent career evidence for the parsed JD."
     )
+    evidence_sentence = (
+        f"Career history {human_join(evidence_bits[:2])}."
+        if evidence_bits
+        else "Career history has relevant technical signals, but fewer explicit system details."
+    )
+    skill_sentence = (
+        f"Named skills include {human_join(skill_bits[:3])}."
+        if skill_bits
+        else "The ranking is driven by career evidence rather than a keyword-heavy skills list."
+    )
+    availability_sentence = (
+        f"Platform signals: {human_join(availability_bits[:2])}."
+        if availability_bits
+        else "Platform availability signals are not the deciding factor here."
+    )
+
+    skeletons = (
+        "{lead}; {evidence} {jd} {skills} {concern}",
+        "{lead}. {jd} {evidence} {skills} {availability} {concern}",
+        "{lead}; {skills} {evidence} {jd} {concern}",
+        "{lead}. {evidence} {skills} {availability} {jd} {concern}",
+        "{lead}; {jd} {skills} {availability} {concern}",
+    )
+    lead = f"{title} at {company} with {years_text}"
+    skeleton = stable_choice(candidate_id, skeletons)
+    reasoning = skeleton.format(
+        lead=lead,
+        evidence=evidence_sentence,
+        jd=jd_sentence,
+        skills=skill_sentence,
+        availability=availability_sentence,
+        concern=concern,
+    )
+    return compact_reasoning(reasoning)
+
+
+def stable_choice(key: str, options: tuple[str, ...]) -> str:
+    if not options:
+        raise ValueError("stable_choice requires options")
+    digest = hashlib.sha256(key.encode("utf-8")).hexdigest()
+    return options[int(digest[:8], 16) % len(options)]
+
+
+def human_join(items: Any) -> str:
+    values = [str(item).strip() for item in items if str(item).strip()]
+    if not values:
+        return ""
+    if len(values) == 1:
+        return values[0]
+    if len(values) == 2:
+        return f"{values[0]} and {values[1]}"
+    return f"{', '.join(values[:-1])}, and {values[-1]}"
+
+
+def matched_requirement_phrases(
+    spec: RequirementSpec,
+    signals: set[str],
+    compounds: set[str],
+) -> list[str]:
+    matches = []
+    for item in spec.must_have + spec.nice_to_have:
+        compound_hit = bool(compounds & set(item.compounds))
+        signal_hit = bool(signals & set(item.evidence_signals))
+        if compound_hit or signal_hit:
+            desc = item.desc.strip().rstrip(".")
+            matches.append(desc[:1].lower() + desc[1:])
+    return matches
+
+
+def evidence_reason_phrases(
+    candidate_id: str,
+    signals: set[str],
+    compounds: set[str],
+) -> list[str]:
+    phrases = []
+    for compound in sorted(compounds):
+        options = COMPOUND_REASON_PHRASES.get(compound)
+        if options:
+            phrases.append(stable_choice(f"{candidate_id}:{compound}", options))
+    if len(phrases) >= 2:
+        return phrases
+    for signal in sorted(signals):
+        phrase = SIGNAL_REASON_PHRASES.get(signal)
+        if phrase and phrase not in phrases:
+            phrases.append(f"shows {phrase}")
+        if len(phrases) >= 3:
+            break
+    return phrases
+
+
+def selected_skill_names(overlay: dict[str, Any], limit: int = 3) -> list[str]:
+    names = [
+        str(name).strip()
+        for name in overlay.get("skill_overlay", {}).get("skill_names", [])
+        if str(name).strip()
+    ]
+    if not names:
+        return []
+    priority = re.compile(
+        r"\b(python|rag|retrieval|ranking|search|bm25|elasticsearch|faiss|"
+        r"pinecone|pgvector|mlops|tensorflow|pytorch|hugging face|llm|nlp)\b",
+        re.IGNORECASE,
+    )
+    prioritized = [name for name in names if priority.search(name)]
+    fallback = [name for name in names if name not in prioritized]
+    selected = []
+    for name in prioritized + fallback:
+        if name not in selected:
+            selected.append(name)
+        if len(selected) >= limit:
+            break
+    return selected
+
+
+def availability_facts(overlay: dict[str, Any]) -> list[str]:
+    availability = overlay.get("availability_overlay", {})
+    facts = []
+    inactive_days = availability.get("inactive_days")
+    if isinstance(inactive_days, int):
+        facts.append(f"active {inactive_days} days ago")
+    response_rate = availability.get("response_rate")
+    if isinstance(response_rate, (int, float)):
+        facts.append(f"{float(response_rate):.2f} recruiter response rate")
+    notice = availability.get("notice_period_days")
+    if isinstance(notice, int):
+        facts.append(f"{notice}-day notice")
+    if availability.get("open_to_work"):
+        facts.append("open to work")
+    return facts
+
+
+def strongest_concern(
+    spec: RequirementSpec,
+    overlay: dict[str, Any],
+    evidence: float,
+    semantic: float,
+    signals: set[str],
+    compounds: set[str],
+) -> str:
+    availability = overlay.get("availability_overlay", {})
+    logistics = overlay.get("logistics_overlay", {})
+    risk_contexts = _as_set(
+        overlay.get("career_evidence", {}).get("any_career_risk_context_ids")
+    )
+    unsatisfied = unsatisfied_must_have(spec, signals, compounds)
+
+    notice = availability.get("notice_period_days")
+    if isinstance(notice, int) and notice >= 90:
+        return f"Concern: {notice}-day notice may slow hiring."
+    response_rate = availability.get("response_rate")
+    if isinstance(response_rate, (int, float)) and response_rate < 0.35:
+        return f"Concern: recruiter response rate is only {float(response_rate):.2f}."
+    inactive_days = availability.get("inactive_days")
+    if isinstance(inactive_days, int) and inactive_days > 120:
+        return f"Concern: profile has been inactive for {inactive_days} days."
+    if logistics.get("location_bucket") == "outside_india" and not logistics.get(
+        "willing_to_relocate"
+    ):
+        return "Concern: location is outside India with no relocation signal."
+    if "llm_application_context" in risk_contexts:
+        return "Concern: some experience is LLM-application context, so production depth matters."
+    if unsatisfied:
+        return f"Concern: less explicit evidence for {unsatisfied[0]}."
+    if evidence < 0.80:
+        return "Concern: relevant evidence is present but not as complete as the highest-ranked profiles."
+    if semantic < 0.45:
+        return "Concern: wording is less directly aligned to the JD than the strongest matches."
+    return "No major integrity issue surfaced; main trade-off is comparing depth against other strong matches."
+
+
+def unsatisfied_must_have(
+    spec: RequirementSpec,
+    signals: set[str],
+    compounds: set[str],
+) -> list[str]:
+    missing = []
+    for item in spec.must_have:
+        compound_hit = bool(compounds & set(item.compounds))
+        signal_hits = len(signals & set(item.evidence_signals))
+        if not compound_hit and signal_hits < max(1, len(item.evidence_signals) // 2):
+            desc = item.desc.strip().rstrip(".")
+            missing.append(desc[:1].lower() + desc[1:])
+    return missing
+
+
+def compact_reasoning(reasoning: str) -> str:
+    return re.sub(r"\s+", " ", reasoning).strip()
+
+
+def apply_rank_tone(reasoning: str, rank: int) -> str:
+    if rank <= 10:
+        prefix = "High-confidence shortlist fit."
+    elif rank <= 50:
+        prefix = "Strong shortlist fit with trade-offs."
+    else:
+        prefix = "Viable shortlist candidate near the cutoff."
+    return f"{prefix} {reasoning}"
 
 
 def write_submission(rows: list[ScoreBreakdown], path: Path) -> None:
@@ -731,7 +993,7 @@ def write_submission(rows: list[ScoreBreakdown], path: Path) -> None:
                     "candidate_id": row.candidate_id,
                     "rank": rank,
                     "score": f"{row.score - rank * 1e-9:.9f}",
-                    "reasoning": row.reasoning,
+                    "reasoning": apply_rank_tone(row.reasoning, rank),
                 }
             )
 

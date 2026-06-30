@@ -5,6 +5,8 @@ from pathlib import Path
 
 from solution.ranker import (
     _item_score,
+    apply_rank_tone,
+    build_reasoning,
     evidence_score,
     integrity_blocks,
     meets_career_evidence_floor,
@@ -247,6 +249,59 @@ class RankerTests(unittest.TestCase):
         )
 
         self.assertEqual(seniority_alignment(self.spec, senior_title_only), 0.0)
+
+    def test_reasoning_is_field_grounded_and_jd_connected(self) -> None:
+        candidate = overlay(
+            title="Senior AI Engineer",
+            compounds=[
+                "production_embeddings_retrieval",
+                "evaluated_ranking_system",
+            ],
+            signals=[
+                "embeddings",
+                "retrieval_search",
+                "ranking_recommendation_matching",
+                "ranking_evaluation",
+                "operational_ownership",
+            ],
+            skill_signals=["retrieval_search", "ranking_recommendation_matching"],
+        )
+        candidate["static"]["current_company"] = "SearchCo"
+        candidate["skill_overlay"]["skill_names"] = ["Python", "BM25", "Elasticsearch"]
+
+        reasoning = score_overlay(self.spec, candidate).reasoning
+
+        self.assertIn("Senior AI Engineer", reasoning)
+        self.assertIn("SearchCo", reasoning)
+        self.assertIn("7.0 years", reasoning)
+        self.assertIn("JD", reasoning)
+        self.assertTrue("Python" in reasoning or "BM25" in reasoning)
+        self.assertNotIn("evidence=", reasoning)
+        self.assertNotIn("semantic=", reasoning)
+        self.assertNotIn("evaluated_ranking_system", reasoning)
+        self.assertNotIn("production_embeddings_retrieval", reasoning)
+
+    def test_reasoning_surfaces_honest_concern(self) -> None:
+        candidate = overlay(
+            compounds=["production_embeddings_retrieval"],
+            signals=[
+                "embeddings",
+                "retrieval_search",
+                "ranking_recommendation_matching",
+            ],
+        )
+        candidate["availability_overlay"]["notice_period_days"] = 90
+
+        reasoning = score_overlay(self.spec, candidate).reasoning
+
+        self.assertIn("Concern:", reasoning)
+        self.assertIn("90-day notice", reasoning)
+
+    def test_rank_tone_changes_by_rank_band(self) -> None:
+        reasoning = "Senior AI Engineer at SearchCo with 7.0 years. Concern: no major issue."
+
+        self.assertTrue(apply_rank_tone(reasoning, 5).startswith("High-confidence"))
+        self.assertTrue(apply_rank_tone(reasoning, 95).startswith("Viable"))
 
     def test_junior_jd_penalizes_staff_profile(self) -> None:
         junior_spec = spec_from_jd_text(

@@ -1,8 +1,8 @@
 {
   "candidate_source": "/mnt/e/contextmatch/artifacts/solution/candidate_features.jsonl",
-  "elapsed_seconds": 10.364,
+  "elapsed_seconds": 9.482,
   "errors": [],
-  "max_rss_mb": 29.1,
+  "max_rss_mb": 29.2,
   "passed": true,
   "row_count": 100,
   "submission": "/mnt/e/contextmatch/artifacts/analysis/solution_ranker_submission.csv",
